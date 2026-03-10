@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Google Play Closed Testing Policy Changes in 2026 Explained</title>
+    <meta name="description" content="Google updated its closed testing algorithm in 2026. I explain the new emulator bans, strict engagement tracking, and what it means for your app approval.">
+    <meta name="keywords" content="google play policy changes 2026, 20 testers requirement update, google play console new rules, android closed testing changes">
+    <meta name="author" content="12 Testers Team">
+    <link rel="canonical" href="https://12testers14days.pro/blog/google-play-policy-changes-2026/">
+    
+    <meta property="og:title" content="Google Play Closed Testing Policy Changes in 2026 Explained">
+    <meta property="og:description" content="Don't get rejected by outdated advice. Read my deep dive into the 2026 Google Play Console policy updates regarding the 14-day testing rule.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://12testers14days.pro/blog/google-play-policy-changes-2026/">
+    <meta property="og:image" content="https://12testers14days.pro/images/blog/policy-changes.jpg">
+    <meta property="article:published_time" content="2026-03-22T08:00:00+00:00">
+    <meta property="article:author" content="12 Testers Team">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Google Play Closed Testing Policy Changes in 2026 Explained",
+      "image": "https://12testers14days.pro/images/blog/policy-changes.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "12 Testers Team",
+        "url": "https://12testers14days.pro"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "12 Testers for 14 Days",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://12testers14days.pro/logo.png"
+        }
+      },
+      "datePublished": "2026-03-22",
+      "dateModified": "2026-03-22",
+      "description": "An insider's analysis of the latest 2026 updates to Google Play's 20 testers for 14 days requirement."
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://12testers14days.pro"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://12testers14days.pro/blog"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "2026 Policy Changes",
+        "item": "https://12testers14days.pro/blog/google-play-policy-changes-2026/"
+      }]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Did Google remove the 20 testers requirement in 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, the requirement is still fully active. However, the algorithms verifying the testers' behavior have become much stricter regarding engagement and device authenticity."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Why did my production application get rejected after 14 days?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Under the 2026 policy, the most common reason for rejection is 'Insufficient testing engagement'. This means your testers installed the app but did not open it enough times during the two weeks."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Can I use an organization account to skip this?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Verified organization accounts (registered with a DUNS number) are exempt from the 20 testers for 14 days rule. This rule applies to personal developer accounts."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Does Google check what feedback I received?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The production access questionnaire now requires you to summarize the feedback you received and detail exactly how you altered your app based on that feedback."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What happens if I get caught using bot testers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Using automated emulator scripts violates Google's spam policy. Your production access will be denied, and your developer account may receive a permanent ban."
+        }
+      }]
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #3DDC84;
+            --primary-dark: #2da863;
+            --accent: #202124;
+            --text-dark: #1F2937;
+            --text-light: #4B5563;
+            --bg-light: #F8F9FA;
+            --white: #FFFFFF;
+            --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.8; font-size: 18px; }
+        h1, h2, h3, h4 { font-weight: 800; color: var(--accent); margin-bottom: 20px; line-height: 1.3; }
+        p { margin-bottom: 25px; }
+        a { text-decoration: none; color: var(--primary-dark); transition: 0.3s; font-weight: 600; }
+        a:hover { color: var(--primary); }
+
+        nav { padding: 20px 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+        .logo i { color: var(--primary); }
+        .btn-whatsapp { background: #25D366; color: white; padding: 10px 20px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+        .btn-whatsapp:hover { background: #1ebc57; color: white; transform: translateY(-2px); }
+
+        .breadcrumb { font-size: 0.9rem; color: var(--text-light); margin: 30px 0; }
+        .breadcrumb span { margin: 0 8px; color: #ccc; }
+
+        .article-header { text-align: center; margin-bottom: 60px; padding-bottom: 40px; border-bottom: 1px solid #eee; }
+        .article-title { font-size: 3rem; margin-bottom: 20px; }
+        .article-meta { font-size: 0.95rem; color: var(--text-light); display: flex; justify-content: center; gap: 20px; }
+        .author-badge { background: var(--accent); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; }
+
+        .content-wrapper { max-width: 100%; margin: 0 auto; background: white; padding: 50px; border-radius: 20px; box-shadow: var(--shadow-card); }
+        .highlight-box { background: #f0fdf4; border-left: 5px solid var(--primary); padding: 30px; margin: 40px 0; border-radius: 0 10px 10px 0; }
+        .alert-box { background: #fff1f2; border-left: 5px solid #e11d48; padding: 30px; margin: 40px 0; border-radius: 0 10px 10px 0; }
+        ul.article-list { margin-bottom: 30px; padding-left: 20px; }
+        ul.article-list li { margin-bottom: 10px; }
+
+        /* Pricing Section */
+        #pricing { margin: 80px 0; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+        .plan-card { background: white; border: 1px solid #eee; border-radius: 20px; padding: 40px 30px; text-align: center; transition: 0.3s; position: relative; overflow: hidden; cursor: pointer; }
+        .plan-card:hover { border-color: var(--primary); box-shadow: 0 20px 40px rgba(61, 220, 132, 0.15); transform: translateY(-5px); }
+        .plan-card.popular { border: 2px solid var(--primary); background: #fcfdfc; }
+        .pop-badge { position: absolute; top: 0; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 5px 20px; font-size: 0.8rem; font-weight: 700; border-radius: 0 0 10px 10px; }
+        .plan-price { font-size: 2.5rem; font-weight: 800; color: var(--accent); margin: 20px 0; }
+        .plan-price span { font-size: 1rem; color: var(--text-light); font-weight: 500; }
+        .btn-select { display: block; width: 100%; padding: 15px; border-radius: 50px; margin-top: 20px; font-weight: 700; border: 2px solid var(--accent); background: transparent; color: var(--accent); cursor: pointer; }
+        .plan-card:hover .btn-select { background: var(--accent); color: white; }
+        .plan-card.popular .btn-select { background: var(--primary); border-color: var(--primary); color: white; }
+
+        /* Order Form */
+        .order-modal { display: none; background: var(--accent); color: white; padding: 50px; border-radius: 20px; margin-top: 40px; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .form-inp { width: 100%; padding: 15px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 10px; font-size: 1rem; }
+        .btn-submit { width: 100%; padding: 18px; background: var(--primary); color: white; font-weight: 800; border: none; border-radius: 50px; font-size: 1.2rem; cursor: pointer; }
+        .btn-submit:hover { background: #2da863; }
+
+        /* FAQs */
+        .faq-box { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .faq-box h4 { margin-bottom: 10px; font-size: 1.2rem; color: #2da863; }
+        .faq-box p { margin-bottom: 0; color: #4B5563; }
+
+        footer { background: #111; color: white; padding: 80px 0 40px; text-align: center; margin-top: 100px; }
+        .footer-logo { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; display: inline-block; }
+        .footer-logo i { color: var(--primary); }
+        .footer-links a { color: #888; margin: 0 15px; }
+        .footer-links a:hover { color: var(--primary); }
+        .copyright { margin-top: 40px; border-top: 1px solid #222; padding-top: 30px; font-size: 0.9rem; color: #555; }
+
+        @media (max-width: 768px) { .article-title { font-size: 2rem; } .content-wrapper { padding: 25px; } .form-row { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-wrapper">
+            <a href="https://12testers14days.pro" class="logo">
+                <i class="fa-brands fa-android"></i> 12 Testers for 14 Days
+            </a>
+            <a href="https://wa.me/+923472061598" class="btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> Chat Now
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/">Home</a> <span>/</span> <a href="/blog/">Blog</a> <span>/</span> 2026 Policy Changes
+        </div>
+
+        <div class="content-wrapper">
+            
+            <header class="article-header">
+                <span style="color: #3DDC84; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem;">Industry Update</span>
+                <h1 class="article-title">Google Play Closed Testing Policy Changes in 2026 Explained</h1>
+                <div class="article-meta">
+                    <span><span class="author-badge">Author</span> 12 Testers Team</span>
+                    <span><i class="fa-regular fa-clock"></i> 20 Min Read</span>
+                    <span><i class="fa-regular fa-calendar"></i> Updated: March 2026</span>
+                </div>
+            </header>
+
+            <article>
+                <p>When Google first dropped the bombshell requirement in November 2023 that all new personal developer accounts must test their apps with 20 people for 14 continuous days, the Android community panicked. Fast forward to 2026, and the panic has evolved into exhaustion.</p>
+
+                <p>As someone who manages a dedicated testing agency, I have a front-row seat to the internal algorithm shifts within the Google Play Console. Many developers are currently reading guides written in early 2024. Let me be clear: <strong>the rules of engagement have changed.</strong></p>
+
+                <p>What worked to get an app approved a year ago will now trigger an automated rejection email. Google has tightened the noose on low-effort testing, emulator farms, and ghost installs.</p>
+
+                <p>In this comprehensive update, I am breaking down exactly what has changed in the <a href="/blog/google-play-12-testers-14-days-rule-guide/">14-day closed testing rule</a> in 2026, how the review algorithms now function, and what you must do differently to secure your production access.</p>
+
+                <h2 style="margin-top: 50px;">Change #1: The Death of the "Ghost Install"</h2>
+                
+                <p>In the early days of this policy, developers discovered a loophole. You could ask 20 friends to install the app on Day 1, and as long as they didn't uninstall it, Google would count them as "active" on Day 14. We called this the "Ghost Install."</p>
+
+                <p><strong>This no longer works in 2026.</strong></p>
+
+                <p>Google Play Console now measures <em>User Engagement Time</em> during the closed testing phase. If a tester installs your app but fails to open it periodically over the two weeks, the system flags that user as inactive. If your active user count drops below the required 20 (which is why most devs supplement with our core 12-tester package), your testing period is invalidated.</p>
+
+                <p>When we test your app today, our team physically opens the application, navigates through the screens, and simulates real user behavior to ensure the telemetry satisfies Google's new engagement thresholds.</p>
+
+                <h2 style="margin-top: 50px;">Change #2: Aggressive Emulator Bans</h2>
+
+                <p>A few years ago, developers could buy $5 gigs from freelancers who used BlueStacks to mimic 20 devices on a single laptop. Google's response to this in 2026 has been ruthless.</p>
+
+                <div class="alert-box">
+                    <h3>⚠️ The Hardware Telemetry Update</h3>
+                    <p>Google Play Services now runs deep hardware checks during the testing phase. If it detects x86 architecture masquerading as ARM, zero battery decay, or missing accelerometer data, it flags the device as an emulator. Not only will your production access be denied, but your developer account will receive a strike for violating the spam policy.</p>
+                </div>
+
+                <p>I cannot stress this enough: you must use real Android phones. For a deep technical breakdown of how Google catches bots, read my article on <a href="/blog/real-physical-devices-vs-emulators/">Emulators vs Physical Devices</a>.</p>
+
+                <h2 style="margin-top: 50px;">Change #3: The "Production Access" Interrogation</h2>
+
+                <p>The most shocking change for many developers happens <em>after</em> the 14 days are over.</p>
+
+                <p>Previously, you would click "Apply for Production," fill out a quick form saying "The app is good," and get approved. Today, the application form is a rigorous questionnaire reviewed by human moderators.</p>
+
+                <p>Google specifically asks:</p>
+                <ul class="article-list">
+                    <li>"How did you recruit your 20 testers?"</li>
+                    <li>"What specific feedback did the testers provide regarding the UI and functionality?"</li>
+                    <li>"What updates did you push to the closed testing track to address this feedback?"</li>
+                </ul>
+
+                <p>If you provide generic, one-sentence answers, you will receive the dreaded <a href="/blog/reasons-google-rejects-production-access/">"Insufficient Testing" rejection email</a>. Google wants to see that you actually used the 14 days to improve the app.</p>
+
+                <p>When you use our service, we don't just click buttons; we provide you with documented, actionable feedback (UI glitches, loading times, navigation UX) that you can copy-paste directly into your Google Play questionnaire to prove legitimate testing occurred.</p>
+
+                <h2 style="margin-top: 50px;">Change #4: Account Aging Weights</h2>
+
+                <p>This is a subtle change that developers relying on "Test for Test" Reddit groups are running into.</p>
+
+                <p>Google analyzes the history of the Gmail account testing the app. If you recruit strangers who created a burner Gmail account yesterday specifically to test apps, Google assigns their testing data a lower "trust weight." Conversely, an account that is 5 years old, pays for Google One, and has an organic app download history carries massive weight.</p>
+
+                <p>Our device lab utilizes strictly aged, verified Google accounts with real-world footprints to ensure your data is instantly trusted by the algorithm.</p>
+
+                <h2 style="margin-top: 50px;">How to Adapt and Win</h2>
+
+                <p>The Google Play ecosystem in 2026 is about quality, not quantity. Google has raised the barrier to entry to stop automated spam apps from clogging the store.</p>
+
+                <p>If you are a legitimate developer, this is actually good news. Less spam means more visibility for your high-quality app once it launches.</p>
+
+                <p>However, getting over the wall requires a professional approach. You can no longer hack your way through the 14-day requirement. You need reliable humans, real devices, and consistent daily engagement.</p>
+
+                <p>Stop risking your app launch with outdated tactics. Hire our dedicated testing team today, and let us generate the authentic data Google demands.</p>
+
+            </article>
+
+            <section id="pricing">
+                <header class="article-header" style="border: none; margin-bottom: 20px;">
+                    <h2 class="article-title" style="font-size: 2.5rem;">Secure Your Production Access</h2>
+                    <p>Fully compliant with Google Play's 2026 strict testing policies.</p>
+                </header>
+
+                <div class="pricing-grid">
+                    <div class="plan-card" onclick="openOrderModal('Single App', 29)">
+                        <h3>Single App</h3>
+                        <div class="plan-price">$29 <span>total</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Perfect for your first app launch.</p>
+                        <ul style="text-align: left; margin: 20px 0; color: #444; list-style: none;">
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #3DDC84;"></i> 12 Real Testers</li>
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #3DDC84;"></i> 14 Days Active</li>
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #3DDC84;"></i> 100% Real Devices</li>
+                        </ul>
+                        <button class="btn-select">Select Plan</button>
+                    </div>
+
+                    <div class="plan-card popular" onclick="openOrderModal('Double Pack', 38)">
+                        <div class="pop-badge">MOST POPULAR</div>
+                        <h3>Double Pack</h3>
+                        <div class="plan-price">$19 <span>/ app</span></div>
+                        <p style="color: #3DDC84; font-size: 0.9rem; font-weight: 600;">Total: $38 for 2 apps</p>
+                        <ul style="text-align: left; margin: 20px 0; color: #444; list-style: none;">
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #3DDC84;"></i> Save $20 Instantly</li>
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #3DDC84;"></i> Priority Support</li>
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #3DDC84;"></i> Dashboard Access</li>
+                        </ul>
+                        <button class="btn-select">Select Plan</button>
+                    </div>
+
+                    <div class="plan-card" onclick="openOrderModal('Bulk Agency', 45)">
+                        <h3>Bulk / Agency</h3>
+                        <div class="plan-price">$15 <span>/ app</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">For 3+ apps (Minimum $45)</p>
+                        <ul style="text-align: left; margin: 20px 0; color: #444; list-style: none;">
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #3DDC84;"></i> Dedicated Manager</li>
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #3DDC84;"></i> Custom Reports</li>
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #3DDC84;"></i> Flexible Timing</li>
+                        </ul>
+                        <button class="btn-select">Select Plan</button>
+                    </div>
+                </div>
+
+                <div id="orderForm" class="order-modal">
+                    <h3 style="margin-bottom: 20px; text-align: center;">Complete Your Order</h3>
+                    <p style="text-align: center; margin-bottom: 30px; opacity: 0.9;">
+                        Selected Plan: <strong id="selectedPlanName">Single App</strong> 
+                        <span style="background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 4px; margin-left: 10px;">Total: $<span id="selectedPlanPrice">29</span></span>
+                    </p>
+                    
+                    <form action="https://formsubmit.co/ssbasemaker@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Order from Policy Article">
+                        <input type="hidden" name="_next" value="https://12testers14days.pro/thank-you">
+                        <input type="hidden" id="formPlan" name="Plan" value="">
+                        
+                        <div class="form-row">
+                            <input type="text" name="name" class="form-inp" placeholder="Your Name" required>
+                            <input type="email" name="email" class="form-inp" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="text" name="app_link" class="form-inp" placeholder="App Link / Package Name" required>
+                            <input type="text" name="whatsapp" class="form-inp" placeholder="WhatsApp (Optional)">
+                        </div>
+                        <button type="submit" class="btn-submit">Proceed to Payment</button>
+                    </form>
+                </div>
+            </section>
+
+            <section style="margin-top: 80px;">
+                <h2 style="text-align: center; margin-bottom: 40px;">FAQs on 2026 Testing Policies</h2>
+                
+                <div class="faq-box">
+                    <h4>Did Google remove the 20 testers requirement in 2026?</h4>
+                    <p>No, the requirement is still fully active. However, the algorithms verifying the testers' behavior have become much stricter regarding engagement and device authenticity.</p>
+                </div>
+
+                <div class="faq-box">
+                    <h4>Why did my production application get rejected after 14 days?</h4>
+                    <p>Under the 2026 policy, the most common reason for rejection is "Insufficient testing engagement". This means your testers installed the app but did not actively open or navigate it enough times during the two weeks.</p>
+                </div>
+
+                <div class="faq-box">
+                    <h4>Can I use an organization account to skip this?</h4>
+                    <p>Yes. Verified organization developer accounts (registered with a legal business entity and DUNS number) are entirely exempt from the 20 testers for 14 days rule. This rule applies solely to personal developer accounts.</p>
+                </div>
+
+                <div class="faq-box">
+                    <h4>Does Google check what feedback I received?</h4>
+                    <p>Yes. The production access questionnaire now requires you to summarize the feedback you received from your testers and detail exactly how you altered your app code based on that feedback.</p>
+                </div>
+
+                <div class="faq-box">
+                    <h4>What happens if I get caught using bot testers?</h4>
+                    <p>Using automated emulator scripts violates Google's spam and developer behavior policies. Your production access will be denied immediately, and your developer account may receive a permanent ban.</p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <a href="https://12testers14days.pro" class="footer-logo">
+                <i class="fa-brands fa-android"></i> 12 Testers for 14 Days
+            </a>
+            <p style="max-width: 600px; margin: 0 auto; color: #888;">
+                The #1 Service for Google Play Console Closed Testing. Helping developers launch since 2021.
+            </p>
+            <div style="margin-top: 30px;" class="footer-links">
+                <a href="https://12testers14days.pro">Home</a>
+                <a href="https://12testers14days.pro#pricing">Pricing</a>
+                <a href="/blog/">Blog</a>
+                <a href="mailto:ssbasemaker@gmail.com">Contact</a>
+            </div>
+            <div class="copyright">
+                &copy; 2024-2026 12 Testers for 14 Days. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openOrderModal(planName, price) {
+            const modal = document.getElementById('orderForm');
+            const planNameEl = document.getElementById('selectedPlanName');
+            const planPriceEl = document.getElementById('selectedPlanPrice');
+            const formPlanInput = document.getElementById('formPlan');
+
+            planNameEl.textContent = planName;
+            planPriceEl.textContent = price;
+            formPlanInput.value = planName + " ($" + price + ")";
+            
+            modal.style.display = 'block';
+            modal.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html>

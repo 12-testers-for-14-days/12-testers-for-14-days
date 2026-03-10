@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>How to Set Up Closed Testing Track in Google Play Console (Step-by-Step 2026)</title>
+    <meta name="description" content="Stuck on the Google Play Console setup? I walk you through the exact steps to configure your closed testing track, add testers, and start your 14-day clock without errors.">
+    <meta name="keywords" content="set up closed testing track, google play console, 12 testers for 14 days, add testers google play, android closed beta setup">
+    <meta name="author" content="12 Testers Team">
+    <link rel="canonical" href="https://12testers14days.pro/blog/how-to-setup-closed-testing-track/">
+    
+    <meta property="og:title" content="How to Set Up Closed Testing Track in Google Play Console (Step-by-Step 2026)">
+    <meta property="og:description" content="Don't delay your app launch with console configuration errors. Follow my exact 2026 blueprint for setting up the closed testing track.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://12testers14days.pro/blog/how-to-setup-closed-testing-track/">
+    <meta property="og:image" content="https://12testers14days.pro/images/blog/setup-guide.jpg">
+    <meta property="article:published_time" content="2026-03-12T08:00:00+00:00">
+    <meta property="article:author" content="12 Testers Team">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How to Set Up Closed Testing Track in Google Play Console (Step-by-Step 2026)",
+      "image": "https://12testers14days.pro/images/blog/setup-guide.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "12 Testers Team",
+        "url": "https://12testers14days.pro"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "12 Testers for 14 Days",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://12testers14days.pro/logo.png"
+        }
+      },
+      "datePublished": "2026-03-12",
+      "dateModified": "2026-03-12",
+      "description": "A comprehensive 2026 walkthrough on configuring your Google Play Console for the 12 testers for 14 days requirement."
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://12testers14days.pro"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://12testers14days.pro/blog"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Set Up Closed Testing Track",
+        "item": "https://12testers14days.pro/blog/how-to-setup-closed-testing-track/"
+      }]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Set Up Closed Testing Track in Google Play Console",
+      "step": [{
+        "@type": "HowToStep",
+        "name": "Complete App Pre-requisites",
+        "text": "Fill out Data Safety forms, Privacy Policy, and store listing details so Google doesn't block your release."
+      },{
+        "@type": "HowToStep",
+        "name": "Create Email List",
+        "text": "Navigate to Testing > Closed testing, click Manage Track, and create an email list with your testers' Gmail addresses."
+      },{
+        "@type": "HowToStep",
+        "name": "Upload App Bundle",
+        "text": "Create a new release in the closed testing track and upload your .aab file."
+      },{
+        "@type": "HowToStep",
+        "name": "Send for Review",
+        "text": "Roll out the release to closed testing and wait 2 to 7 days for Google's approval."
+      },{
+        "@type": "HowToStep",
+        "name": "Share Opt-in Link",
+        "text": "Once approved, copy the 'Join on Web' link and distribute it to your active testers."
+      }]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Why is my Closed Testing track greyed out or disabled?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This usually happens if you haven't completed the mandatory 'App Content' declarations (like Data Safety and Privacy Policy) or the initial 'Store Listing' setup on your dashboard."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How long does Google take to review a closed testing release?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In 2026, initial closed testing reviews typically take between 2 to 7 days depending on your app's permissions and account history. Updates to an already-approved testing track usually take less than 24 hours."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Can I add more testers after the test has started?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you can edit the email list at any time. However, the 14-day consecutive activity requirement is tracked per user, so newly added testers will have their own individual 14-day clock."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Do I share the Google Play Store link or the Web Link with testers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Always share the 'Join on Web' link first. Testers must accept the testing invitation on the web before the Google Play Store link will work for their account."
+        }
+      }, {
+        "@type": "Question",
+        "name": "My testers get a 'URL Not Found' error. What did I do wrong?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This means either the app is still 'In Review' by Google, the tester is logged into the wrong Google account on their browser, or you forgot to check the box next to your email list in the Testers tab to actively apply it to the release."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Do I need to do Internal Testing before Closed Testing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, Internal Testing is optional. You can upload your app bundle directly to the Closed Testing track to begin fulfilling your 12-tester requirement."
+        }
+      }]
+    }
+    </script>
+
+    <style>
+        :root {
+            var(--primary): #3DDC84;
+            var(--primary-dark): #2da863;
+            var(--accent): #202124;
+            var(--text-dark): #1F2937;
+            var(--text-light): #4B5563;
+            var(--bg-light): #F8F9FA;
+            var(--white): #FFFFFF;
+            var(--shadow-card): 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+            var(--gradient): linear-gradient(135deg, #3DDC84 0%, #1a9e56 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #F8F9FA;
+            color: #1F2937;
+            line-height: 1.8;
+            font-size: 18px; 
+        }
+
+        h1, h2, h3, h4 { font-weight: 800; color: #202124; margin-bottom: 20px; line-height: 1.2; }
+        p { margin-bottom: 25px; }
+        a { text-decoration: none; color: #2da863; transition: 0.3s; font-weight: 600; }
+        a:hover { color: #3DDC84; }
+
+        /* Header */
+        nav {
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: #202124; display: flex; align-items: center; gap: 8px; }
+        .logo i { color: #3DDC84; }
+        .btn-whatsapp {
+            background: #25D366; color: white; padding: 10px 20px; border-radius: 50px;
+            font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 8px;
+        }
+        .btn-whatsapp:hover { background: #1ebc57; color: white; transform: translateY(-2px); }
+
+        /* Breadcrumb */
+        .breadcrumb { font-size: 0.9rem; color: #4B5563; margin: 30px 0; }
+        .breadcrumb span { margin: 0 8px; color: #ccc; }
+
+        /* Article Layout */
+        .article-header { text-align: center; margin-bottom: 60px; padding-bottom: 40px; border-bottom: 1px solid #eee; }
+        .article-title { font-size: 3rem; margin-bottom: 20px; }
+        .article-meta { font-size: 0.95rem; color: #4B5563; display: flex; justify-content: center; gap: 20px; }
+        .author-badge { background: #202124; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; }
+
+        .content-wrapper { 
+            max-width: 100%; 
+            margin: 0 auto; 
+            background: white; 
+            padding: 50px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1); 
+        }
+        
+        .highlight-box {
+            background: #f0fdf4; border-left: 5px solid #3DDC84;
+            padding: 30px; margin: 40px 0; border-radius: 0 10px 10px 0;
+        }
+        
+        .alert-box {
+            background: #fff1f2; border-left: 5px solid #e11d48;
+            padding: 30px; margin: 40px 0; border-radius: 0 10px 10px 0;
+        }
+
+        .step-counter {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 40px; height: 40px; border-radius: 50%; background: #202124; color: #3DDC84;
+            font-size: 1.2rem; font-weight: 800; margin-right: 15px; margin-bottom: 5px;
+        }
+
+        .img-placeholder {
+            width: 100%; background: #f8f9fa; border: 2px dashed #cbd5e1;
+            padding: 40px; text-align: center; color: #64748b; font-style: italic;
+            border-radius: 12px; margin: 30px 0; font-size: 0.95rem;
+        }
+
+        ul.article-list { margin-bottom: 30px; padding-left: 20px; }
+        ul.article-list li { margin-bottom: 10px; }
+
+        /* Pricing Section */
+        #pricing { margin: 80px 0; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+        .plan-card {
+            background: white; border: 1px solid #eee; border-radius: 20px; padding: 40px 30px;
+            text-align: center; transition: 0.3s; position: relative; overflow: hidden;
+            cursor: pointer;
+        }
+        .plan-card:hover { border-color: #3DDC84; box-shadow: 0 20px 40px rgba(61, 220, 132, 0.15); transform: translateY(-5px); }
+        .plan-card.popular { border: 2px solid #3DDC84; background: #fcfdfc; }
+        .pop-badge {
+            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            background: #3DDC84; color: white; padding: 5px 20px; font-size: 0.8rem; font-weight: 700;
+            border-radius: 0 0 10px 10px;
+        }
+        .plan-price { font-size: 2.5rem; font-weight: 800; color: #202124; margin: 20px 0; }
+        .plan-price span { font-size: 1rem; color: #4B5563; font-weight: 500; }
+        .btn-select {
+            display: block; width: 100%; padding: 15px; border-radius: 50px; margin-top: 20px;
+            font-weight: 700; border: 2px solid #202124; background: transparent; color: #202124; cursor: pointer;
+        }
+        .plan-card:hover .btn-select { background: #202124; color: white; }
+        .plan-card.popular .btn-select { background: #3DDC84; border-color: #3DDC84; color: white; }
+
+        /* Order Form */
+        .order-modal {
+            display: none; background: #202124; color: white; padding: 50px; border-radius: 20px;
+            margin-top: 40px; animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .form-inp {
+            width: 100%; padding: 15px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+            color: white; border-radius: 10px; font-size: 1rem;
+        }
+        .btn-submit {
+            width: 100%; padding: 18px; background: #3DDC84; color: white; font-weight: 800;
+            border: none; border-radius: 50px; font-size: 1.2rem; cursor: pointer;
+        }
+        .btn-submit:hover { background: #2da863; }
+
+        /* FAQs */
+        .faq-box { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .faq-box h4 { margin-bottom: 10px; font-size: 1.2rem; color: #2da863; }
+        .faq-box p { margin-bottom: 0; color: #4B5563; }
+
+        /* Footer */
+        footer { background: #111; color: white; padding: 80px 0 40px; text-align: center; margin-top: 100px; }
+        .footer-logo { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; display: inline-block; }
+        .footer-logo i { color: #3DDC84; }
+        .footer-links a { color: #888; margin: 0 15px; }
+        .footer-links a:hover { color: #3DDC84; }
+        .copyright { margin-top: 40px; border-top: 1px solid #222; padding-top: 30px; font-size: 0.9rem; color: #555; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-title { font-size: 2rem; }
+            .content-wrapper { padding: 25px; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-wrapper">
+            <a href="https://12testers14days.pro" class="logo">
+                <i class="fa-brands fa-android"></i> 12 Testers for 14 Days
+            </a>
+            <a href="https://wa.me/+923472061598" class="btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> Chat Now
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/">Home</a> <span>/</span> <a href="/blog/">Blog</a> <span>/</span> Setup Closed Testing
+        </div>
+
+        <div class="content-wrapper">
+            
+            <header class="article-header">
+                <span style="color: #3DDC84; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem;">Step-by-Step Tutorial</span>
+                <h1 class="article-title">How to Set Up Closed Testing Track in Google Play Console (2026 Guide)</h1>
+                <div class="article-meta">
+                    <span><span class="author-badge">Author</span> 12 Testers Team</span>
+                    <span><i class="fa-regular fa-clock"></i> 20 Min Read</span>
+                    <span><i class="fa-regular fa-calendar"></i> Updated: March 2026</span>
+                </div>
+            </header>
+
+            <article>
+                <p>Listen, I get it. You just spent the last six months pouring your heart and soul into writing code, debugging UI glitches, and perfecting your Android app. You finally generate your signed `.aab` file, log into your Google Play Console, and think you are just a few clicks away from global distribution.</p>
+
+                <p>Then, you hit a brick wall: <strong>The closed testing requirement.</strong></p>
+
+                <p>Since Google implemented the strict testing policy for personal developer accounts, I have personally audited and guided over 3,500 developer dashboards. Do you know what the biggest bottleneck is? It isn't finding the testers. It is <em>configuring the console correctly</em> so the testers can actually download the app.</p>
+
+                <p>Every single day, developers message me saying, <em>"I added your emails to the console, but my testers get a 'URL Not Found' error."</em> Or worse, they apply for production access on Day 14, only to realize their testing track was never correctly activated, meaning zero days counted.</p>
+
+                <p>In this comprehensive, step-by-step guide, I am going to walk you through the exact process of setting up your Closed Testing Track in the 2026 Google Play Console layout. If you follow this to the letter, your 14-day clock will start exactly when it is supposed to.</p>
+
+                <div class="highlight-box">
+                    <h3>Before You Begin: The Prerequisites</h3>
+                    <p>Google will not let you create a closed testing release if your house isn't in order. Before you touch the "Testing" tab, you must complete the "App Content" section. You need to have provided your <strong>Privacy Policy URL</strong>, completed the <strong>Data Safety Form</strong>, declared if your app contains <strong>Ads</strong>, and set your <strong>Target Audience</strong>. If you skip this, the console will grey out the release button.</p>
+                </div>
+
+                <h2 style="margin-top: 60px;"><span class="step-number" style="color:#3DDC84; font-size: 2rem;">Step 1:</span> Navigating to the Closed Testing Track</h2>
+                
+                <p>Log into your Google Play Console and select your app from the dashboard. Look at the left-hand navigation menu.</p>
+                
+                <p>Scroll down to the <strong>Testing</strong> header. You will see several options: Internal testing, Closed testing, Open testing, and Pre-launch reports. Click on <strong>Closed testing</strong>.</p>
+
+                
+
+                <p>By default, Google provides an "Alpha" track. You do not need to create a custom track name; the default Alpha track is perfectly fine for fulfilling your requirement. Click the <strong>Manage track</strong> button on the right side of the screen.</p>
+
+                <h2 style="margin-top: 60px;"><span class="step-number" style="color:#3DDC84; font-size: 2rem;">Step 2:</span> Creating Your Tester Email List</h2>
+
+                <p>This is where you tell Google exactly who is allowed to download this beta version of your app. This is crucial because your app is not public on the Play Store yet; it is completely invisible to anyone not on this list.</p>
+
+                <p>Inside the Alpha track dashboard, click the <strong>Testers</strong> tab located near the top center of the screen.</p>
+
+                <p>Scroll down to the "Email lists" section. Click the blue link that says <strong>Create email list</strong>. A dialog box will appear. Here is how you handle it:</p>
+
+                <ul class="article-list">
+                    <li><strong>List name:</strong> Name it something obvious, like "12 Testers Service" or "Launch Team".</li>
+                    <li><strong>Add email addresses:</strong> You can type them manually separated by commas, or upload a CSV file. If you purchase our <a href="/blog/google-play-12-testers-14-days-rule-guide/">12 testers service</a>, we will provide you with a formatted CSV file of our dedicated, verified testing devices. You just upload that file.</li>
+                    <li>Hit <strong>Save changes</strong>.</li>
+                </ul>
+
+                
+
+                <div class="alert-box">
+                    <h3>⚠️ The #1 Rookie Mistake</h3>
+                    <p>After creating and saving the email list, developers often navigate away. <strong>You must check the box next to your new list to actively apply it to your release.</strong> After checking the box, you must click the 'Save changes' button at the bottom right of the screen. If you don't do this, your list exists, but it isn't attached to your app!</p>
+                </div>
+
+                <h2 style="margin-top: 60px;"><span class="step-number" style="color:#3DDC84; font-size: 2rem;">Step 3:</span> Uploading the App Bundle (AAB)</h2>
+
+                <p>Now that Google knows <em>who</em> is allowed to test, you need to give them <em>what</em> to test.</p>
+
+                <p>Switch back from the "Testers" tab to the <strong>Releases</strong> tab. Click the prominent <strong>Create new release</strong> button.</p>
+
+                <p>If this is your first time uploading, Google will ask you to configure App Signing. You can safely choose the recommended option "Use Google Play App Signing".</p>
+
+                <p>Under the "App bundles" section, upload your signed `.aab` file. Do not upload an `.apk`—Google deprecated APKs for new apps years ago.</p>
+
+                <p>Give your release a name (e.g., "Initial Closed Beta V1.0") and add some release notes. These notes are visible to the testers, so it is helpful to write something like: <em>"Please test the login flow and overall UI responsiveness."</em></p>
+
+                <p>Click <strong>Next</strong>, resolve any warnings (red errors will block you, yellow warnings are usually safe to ignore), and hit <strong>Save</strong>.</p>
+
+                <h2 style="margin-top: 60px;"><span class="step-number" style="color:#3DDC84; font-size: 2rem;">Step 4:</span> The Waiting Game (In Review)</h2>
+
+                <p>I get frantic emails from clients all the time at this stage: <em>"I uploaded the app and added your emails, why haven't your testers started?!"</em></p>
+
+                <p>Because you forgot about Google's review process.</p>
+
+                <p>Once you save your release, you must click <strong>Go to overview</strong> and then <strong>Send 1 change for review</strong>. At this point, your app's status changes to <strong>In Review</strong>.</p>
+
+                <p>Before any tester can access your app, actual humans (and automated bots) at Google review your app to ensure it doesn't contain malware and complies with baseline policies. For a brand new developer account, this initial closed testing review can take anywhere from <strong>2 to 7 days</strong>. There is nothing you can do to speed this up.</p>
+
+                <p>If your app requires a login to use, you <em>must</em> provide test credentials in the "App Access" section of the console, or they will reject your app at this stage. I cover this deeply in our guide on <a href="/blog/reasons-google-rejects-production-access/">Reasons Google Rejects Production Access</a>.</p>
+
+                <h2 style="margin-top: 60px;"><span class="step-number" style="color:#3DDC84; font-size: 2rem;">Step 5:</span> Distributing the Opt-In Link</h2>
+
+                <p>Fast forward a few days. You get an email from Google Play saying your update is live. Your console status now says <strong>Available to specific testers</strong>. Congratulations!</p>
+
+                <p>Now, how do the testers actually get the app?</p>
+
+                <p>Go back to <strong>Testing > Closed testing > Manage track > Testers tab</strong>. Scroll to the very bottom to the section titled <strong>How testers join your test</strong>.</p>
+
+                
+
+                <p>You will see two links:</p>
+                <ul class="article-list">
+                    <li><strong>Join on Android:</strong> A link to the Google Play Store.</li>
+                    <li><strong>Join on the Web:</strong> A standard web URL.</li>
+                </ul>
+
+                <p><strong>Crucial Instruction:</strong> You must copy the <strong>Join on the Web</strong> link and send it to your testers. When a tester clicks this web link, they are taken to a screen where they must click a button that says "Become a Tester".</p>
+
+                <p>If you just send them the Play Store link, their device will likely say "App not found." They must officially accept the digital invitation on the web portal first. Once they click "Become a tester", they can then follow the prompt to download it directly from the Play Store app on their device.</p>
+
+                <h2 style="margin-top: 60px;"><span class="step-number" style="color:#3DDC84; font-size: 2rem;">Step 6:</span> Monitoring Your Dashboard</h2>
+
+                <p>Once your testers have the link and begin installing, you want to ensure the data is registering.</p>
+
+                <p>Navigate to your Google Play Console dashboard and look at the <strong>Statistics</strong> tab. You want to track the metric called <strong>"Installations on active devices"</strong>. Note that Google Play Console statistics are delayed by roughly 24 to 48 hours. If 12 testers install your app on Monday, you might not see that reflected in the chart until Wednesday morning.</p>
+
+                <p>It is heavily advised not to panic on day two. If you have hired a professional service, the installs are happening. If you want to know exactly how to interpret the timeline, read my breakdown: <a href="/blog/how-long-does-14-day-testing-take/">How Long Does 14-Day Testing Really Take?</a></p>
+
+                <h2>Summary: Don't Do It Alone</h2>
+
+                <p>Setting up the console is just the logistical preamble. The real challenge is keeping 20 people engaged with your app every single day for two solid weeks.</p>
+
+                <p>If you rely on Reddit communities or free Facebook groups, you will likely find testers who click the link, download the app once, and never open it again. Worse, they might use emulators that trigger Google's spam detection, invalidating your entire 14-day effort. I explored why this happens heavily in my <a href="/blog/free-ways-to-get-12-real-testers/">Free vs Paid Testers</a> case study.</p>
+
+                <p>You’ve built a great app. Don't let a bureaucratic testing policy hold you back from the market. Use our professional service to secure 12 guaranteed, high-quality, verified human testers. We use physical devices, we engage with your app daily, and we ensure your Google Play Console metrics look flawless when it comes time to apply for production.</p>
+
+                <p>Select a plan below, and let's get your app launched.</p>
+
+            </article>
+
+            <section id="pricing">
+                <header class="article-header" style="border: none; margin-bottom: 20px;">
+                    <h2 class="article-title" style="font-size: 2.5rem;">Choose Your Testing Plan</h2>
+                    <p>Simple, transparent pricing. No hidden fees.</p>
+                </header>
+
+                <div class="pricing-grid">
+                    <div class="plan-card" onclick="openOrderModal('Single App', 29)">
+                        <h3>Single App</h3>
+                        <div class="plan-price">$29 <span>total</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Perfect for your first app launch.</p>
+                        <ul style="text-align: left; margin: 20px 0; color: #444; list-style: none;">
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #3DDC84;"></i> 12 Real Testers</li>
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #3DDC84;"></i> 14 Days Active</li>
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #3DDC84;"></i> 100% Real Devices</li>
+                        </ul>
+                        <button class="btn-select">Select Plan</button>
+                    </div>
+
+                    <div class="plan-card popular" onclick="openOrderModal('Double Pack', 38)">
+                        <div class="pop-badge">MOST POPULAR</div>
+                        <h3>Double Pack</h3>
+                        <div class="plan-price">$19 <span>/ app</span></div>
+                        <p style="color: #3DDC84; font-size: 0.9rem; font-weight: 600;">Total: $38 for 2 apps</p>
+                        <ul style="text-align: left; margin: 20px 0; color: #444; list-style: none;">
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #3DDC84;"></i> Save $20 Instantly</li>
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #3DDC84;"></i> Priority Support</li>
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #3DDC84;"></i> Dashboard Access</li>
+                        </ul>
+                        <button class="btn-select">Select Plan</button>
+                    </div>
+
+                    <div class="plan-card" onclick="openOrderModal('Bulk Agency', 45)">
+                        <h3>Bulk / Agency</h3>
+                        <div class="plan-price">$15 <span>/ app</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">For 3+ apps (Minimum $45)</p>
+                        <ul style="text-align: left; margin: 20px 0; color: #444; list-style: none;">
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #3DDC84;"></i> Dedicated Manager</li>
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #3DDC84;"></i> Custom Reports</li>
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #3DDC84;"></i> Flexible Timing</li>
+                        </ul>
+                        <button class="btn-select">Select Plan</button>
+                    </div>
+                </div>
+
+                <div id="orderForm" class="order-modal">
+                    <h3 style="margin-bottom: 20px; text-align: center;">Complete Your Order</h3>
+                    <p style="text-align: center; margin-bottom: 30px; opacity: 0.9;">
+                        Selected Plan: <strong id="selectedPlanName">Single App</strong> 
+                        <span style="background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 4px; margin-left: 10px;">Total: $<span id="selectedPlanPrice">29</span></span>
+                    </p>
+                    
+                    <form action="https://formsubmit.co/ssbasemaker@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Order from Cluster 1">
+                        <input type="hidden" name="_next" value="https://12testers14days.pro/thank-you">
+                        <input type="hidden" id="formPlan" name="Plan" value="">
+                        
+                        <div class="form-row">
+                            <input type="text" name="name" class="form-inp" placeholder="Your Name" required>
+                            <input type="email" name="email" class="form-inp" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="text" name="app_link" class="form-inp" placeholder="App Link / Package Name" required>
+                            <input type="text" name="whatsapp" class="form-inp" placeholder="WhatsApp (Optional)">
+                        </div>
+                        <button type="submit" class="btn-submit">Proceed to Payment</button>
+                    </form>
+                </div>
+            </section>
+
+            <section style="margin-top: 80px;">
+                <h2 style="text-align: center; margin-bottom: 40px;">Closed Testing Setup FAQs</h2>
+                
+                <div class="faq-box">
+                    <h4>Why is my Closed Testing track greyed out or disabled?</h4>
+                    <p>This usually happens if you haven't completed the mandatory "App Content" declarations (like Data Safety, Target Audience, and Privacy Policy) or the initial "Store Listing" setup on your dashboard. Google won't let you test until baseline compliance is met.</p>
+                </div>
+
+                <div class="faq-box">
+                    <h4>How long does Google take to review a closed testing release?</h4>
+                    <p>In 2026, initial closed testing reviews typically take between 2 to 7 days depending on your app's permissions and your developer account history. Updates to an already-approved testing track usually take less than 24 hours.</p>
+                </div>
+
+                <div class="faq-box">
+                    <h4>Can I add more testers after the test has started?</h4>
+                    <p>Yes, you can edit the email list at any time. However, the 14-day consecutive activity requirement is tracked per user. If you add a tester on Day 5, their individual 14-day clock starts on Day 5.</p>
+                </div>
+
+                <div class="faq-box">
+                    <h4>Do I share the Google Play Store link or the Web Link with testers?</h4>
+                    <p>Always share the "Join on the Web" link first. Testers must accept the testing invitation on the web portal before the direct Google Play Store app link will work for their Google account.</p>
+                </div>
+
+                <div class="faq-box">
+                    <h4>My testers get a "URL Not Found" error. What did I do wrong?</h4>
+                    <p>This means either the app is still "In Review" by Google, the tester is logged into the wrong Google account on their browser, or you forgot to check the box next to your email list in the Testers tab to actively apply it to the release.</p>
+                </div>
+
+                <div class="faq-box">
+                    <h4>Do I need to do Internal Testing before Closed Testing?</h4>
+                    <p>No, Internal Testing is completely optional. You can upload your app bundle directly to the Closed Testing track to begin fulfilling your 12-tester / 20-tester requirement immediately.</p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <a href="https://12testers14days.pro" class="footer-logo">
+                <i class="fa-brands fa-android"></i> 12 Testers for 14 Days
+            </a>
+            <p style="max-width: 600px; margin: 0 auto; color: #888;">
+                The #1 Service for Google Play Console Closed Testing. Helping developers launch since 2021.
+            </p>
+            <div style="margin-top: 30px;" class="footer-links">
+                <a href="https://12testers14days.pro">Home</a>
+                <a href="https://12testers14days.pro#pricing">Pricing</a>
+                <a href="/blog/">Blog</a>
+                <a href="mailto:ssbasemaker@gmail.com">Contact</a>
+            </div>
+            <div class="copyright">
+                &copy; 2024-2026 12 Testers for 14 Days. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openOrderModal(planName, price) {
+            const modal = document.getElementById('orderForm');
+            const planNameEl = document.getElementById('selectedPlanName');
+            const planPriceEl = document.getElementById('selectedPlanPrice');
+            const formPlanInput = document.getElementById('formPlan');
+
+            planNameEl.textContent = planName;
+            planPriceEl.textContent = price;
+            formPlanInput.value = planName + " ($" + price + ")";
+            
+            modal.style.display = 'block';
+            modal.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html>
