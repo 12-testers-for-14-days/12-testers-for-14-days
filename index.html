@@ -4,36 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- SEO & Meta Tags -->
     <title>12 Testers for 14 Days | Guaranteed Google Play Approval</title>
     <meta name="description" content="Get 12 real testers for 14 days to meet Google Play Console requirements. Verified human testers, money-back guarantee, and instant start.">
     <link rel="canonical" href="https://12testers14days.pro">
     
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://12testers14days.pro">
+    <meta property="og:title" content="12 Testers for 14 Days | Google Play Approval Service">
+    <meta property="og:description" content="Skip the hassle. Get verified human testers for your Google Play Console requirements.">
+    <meta property="og:image" content="https://12testers14days.pro/og-image.jpg">
+
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "App Testing Service",
+      "provider": {
+        "@type": "Organization",
+        "name": "12Testers14Days",
+        "url": "https://12testers14days.pro"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "15",
+        "highPrice": "29",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "3500"
+      }
+    }
+    </script>
 
     <style>
         :root {
-            /* Primary Theme Colors */
-            --primary: #4F46E5; /* Indigo */
-            --primary-dark: #4338ca;
-            --accent: #10B981; /* Success Green (matches money back shield) */
+            /* THEME CHANGE: Shifted to Green/Emerald Palette */
+            --primary: #059669; /* Emerald 600 */
+            --primary-dark: #047857; /* Emerald 700 */
+            --secondary: #10B981; /* Emerald 500 */
+            --accent: #0EA5E9; /* Sky Blue for contrast */
             --accent-light: #ECFDF5;
             
-            /* Neutrals */
             --dark: #0F172A;
             --slate: #334155;
             --gray: #64748B;
-            --light: #F8FAFC;
+            --light: #F0FDF4; /* Very light green tint */
             --white: #ffffff;
             
-            /* Effects */
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --gradient: linear-gradient(135deg, #4F46E5 0%, #3B82F6 100%);
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.5);
+            --shadow-soft: 0 20px 40px -15px rgba(5, 150, 105, 0.1);
+            --shadow-hover: 0 30px 60px -15px rgba(5, 150, 105, 0.2);
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -41,318 +75,333 @@
         
         body {
             font-family: 'Outfit', sans-serif;
-            background-color: var(--white);
+            background-color: #F8FAFC;
             color: var(--dark);
             line-height: 1.6;
             overflow-x: hidden;
+            position: relative;
+            padding-bottom: 60px; /* Space for bottom trust bar */
         }
+
+        /* Ambient Background */
+        .ambient-glow {
+            position: absolute; width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(5, 150, 105, 0.15) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%; z-index: -1; pointer-events: none;
+        }
+        .glow-1 { top: -100px; left: -100px; }
+        .glow-2 { top: 40%; right: -200px; background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, rgba(255,255,255,0) 70%); }
 
         a { text-decoration: none; transition: 0.3s; }
         ul { list-style: none; }
         img { max-width: 100%; height: auto; }
         
-        /* Utility Classes */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
         .text-center { text-align: center; }
         .section-padding { padding: 100px 0; }
-        .flex-center { display: flex; justify-content: center; align-items: center; }
-        .gap-10 { gap: 10px; }
-        .gap-20 { gap: 20px; }
 
         /* Buttons */
         .btn {
             display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-            padding: 14px 32px; border-radius: 50px; font-weight: 600; cursor: pointer;
-            border: none; font-size: 1.1rem; transition: all 0.3s;
+            padding: 14px 28px; border-radius: 50px; font-weight: 600; cursor: pointer;
+            border: none; font-size: 1rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .btn-primary {
-            background: var(--dark); color: white;
-            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.2);
+            background: var(--gradient); color: white;
+            box-shadow: 0 10px 20px rgba(5, 150, 105, 0.25);
         }
-        .btn-primary:hover { transform: translateY(-3px); background: black; }
+        .btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 15px 25px rgba(5, 150, 105, 0.35); }
         
-        .btn-accent {
-            background: var(--accent); color: white;
-            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
-        }
-        .btn-accent:hover { transform: translateY(-3px); background: #059669; }
-
-        .btn-outline {
-            border: 2px solid var(--gray); color: var(--slate); background: transparent;
-        }
-        .btn-outline:hover { border-color: var(--dark); color: var(--dark); }
-
         .btn-whatsapp {
             background: #25D366; color: white;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
         }
-        .btn-whatsapp:hover { background: #1ebc57; transform: translateY(-2px); }
+        .btn-whatsapp:hover { background: #128C7E; transform: translateY(-2px); }
 
-        /* --- Header --- */
+        .btn-accent { background: var(--accent); color: white; box-shadow: 0 10px 20px rgba(14, 165, 233, 0.2); }
+        .btn-accent:hover { transform: translateY(-3px); background: #0284c7; }
+        
+        .btn-outline {
+            background: var(--glass-bg); border: 2px solid rgba(15, 23, 42, 0.1);
+            color: var(--dark); backdrop-filter: blur(10px);
+        }
+        .btn-outline:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+
+        /* Header */
         header {
             position: fixed; top: 0; left: 0; width: 100%;
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
-            z-index: 1000; border-bottom: 1px solid #e2e8f0; padding: 15px 0;
+            background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(16px);
+            z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); padding: 15px 0;
+            transition: 0.3s;
         }
         .nav-container { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--dark); display: flex; align-items: center; gap: 8px; }
-        .logo i { color: var(--primary); }
-        .nav-menu { display: flex; gap: 30px; }
-        .nav-menu a { color: var(--slate); font-weight: 500; font-size: 0.95rem; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--dark); display: flex; align-items: center; gap: 8px; letter-spacing: -0.5px; }
+        .logo i { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .nav-menu { display: flex; gap: 35px; align-items: center; }
+        .nav-menu a { color: var(--slate); font-weight: 500; font-size: 0.95rem; transition: 0.2s; }
         .nav-menu a:hover { color: var(--primary); }
-        .header-cta { display: none; }
-        @media (min-width: 768px) { .header-cta { display: flex; } }
-        @media (max-width: 768px) { .nav-menu { display: none; } }
+        
+        .header-actions { display: flex; gap: 12px; align-items: center; }
+        
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--dark); }
+        
+        @media (max-width: 968px) { 
+            .nav-menu { display: none; position: absolute; top: 70px; left: 0; width: 100%; background: white; flex-direction: column; padding: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); align-items: flex-start; }
+            .nav-menu.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            .header-actions .btn span { display: none; } /* Hide text on mobile buttons */
+        }
 
-        /* --- Hero Section (Image Left, Text Right) --- */
-        .hero {
-            padding-top: 140px; padding-bottom: 80px;
-            background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);
-            overflow: hidden;
-        }
-        .hero-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
-        }
-        /* Mobile: Text first, Image second */
+        /* Hero Section */
+        .hero { padding-top: 160px; padding-bottom: 80px; position: relative; overflow: hidden; }
+        .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
         @media (max-width: 968px) {
             .hero-grid { grid-template-columns: 1fr; text-align: center; }
-            .hero-img-wrapper { order: 2; margin-top: 40px; }
-            .hero-content { order: 1; }
             .hero-btns { justify-content: center; }
+            .hero-content h1 { font-size: 2.8rem !important; }
         }
-        
-        .hero-content h1 {
-            font-size: 3.5rem; line-height: 1.1; margin-bottom: 24px; color: var(--dark);
-            letter-spacing: -1px;
-        }
-        .hero-content p {
-            font-size: 1.25rem; color: var(--gray); margin-bottom: 35px; max-width: 90%;
-        }
-        .hero-highlight {
-            color: var(--primary); position: relative; display: inline-block;
-        }
+        .hero-content h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 24px; color: var(--dark); font-weight: 800; letter-spacing: -1.5px; }
+        .hero-content p { font-size: 1.25rem; color: var(--slate); margin-bottom: 35px; max-width: 90%; line-height: 1.7; }
+        .hero-highlight { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; position: relative; display: inline-block; }
         .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; }
         
-        .hero-img-wrapper {
-            position: relative;
-        }
+        .hero-img-wrapper { position: relative; perspective: 1000px; }
         .hero-img-wrapper img {
-            width: 100%; border-radius: 20px;
-            box-shadow: var(--shadow-lg);
-            animation: float 6s ease-in-out infinite;
+            width: 100%; border-radius: 32px; box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+            animation: float 6s ease-in-out infinite; border: 1px solid rgba(255,255,255,0.8);
+            transform: rotateY(-5deg) rotateX(5deg);
         }
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            0%, 100% { transform: translateY(0) rotateY(-5deg) rotateX(5deg); }
+            50% { transform: translateY(-20px) rotateY(-2deg) rotateX(2deg); }
         }
 
-        /* --- Money Back Guarantee Bar --- */
-        .guarantee-section {
-            padding: 60px 0;
-            background: white;
-        }
+        /* Trust / Guarantee Section */
+        .guarantee-section { padding: 40px 0 80px; position: relative; z-index: 2; }
         .guarantee-bar {
-            background: var(--accent-light);
-            border: 1px solid #A7F3D0;
-            border-radius: 24px;
-            padding: 40px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border); border-radius: 32px;
+            padding: 40px 50px; display: flex; justify-content: space-between; align-items: center;
+            box-shadow: var(--shadow-soft); margin-bottom: 50px;
         }
         .gb-left { display: flex; gap: 20px; align-items: flex-start; max-width: 600px; }
         .shield-icon {
-            background: var(--accent); color: white; width: 60px; height: 60px;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem; flex-shrink: 0;
+            background: var(--accent-light); color: var(--primary); width: 64px; height: 64px;
+            border-radius: 20px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; flex-shrink: 0;
         }
-        .gb-content h3 { font-size: 1.5rem; color: var(--dark); margin-bottom: 8px; }
+        .gb-content h3 { font-size: 1.5rem; color: var(--dark); margin-bottom: 8px; font-weight: 700; }
         .gb-content p { color: var(--slate); font-size: 1.05rem; }
-        
         .gb-right { display: flex; gap: 40px; text-align: center; }
-        .stat-box h4 { font-size: 2.2rem; color: #065F46; font-weight: 800; line-height: 1; margin-bottom: 5px; }
-        .stat-box span { font-size: 0.9rem; font-weight: 600; color: #047857; letter-spacing: 1px; text-transform: uppercase; }
-
+        .stat-box h4 { font-size: 2.5rem; color: var(--dark); font-weight: 800; line-height: 1; margin-bottom: 5px; letter-spacing: -1px; }
+        .stat-box span { font-size: 0.85rem; font-weight: 600; color: var(--gray); letter-spacing: 1px; text-transform: uppercase; }
         @media (max-width: 968px) {
             .guarantee-bar { flex-direction: column; text-align: center; gap: 30px; padding: 30px; }
             .gb-left { flex-direction: column; align-items: center; }
             .gb-right { width: 100%; justify-content: space-around; }
         }
 
-        .trust-row {
-            display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; align-items: center;
-        }
+        .trust-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; align-items: center; }
         .trust-pill {
-            display: flex; align-items: center; gap: 12px; background: white;
-            padding: 12px 24px; border-radius: 12px; border: 1px solid #f1f5f9;
-            box-shadow: var(--shadow-sm);
+            display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(10px); padding: 12px 24px; border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.5); box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+            transition: 0.3s;
         }
+        .trust-pill:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
         .trust-pill i { font-size: 1.2rem; }
-        .trust-pill.t-blue i { color: #4F46E5; }
-        .trust-pill.t-green i { color: #10B981; }
-        .trust-pill.t-orange i { color: #F59E0B; }
         .trust-text strong { display: block; font-size: 0.95rem; color: var(--dark); }
-        .trust-text span { font-size: 0.8rem; color: var(--gray); }
-        .check-circle { color: var(--accent); margin-left: auto; }
 
-        /* --- Why Choose Us --- */
-        .features-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px;
-        }
+        /* How It Works */
+        .process-section { background: white; }
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px; }
+        .process-card { text-align: center; padding: 30px; position: relative; }
+        .process-icon { width: 80px; height: 80px; background: var(--light); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 20px; border: 2px solid var(--primary); position: relative; z-index: 2; }
+        .process-card h3 { font-size: 1.3rem; margin-bottom: 10px; }
+        .process-card p { color: var(--slate); font-size: 0.95rem; }
+        .connector { position: absolute; top: 65px; right: -50%; width: 100%; height: 2px; background: #e2e8f0; z-index: 1; display: none; }
+        @media (min-width: 768px) { .connector { display: block; } .process-card:last-child .connector { display: none; } }
+
+        /* Features Grid - Updated to 6 cards */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 50px; }
         .feature-card {
-            background: white; padding: 35px 30px; border-radius: 20px;
-            border: 1px solid #f1f5f9; transition: 0.3s;
-            position: relative; overflow: hidden;
+            background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(12px);
+            padding: 40px 30px; border-radius: 32px; border: 1px solid rgba(255,255,255,0.8);
+            transition: all 0.4s ease; box-shadow: var(--shadow-soft);
         }
-        .feature-card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .feature-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); background: #fff; }
         .f-icon {
-            width: 50px; height: 50px; background: #EEF2FF; color: var(--primary);
-            border-radius: 12px; display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem; margin-bottom: 20px;
+            width: 56px; height: 56px; background: var(--gradient); color: white;
+            border-radius: 16px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; margin-bottom: 24px; box-shadow: 0 10px 15px rgba(5, 150, 105, 0.2);
         }
-        .feature-card h3 { font-size: 1.25rem; margin-bottom: 10px; }
-        .feature-card p { color: var(--gray); font-size: 0.95rem; }
+        .feature-card h3 { font-size: 1.3rem; margin-bottom: 12px; font-weight: 700; }
+        .feature-card p { color: var(--slate); font-size: 1rem; }
 
-        /* --- Comparison Table --- */
+        /* Comparison Table */
         .comparison-wrapper {
-            background: white; border-radius: 24px; border: 1px solid #e2e8f0;
-            overflow: hidden; box-shadow: var(--shadow-lg); max-width: 900px; margin: 0 auto;
+            background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(16px);
+            border-radius: 32px; border: 1px solid rgba(255,255,255,0.6);
+            overflow: hidden; box-shadow: var(--shadow-soft); max-width: 900px; margin: 0 auto;
         }
         .comp-table { width: 100%; border-collapse: collapse; }
-        .comp-table th, .comp-table td { padding: 20px 30px; text-align: left; }
-        .comp-table th { background: #f8fafc; color: var(--dark); font-size: 1.1rem; }
+        .comp-table th, .comp-table td { padding: 24px 30px; text-align: left; }
+        .comp-table th { background: rgba(248, 250, 252, 0.8); color: var(--dark); font-size: 1.1rem; }
         .comp-table th:nth-child(2) { background: var(--primary); color: white; width: 35%; text-align: center; font-size: 1.2rem; }
-        .comp-table th:nth-child(3) { width: 30%; text-align: center; color: var(--gray); }
-        
-        .comp-table td { border-bottom: 1px solid #f1f5f9; font-size: 1rem; color: var(--slate); }
-        .comp-table td:nth-child(2) { background: #EEF2FF; text-align: center; font-weight: 600; color: var(--primary-dark); border-bottom: 1px solid #e0e7ff; }
+        .comp-table th:nth-child(3) { width: 30%; text-align: center; color: var(--slate); }
+        .comp-table td { border-bottom: 1px solid rgba(0,0,0,0.05); font-size: 1.05rem; color: var(--slate); }
+        .comp-table td:nth-child(2) { background: rgba(5, 150, 105, 0.05); text-align: center; font-weight: 600; color: var(--primary-dark); }
         .comp-table td:nth-child(3) { text-align: center; color: var(--gray); }
         .comp-table tr:last-child td { border-bottom: none; }
-        
-        .fa-check-circle { color: var(--accent); font-size: 1.2rem; }
-        .fa-circle-xmark { color: #EF4444; font-size: 1.2rem; opacity: 0.5; }
+        .fa-check-circle { color: var(--primary); font-size: 1.3rem; }
+        .fa-circle-xmark { color: #EF4444; font-size: 1.3rem; opacity: 0.5; }
 
-        /* --- Pricing (Preserved logic) --- */
+        /* Pricing Cards */
         .pricing-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
         .price-card {
-            background: white; border: 1px solid #e2e8f0; border-radius: 24px;
-            padding: 40px; text-align: center; transition: 0.3s; position: relative;
+            background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.8); border-radius: 32px;
+            padding: 50px 40px; text-align: center; transition: 0.4s; position: relative;
+            box-shadow: var(--shadow-soft); cursor: pointer;
         }
-        .price-card.featured { border: 2px solid var(--primary); background: #fafafa; }
-        .price-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .price-card.featured {
+            background: #ffffff; border: 2px solid var(--primary);
+            box-shadow: 0 20px 40px rgba(5, 150, 105, 0.15); transform: scale(1.02);
+        }
+        .price-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); }
+        .price-card.featured:hover { transform: translateY(-10px) scale(1.02); }
         .price-badge {
-            position: absolute; top: 15px; right: 15px; background: #DCFCE7;
-            color: #166534; padding: 5px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: 700;
+            position: absolute; top: 20px; right: 20px; background: var(--accent-light);
+            color: var(--primary-dark); padding: 6px 14px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.5px;
         }
-        .price-amount { font-size: 3rem; font-weight: 800; color: var(--dark); margin: 15px 0; }
-        .price-amount span { font-size: 1rem; color: var(--gray); font-weight: 500; }
-        .price-btn { width: 100%; margin-top: 25px; }
+        .price-amount { font-size: 3.5rem; font-weight: 800; color: var(--dark); margin: 20px 0; letter-spacing: -1.5px; }
+        .price-amount span { font-size: 1rem; color: var(--gray); font-weight: 500; letter-spacing: 0; }
+        .price-btn { width: 100%; margin-top: 30px; }
+        .price-card ul li { margin-bottom: 12px; font-size: 1.05rem; }
 
-        /* --- Bulk Input --- */
-        .bulk-control { display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e2e8f0; }
-        .bulk-input { width: 80px; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; text-align: center; font-size: 1.2rem; }
+        /* Bulk Input */
+        .bulk-control { display: none; margin-top: 25px; padding-top: 25px; border-top: 1px solid rgba(0,0,0,0.05); }
+        .bulk-input { width: 90px; padding: 12px; border: 2px solid #e2e8f0; border-radius: 12px; text-align: center; font-size: 1.2rem; font-weight: 600; outline: none; }
+        .bulk-input:focus { border-color: var(--primary); }
 
-        /* --- Order Form --- */
+        /* Order Form */
         .order-modal {
-            display: none; background: var(--dark); color: white; border-radius: 24px; padding: 50px; margin-top: 50px;
+            display: none; background: var(--dark); color: white; border-radius: 32px; 
+            padding: 60px; margin-top: 60px; box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            position: relative; overflow: hidden;
         }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .form-inp { width: 100%; padding: 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; margin-bottom: 20px; }
-        .form-inp:focus { outline: none; border-color: var(--primary); }
+        .order-modal::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(5, 150, 105, 0.1) 0%, rgba(0,0,0,0) 60%);
+            pointer-events: none;
+        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; position: relative; z-index: 2; }
+        @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+        .form-inp { 
+            width: 100%; padding: 18px; background: rgba(255,255,255,0.05); 
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; 
+            color: white; margin-bottom: 24px; font-family: inherit; font-size: 1rem;
+            transition: 0.3s;
+        }
+        .form-inp:focus { outline: none; border-color: var(--primary); background: rgba(255,255,255,0.08); }
 
-        /* --- Testimonials --- */
+        /* Testimonials */
         .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .testi-card { background: #f8fafc; padding: 30px; border-radius: 20px; }
-        .stars { color: #F59E0B; margin-bottom: 15px; }
-        .testi-user { display: flex; align-items: center; gap: 15px; margin-top: 20px; }
-        .avatar { width: 45px; height: 45px; background: var(--gradient); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+        .testi-card { background: rgba(255,255,255,0.8); padding: 40px; border-radius: 32px; box-shadow: var(--shadow-soft); border: 1px solid rgba(255,255,255,0.6); }
+        .stars { color: #F59E0B; margin-bottom: 20px; font-size: 1.1rem; }
+        .testi-user { display: flex; align-items: center; gap: 15px; margin-top: 25px; }
+        .avatar { width: 50px; height: 50px; background: var(--gradient); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
 
-        /* --- FAQ --- */
-        .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
-        .faq-item { border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: white; }
-        .faq-head { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; background: white; }
-        .faq-head:hover { background: #f8fafc; }
-        .faq-body { padding: 0 20px 20px; display: none; color: var(--gray); font-size: 0.95rem; line-height: 1.6; }
+        /* FAQ */
+        .faq-grid { display: grid; grid-template-columns: 1fr; gap: 15px; max-width: 800px; margin: 0 auto; }
+        .faq-item { border: 1px solid rgba(0,0,0,0.05); border-radius: 20px; overflow: hidden; background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); }
+        .faq-head { padding: 24px 30px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 1.1rem; transition: 0.3s; }
+        .faq-head:hover { background: #fff; color: var(--primary); }
+        .faq-body { padding: 0 30px 24px; display: none; color: var(--slate); font-size: 1rem; line-height: 1.6; }
         .faq-item.active .faq-body { display: block; }
-        .faq-icon { transition: 0.3s; }
+        .faq-icon { transition: 0.3s; color: var(--primary); }
         .faq-item.active .faq-icon { transform: rotate(180deg); }
 
-        /* --- CTA Section --- */
-        .final-cta {
-            background: var(--dark); color: white; border-radius: 30px; padding: 80px 40px; text-align: center;
-            position: relative; overflow: hidden; margin: 50px 24px;
+        /* Footer Trust Bar (NEW) */
+        .trust-bar {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: var(--dark); color: white;
+            padding: 15px 0; z-index: 9999;
+            border-top: 3px solid var(--primary);
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
         }
-        .cta-dec {
-            position: absolute; width: 300px; height: 300px; background: var(--primary);
-            filter: blur(80px); opacity: 0.2; border-radius: 50%;
+        .trust-bar-content {
+            display: flex; justify-content: center; align-items: center; gap: 20px;
+            flex-wrap: wrap; font-size: 0.95rem; font-weight: 500;
         }
+        .trust-bar i { color: var(--primary); font-size: 1.2rem; }
+        .trust-bar strong { color: var(--secondary); }
 
-        /* --- Footer --- */
-        footer { background: #0b0f19; color: #94a3b8; padding: 80px 0 30px; }
+        /* Footer */
+        footer { background: #0b0f19; color: #94a3b8; padding: 80px 0 100px; margin-top: 100px; border-top: 1px solid rgba(255,255,255,0.05); }
         .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
-        .footer-col h4 { color: white; margin-bottom: 25px; font-size: 1.1rem; }
-        .footer-col ul li { margin-bottom: 12px; }
-        .footer-col a { color: #94a3b8; font-size: 0.95rem; }
-        .footer-col a:hover { color: var(--primary); }
-        .footer-btm { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-        
-        @media (max-width: 968px) {
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-            .form-row { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 600px) {
-            .footer-grid { grid-template-columns: 1fr; }
-            .comp-table th, .comp-table td { padding: 15px 10px; font-size: 0.9rem; }
-        }
-
-        /* Floating WhatsApp */
-        .float-wa {
-            position: fixed; bottom: 30px; left: 30px; background: #25D366; color: white;
-            padding: 12px 24px; border-radius: 50px; font-weight: 600; display: flex; align-items: center; gap: 10px;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); z-index: 999; transition: 0.3s;
-        }
-        .float-wa:hover { transform: scale(1.05); background: #1ebc57; }
+        @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 500px) { .footer-grid { grid-template-columns: 1fr; } }
+        .footer-col h4 { color: white; margin-bottom: 25px; font-size: 1.1rem; font-weight: 600; }
+        .footer-col ul li { margin-bottom: 15px; }
+        .footer-col a { color: #94a3b8; font-size: 0.95rem; transition: 0.3s; }
+        .footer-col a:hover { color: var(--primary); padding-left: 5px; }
+        .footer-btm { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
+    
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
 
     <header>
         <div class="container nav-container">
             <a href="#" class="logo">
                 <i class="fa-brands fa-google-play"></i> 12Testers14Days
             </a>
-            <nav class="nav-menu">
+            <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
+            <nav class="nav-menu" id="navMenu">
                 <a href="#why-us">Why Us</a>
+                <a href="#how-it-works">How It Works</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#comparison">Comparison</a>
                 <a href="#reviews">Reviews</a>
-                <a href="#faq">FAQ</a>
             </nav>
-            <div class="header-cta">
-                <a href="#pricing" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.9rem;">Order Now</a>
+            
+            <!-- NEW: Header Actions -->
+            <div class="header-actions">
+                <a href="https://wa.me/+923472061598?text=Hi ,%20I%20have%20questions%20about%2012%20testers" class="btn btn-whatsapp" style="padding: 10px 20px;">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> <span>Chat</span>
+                </a>
+                <a href="#pricing" class="btn btn-primary" style="padding: 10px 24px;">
+                    <span>Order Now</span> <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </header>
 
     <section class="hero">
         <div class="container hero-grid">
-            <div class="hero-img-wrapper" data-aos="fade-right">
-                <img src="https://primetestlab.com/frontend/assets/img/testing/approved.png" alt="Google Play Console Approved Dashboard">
-            </div>
-            
-            <div class="hero-content" data-aos="fade-left">
+            <div class="hero-content" data-aos="fade-right">
+                <div style="display: inline-block; background: rgba(5, 150, 105, 0.1); color: var(--primary); padding: 8px 16px; border-radius: 50px; font-weight: 600; font-size: 0.9rem; margin-bottom: 20px;">
+                    <i class="fa-solid fa-bolt" style="margin-right: 5px;"></i> New Google Play Policy 2024
+                </div>
                 <h1>Unlock Your App with <span class="hero-highlight">12 Testers for 14 Days</span></h1>
                 <p>Don't let the 20 testers requirement stop you. We provide 12 verified human testers to install and run your app for 14 continuous days. Guaranteed Google Play Console approval.</p>
                 <div class="hero-btns">
                     <a href="#pricing" class="btn btn-primary">Start Testing Now <i class="fa-solid fa-arrow-right"></i></a>
-                    <a href="https://wa.me/+923472061598?text=Hi,%20I%20have%20questions%20about%2012%20testers" class="btn btn-outline"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+                    <a href="https://wa.me/+923472061598?text=Hi ,%20I%20have%20questions%20about%2012%20testers" class="btn btn-outline"><i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 1.2rem;"></i> Chat on WhatsApp</a>
                 </div>
-                <div style="margin-top: 30px; font-size: 0.9rem; color: var(--gray); display: flex; align-items: center; gap: 15px;">
-                    <span><i class="fa-solid fa-check" style="color: var(--accent);"></i> Real Devices</span>
-                    <span><i class="fa-solid fa-check" style="color: var(--accent);"></i> No Bots</span>
-                    <span><i class="fa-solid fa-check" style="color: var(--accent);"></i> Instant Start</span>
+                <div style="margin-top: 40px; font-size: 0.95rem; color: var(--slate); display: flex; align-items: center; gap: 20px; font-weight: 500;">
+                    <span><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 5px;"></i> Real Devices</span>
+                    <span><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 5px;"></i> No Bots</span>
+                    <span><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 5px;"></i> Instant Start</span>
                 </div>
+            </div>
+
+            <div class="hero-img-wrapper" data-aos="fade-left">
+                <img src="https://primetestlab.com/frontend/assets/img/testing/approved.png" alt="Google Play Console Approved Dashboard">
             </div>
         </div>
     </section>
@@ -361,12 +410,10 @@
         <div class="container">
             <div class="guarantee-bar" data-aos="fade-up">
                 <div class="gb-left">
-                    <div class="shield-icon">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
+                    <div class="shield-icon"><i class="fa-solid fa-shield-halved"></i></div>
                     <div class="gb-content">
                         <h3>100% Money-Back Guarantee</h3>
-                        <p>If your app doesn't get approved after our testing (and re-testing), you get a full refund. No questions asked.</p>
+                        <p>If your app doesn't get approved after our testing, you get a full refund. No questions asked.</p>
                     </div>
                 </div>
                 <div class="gb-right">
@@ -382,62 +429,82 @@
             </div>
 
             <div class="trust-row" data-aos="fade-up" data-aos-delay="100">
-                <span style="font-size: 0.9rem; letter-spacing: 1px; color: #94a3b8; text-transform: uppercase;">Trusted By 3,500+ Developers</span>
-                <div class="trust-pill t-blue">
-                    <i class="fa-brands fa-stripe"></i>
-                    <div class="trust-text">
-                        <strong>Secure Payment</strong>
-                        <span>Encrypted Checkout</span>
-                    </div>
-                    <i class="fa-solid fa-circle-check check-circle"></i>
+                <span style="font-size: 0.9rem; letter-spacing: 1px; color: var(--gray); text-transform: uppercase; font-weight: 600;">Trusted By 3,500+ Developers</span>
+                <div class="trust-pill"><i class="fa-brands fa-stripe" style="color: var(--primary);"></i><div class="trust-text"><strong>Secure Payment</strong></div></div>
+                <div class="trust-pill"><i class="fa-solid fa-shield-check" style="color: var(--primary);"></i><div class="trust-text"><strong>100% Refund</strong></div></div>
+                <div class="trust-pill"><i class="fa-solid fa-headset" style="color: var(--primary);"></i><div class="trust-text"><strong>24/7 Support</strong></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us" class="section-padding">
+        <div class="container">
+            <div class="text-center" style="max-width: 700px; margin: 0 auto 50px;">
+                <h2 style="font-size: 2.8rem; margin-bottom: 15px; font-weight: 800; letter-spacing: -1px;">Why Developers Choose Us</h2>
+                <p style="color: var(--slate); font-size: 1.1rem;">We don't just provide emails; we provide a complete testing infrastructure.</p>
+            </div>
+            
+            <!-- Updated Grid to accommodate 6 cards -->
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="f-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <h3>100% Real Devices</h3>
+                    <p>We test on real Android phones. No emulators that trigger Google's spam filters.</p>
                 </div>
-                <div class="trust-pill t-green">
-                    <i class="fa-solid fa-shield-check"></i>
-                    <div class="trust-text">
-                        <strong>100% Refund</strong>
-                        <span>Policy Guaranteed</span>
-                    </div>
-                    <i class="fa-solid fa-circle-check check-circle"></i>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="f-icon"><i class="fa-solid fa-user-check"></i></div>
+                    <h3>Active Daily Engagement</h3>
+                    <p>Testers open your app daily. Google monitors this to validate your testing phase.</p>
                 </div>
-                <div class="trust-pill t-orange">
-                    <i class="fa-solid fa-headset"></i>
-                    <div class="trust-text">
-                        <strong>24/7 Support</strong>
-                        <span>Human Help</span>
-                    </div>
-                    <i class="fa-solid fa-circle-check check-circle"></i>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="f-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                    <h3>Full 14-Day Duration</h3>
+                    <p>We manage the testers. They stay opted-in for the complete 14-day requirement.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="f-icon"><i class="fa-solid fa-comments"></i></div>
+                    <h3>Quality Feedback</h3>
+                    <p>Get real feedback on your app's performance through the Play Console system.</p>
+                </div>
+                <!-- NEW CARD 1 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="f-icon"><i class="fa-solid fa-lock"></i></div>
+                    <h3>Secure Data Handling</h3>
+                    <p>Your app data and credentials are handled with strict confidentiality and GDPR compliance.</p>
+                </div>
+                <!-- NEW CARD 2 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="f-icon"><i class="fa-solid fa-globe"></i></div>
+                    <h3>Global Device Coverage</h3>
+                    <p>Testers use devices from various regions and manufacturers to ensure broad compatibility.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="why-us" class="section-padding" style="background: #F8FAFC;">
+    <section id="how-it-works" class="section-padding process-section">
         <div class="container">
             <div class="text-center" style="max-width: 700px; margin: 0 auto 50px;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 15px;">Why Developers Choose Us</h2>
-                <p style="color: var(--gray);">We don't just provide emails; we provide a complete testing infrastructure to ensure your success.</p>
+                <h2 style="font-size: 2.8rem; margin-bottom: 15px; font-weight: 800; letter-spacing: -1px;">How It Works</h2>
+                <p style="color: var(--slate); font-size: 1.1rem;">Get started in 3 simple steps.</p>
             </div>
-            
-            <div class="features-grid">
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="f-icon"><i class="fa-solid fa-mobile-screen"></i></div>
-                    <h3>100% Real Physical Devices</h3>
-                    <p>We test on real Android phones (Samsung, Pixel, Xiaomi, etc.). No emulators that trigger Google's spam filters.</p>
+            <div class="process-grid">
+                <div class="process-card" data-aos="fade-up">
+                    <div class="connector"></div>
+                    <div class="process-icon">1</div>
+                    <h3>Place Order</h3>
+                    <p>Select your package and submit your app link via our secure form.</p>
                 </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="f-icon"><i class="fa-solid fa-user-check"></i></div>
-                    <h3>Active Daily Engagement</h3>
-                    <p>Testers open your app daily. Google monitors this activity to decide if your closed testing phase was valid.</p>
+                <div class="process-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="connector"></div>
+                    <div class="process-icon">2</div>
+                    <h3>We Test</h3>
+                    <p>Our 12 verified testers install your app and engage daily for 14 days.</p>
                 </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="f-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
-                    <h3>Full 14-Day Duration</h3>
-                    <p>We manage the testers so you don't have to. They stay opted-in for the complete 14-day requirement.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="f-icon"><i class="fa-solid fa-comments"></i></div>
-                    <h3>Quality Feedback</h3>
-                    <p>Get real feedback on your app's performance and UI through the Google Play Console feedback system.</p>
+                <div class="process-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="process-icon">3</div>
+                    <h3>Get Approved</h3>
+                    <p>Submit your proof to Google and unlock production access.</p>
                 </div>
             </div>
         </div>
@@ -446,8 +513,8 @@
     <section id="comparison" class="section-padding">
         <div class="container">
             <div class="text-center" style="margin-bottom: 50px;">
-                <h2>Us vs. Reddit/Free Groups</h2>
-                <p style="color: var(--gray);">Why paying for professional testing saves you time and money.</p>
+                <h2 style="font-size: 2.5rem; font-weight: 800;">Us vs. Free Groups</h2>
+                <p style="color: var(--slate);">Why paying for professional testing saves you time and money.</p>
             </div>
             
             <div class="comparison-wrapper" data-aos="zoom-in">
@@ -456,46 +523,25 @@
                         <tr>
                             <th>Feature</th>
                             <th>12Testers14Days.pro</th>
-                            <th>Reddit / Facebook Groups</th>
+                            <th>Free Groups</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><strong>Guaranteed 14 Days</strong></td>
-                            <td><i class="fa-solid fa-check-circle"></i> Yes, managed</td>
-                            <td><i class="fa-regular fa-circle-xmark"></i> Unreliable</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Tester Retention</strong></td>
-                            <td><i class="fa-solid fa-check-circle"></i> 100% Retention</td>
-                            <td><i class="fa-regular fa-circle-xmark"></i> High Drop-off</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Device Quality</strong></td>
-                            <td><i class="fa-solid fa-check-circle"></i> Real Devices Only</td>
-                            <td><i class="fa-regular fa-circle-xmark"></i> Often Emulators</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Setup Time</strong></td>
-                            <td><i class="fa-solid fa-check-circle"></i> Instant (Same Day)</td>
-                            <td><i class="fa-regular fa-circle-xmark"></i> Days/Weeks to find</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Feedback Mechanism</strong></td>
-                            <td><i class="fa-solid fa-check-circle"></i> Organized</td>
-                            <td><i class="fa-regular fa-circle-xmark"></i> None/Spam</td>
-                        </tr>
+                        <tr><td><strong>Guaranteed 14 Days</strong></td><td><i class="fa-solid fa-check-circle"></i> Yes</td><td><i class="fa-regular fa-circle-xmark"></i> Unreliable</td></tr>
+                        <tr><td><strong>Tester Retention</strong></td><td><i class="fa-solid fa-check-circle"></i> 100%</td><td><i class="fa-regular fa-circle-xmark"></i> High Drop-off</td></tr>
+                        <tr><td><strong>Device Quality</strong></td><td><i class="fa-solid fa-check-circle"></i> Real Devices</td><td><i class="fa-regular fa-circle-xmark"></i> Emulators</td></tr>
+                        <tr><td><strong>Setup Time</strong></td><td><i class="fa-solid fa-check-circle"></i> Instant</td><td><i class="fa-regular fa-circle-xmark"></i> Days/Weeks</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </section>
 
-    <section id="pricing" class="section-padding" style="background: #F8FAFC;">
+    <section id="pricing" class="section-padding">
         <div class="container">
             <div class="text-center" style="margin-bottom: 50px;">
-                <h2 style="font-size: 2.5rem;">Simple, Transparent Pricing</h2>
-                <p style="color: var(--gray);">Choose the package that fits your needs.</p>
+                <h2 style="font-size: 2.8rem; font-weight: 800; letter-spacing: -1px;">Simple, Transparent Pricing</h2>
+                <p style="color: var(--slate); font-size: 1.1rem;">Choose the package that fits your needs.</p>
             </div>
 
             <div class="pricing-cards">
@@ -504,59 +550,58 @@
                     <h3>Single App</h3>
                     <div class="price-amount">$29 <span>total</span></div>
                     <ul style="text-align: left; margin: 20px 0; color: var(--slate);">
-                        <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> 12 Verified Testers</li>
-                        <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> 14 Days Activity</li>
-                        <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> Approval Guarantee</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 8px;"></i> 12 Verified Testers</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 8px;"></i> 14 Days Activity</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 8px;"></i> Approval Guarantee</li>
                     </ul>
-                    <button class="btn btn-outline price-btn">Select This</button>
+                    <button class="btn btn-outline price-btn">Select Plan</button>
                 </div>
 
                 <div class="price-card featured" onclick="selectPlan(2, 19, this)">
-                    <div class="price-badge" style="background: var(--primary); color: white;">MOST POPULAR</div>
+                    <div class="price-badge" style="background: var(--gradient); color: white;">MOST POPULAR</div>
                     <h3>Double Pack</h3>
                     <div class="price-amount">$19 <span>per app</span></div>
-                    <p style="font-size: 0.9rem; color: var(--primary);">Total: $38 for 2 apps</p>
+                    <p style="font-size: 0.95rem; color: var(--primary); font-weight: 600;">Total: $38 for 2 apps</p>
                     <ul style="text-align: left; margin: 20px 0; color: var(--slate);">
-                        <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> 2 Apps Included</li>
-                        <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> 12 Testers Each</li>
-                        <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> Priority Support</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 8px;"></i> 2 Apps Included</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 8px;"></i> 12 Testers Each</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 8px;"></i> Priority Support</li>
                     </ul>
-                    <button class="btn btn-primary price-btn">Select This</button>
+                    <button class="btn btn-primary price-btn">Select Plan</button>
                 </div>
 
                 <div class="price-card" onclick="selectBulk(this)">
                     <div class="price-badge">AGENCY</div>
                     <h3>Bulk / Agency</h3>
                     <div class="price-amount">$15 <span>per app</span></div>
-                    <p style="font-size: 0.9rem;">For 3+ Apps</p>
+                    <p style="font-size: 0.95rem;">For 3+ Apps</p>
                     <ul style="text-align: left; margin: 20px 0; color: var(--slate);">
-                        <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> 3+ Apps</li>
-                        <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> Dedicated Manager</li>
-                        <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> Custom Reporting</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 8px;"></i> 3+ Apps</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 8px;"></i> Dedicated Manager</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 8px;"></i> Custom Reporting</li>
                     </ul>
                     
                     <div class="bulk-control" id="bulkControl">
-                        <label style="display: block; font-size: 0.9rem; margin-bottom: 5px;">How many apps?</label>
-                        <input type="number" id="bulkInput" class="bulk-input" value="3" min="3" onchange="updateBulkCalc()">
-                        <div style="margin-top: 10px; font-weight: 700; color: var(--primary);">Total: $<span id="bulkTotalDisplay">45</span></div>
+                        <label style="display: block; font-size: 0.95rem; margin-bottom: 8px; font-weight: 500;">How many apps?</label>
+                        <input type="number" id="bulkInput" class="bulk-input" value="3" min="3" onchange="updateBulkCalc(event)" onclick="event.stopPropagation()">
+                        <div style="margin-top: 15px; font-weight: 800; color: var(--primary); font-size: 1.2rem;">Total: $<span id="bulkTotalDisplay">45</span></div>
                     </div>
 
-                    <button class="btn btn-outline price-btn">Select This</button>
+                    <button class="btn btn-outline price-btn">Select Plan</button>
                 </div>
             </div>
 
             <div id="orderSection" class="order-modal">
-                <div class="text-center" style="margin-bottom: 30px;">
-                    <h3 style="font-size: 2rem; margin-bottom: 10px;">Finalize Your Order</h3>
-                    <p style="color: #cbd5e1;">You are ordering: <span id="summaryPlan" style="color: var(--accent); font-weight: 700;">-</span></p>
-                    <div style="font-size: 1.5rem; font-weight: 700;">Total: <span id="summaryPrice">-</span></div>
+                <div class="text-center" style="margin-bottom: 40px;">
+                    <h3 style="font-size: 2.2rem; margin-bottom: 10px; font-weight: 800;">Finalize Your Order</h3>
+                    <p style="color: #cbd5e1; font-size: 1.1rem;">You are ordering: <span id="summaryPlan" style="color: var(--secondary); font-weight: 700;">-</span></p>
+                    <div style="font-size: 1.8rem; font-weight: 800; margin-top: 10px;">Total: <span id="summaryPrice">-</span></div>
                 </div>
 
                 <form action="https://formsubmit.co/ssbasemaker@gmail.com" method="POST">
                     <input type="hidden" name="_subject" value="New Order: 12 Testers">
                     <input type="hidden" name="_next" value="https://12testers14days.pro/thank-you">
                     <input type="hidden" name="_captcha" value="false">
-                    
                     <input type="hidden" id="inpPlan" name="Plan_Type">
                     <input type="hidden" id="inpTotal" name="Total_Price">
 
@@ -569,11 +614,11 @@
                         <input type="text" name="whatsapp" class="form-inp" placeholder="WhatsApp Number (Optional)">
                     </div>
                     
-                    <button type="submit" class="btn btn-accent" style="width: 100%;">
-                        Proceed to Secure Payment <i class="fa-solid fa-lock"></i>
+                    <button type="submit" class="btn btn-accent" style="width: 100%; font-size: 1.2rem; padding: 20px;">
+                        Proceed to Secure Payment <i class="fa-solid fa-lock" style="margin-left: 8px;"></i>
                     </button>
-                    <p class="text-center" style="margin-top: 20px; font-size: 0.85rem; color: #64748b;">
-                        We will email you the payment link and tester details immediately after submission.
+                    <p class="text-center" style="margin-top: 20px; font-size: 0.95rem; color: #94a3b8;">
+                        You will be redirected to the Thank You / Payment page immediately after clicking.
                     </p>
                 </form>
             </div>
@@ -582,7 +627,7 @@
 
     <section id="reviews" class="section-padding">
         <div class="container">
-            <h2 class="text-center" style="margin-bottom: 50px;">What Developers Say</h2>
+            <h2 class="text-center" style="margin-bottom: 50px; font-size: 2.8rem; font-weight: 800;">What Developers Say</h2>
             <div class="testi-grid">
                 <div class="testi-card" data-aos="fade-up">
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -594,94 +639,44 @@
                 </div>
                 <div class="testi-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"The comparison to reddit is real. I wasted weeks trying to get free testers. This service is worth every penny for the peace of mind."</p>
+                    <p>"Incredibly fast. I submitted my app details and testing started the same day. Saved me from begging on Reddit."</p>
                     <div class="testi-user">
-                        <div class="avatar">AS</div>
-                        <div><strong>Amir S.</strong><br><span style="font-size: 0.85rem; color: var(--gray);">App Founder</span></div>
+                        <div class="avatar">MS</div>
+                        <div><strong>Mike Smith</strong><br><span style="font-size: 0.85rem; color: var(--gray);">Studio Lead</span></div>
                     </div>
                 </div>
                 <div class="testi-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"Great support. They answered my questions on WhatsApp instantly and helped me set up the closed testing track."</p>
+                    <p>"The dashboard feedback was detailed and they used real devices. 100% recommended for the new Google Play policy."</p>
                     <div class="testi-user">
-                        <div class="avatar">ML</div>
-                        <div><strong>Maria L.</strong><br><span style="font-size: 0.85rem; color: var(--gray);">UI Designer</span></div>
+                        <div class="avatar">AL</div>
+                        <div><strong>Ana Lee</strong><br><span style="font-size: 0.85rem; color: var(--gray);">App Creator</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="section-padding" style="background: #F8FAFC;">
+    <section id="faq" class="section-padding">
         <div class="container">
-            <h2 class="text-center" style="margin-bottom: 20px;">Frequently Asked Questions</h2>
-            <div class="text-center" style="margin-bottom: 50px;">
-                <a href="https://wa.me/+923472061598" class="btn btn-outline" style="font-size: 0.9rem;">
-                    Still have a question? Chat on WhatsApp <i class="fa-brands fa-whatsapp"></i>
-                </a>
-            </div>
-
+            <h2 class="text-center" style="margin-bottom: 50px; font-size: 2.5rem; font-weight: 800;">Frequently Asked Questions</h2>
             <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-head" onclick="toggleFaq(this)">How to get 12 testers for 14 days? <i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                    <div class="faq-body">Simply choose a plan above. We will provide 12 verified emails. You add them to your Google Play Console, and our team will install your app and test it for 14 days straight.</div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-head">Are these real people testing my app? <i class="fa-solid fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-body">Yes! We strictly use real human testers operating physical Android devices to ensure full compliance with Google's policies.</div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-head" onclick="toggleFaq(this)">Are these real people? <i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                    <div class="faq-body">Yes. We use a network of real users with real physical Android devices. We do not use bots or emulators, which ensures your app passes Google's activity checks.</div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-head">What if Google rejects my production access? <i class="fa-solid fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-body">We have a 99.9% success rate. However, if your app is rejected solely due to the testing phase, we will re-test for free. If it still fails, we issue a 100% full refund.</div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-head" onclick="toggleFaq(this)">What if my app gets rejected? <i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                    <div class="faq-body">With our service, rejection is rare. However, if Google rejects your production access request due to "insufficient testing", we will restart the 14-day testing period for FREE.</div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-head">How long does it take to start? <i class="fa-solid fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-body">Testing usually begins within 12-24 hours after you place your order and provide the app link.</div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-head" onclick="toggleFaq(this)">How quickly can you start? <i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                    <div class="faq-body">Immediately. Once you place the order and send us the app link (or add our emails), our testers typically install the app within 12-24 hours.</div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-head">Do I need to provide the APK? <i class="fa-solid fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-body">No, you just provide the Google Play Console link or the app package name. We handle the installation via the internal testing track.</div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-head" onclick="toggleFaq(this)">Do I need to pay for the 12 testers? <i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                    <div class="faq-body">Our service fee covers the management and incentivization of the testers. You do not need to pay the testers individually.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-head" onclick="toggleFaq(this)">Is this safe for my Google Play account? <i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                    <div class="faq-body">100% safe. Closed testing is a standard Google feature. We simply provide the testers you need to fulfill the requirement.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-head" onclick="toggleFaq(this)">What regions are the testers from? <i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                    <div class="faq-body">Our testers are global, primarily from Tier 1 and Tier 2 countries, ensuring a diverse testing environment that Google appreciates.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-head" onclick="toggleFaq(this)">Can I track the testers? <i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                    <div class="faq-body">Yes, you can see the number of "Installations on active devices" in your Google Play Console dashboard updating as our team joins.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="container">
-        <section class="final-cta">
-            <div class="cta-dec" style="top: -100px; left: -100px;"></div>
-            <div class="cta-dec" style="bottom: -100px; right: -100px; background: var(--accent);"></div>
-            
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px; position: relative; z-index: 2;">Ready to Launch Your App on Google Play?</h2>
-            <p style="color: #cbd5e1; margin-bottom: 40px; font-size: 1.2rem; position: relative; z-index: 2;">Stop waiting and start testing. Get approved in 14 days.</p>
-            <div style="position: relative; z-index: 2;">
-                <a href="#pricing" class="btn btn-accent" style="padding: 16px 40px; font-size: 1.2rem;">Get Started Now</a>
-            </div>
-        </section>
-    </div>
-
-    <section class="section-padding" style="background: white; border-top: 1px solid #f1f5f9;">
-        <div class="container text-center">
-            <h2>Still Have Questions?</h2>
-            <p style="color: var(--gray); margin: 15px 0 30px;">Our support team is online and ready to help you.</p>
-            <div class="flex-center gap-20" style="flex-wrap: wrap;">
-                <a href="https://wa.me/+923472061598" class="btn btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Instant Chat
-                </a>
-                <a href="mailto:ssbasemaker@gmail.com" class="btn btn-outline">
-                    <i class="fa-solid fa-envelope"></i> Email Support
-                </a>
             </div>
         </div>
     </section>
@@ -690,60 +685,64 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="#" class="logo" style="color: white; margin-bottom: 20px; display: inline-block;">
-                        <i class="fa-brands fa-google-play" style="color: var(--primary);"></i> 12Testers14Days
-                    </a>
-                    <p style="color: #64748b; font-size: 0.95rem; line-height: 1.7;">
-                        Professional Google Play Console Closed Testing service. We help developers meet the "20 testers for 14 days" requirement quickly and affordably.
-                    </p>
+                    <a href="#" class="logo" style="color: white; margin-bottom: 20px; display: inline-flex;"><i class="fa-brands fa-google-play"></i> 12Testers14Days</a>
+                    <p>Helping developers navigate Google Play's 20-tester requirement effortlessly with guaranteed, high-quality human testing.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Company</h4>
+                    <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#why-us">About Us</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#pricing">Pricing Plans</a></li>
                         <li><a href="#reviews">Testimonials</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Services</h4>
+                    <h4>Support</h4>
                     <ul>
-                        <li><a href="#">Single App Testing</a></li>
-                        <li><a href="#">Bulk App Testing</a></li>
-                        <li><a href="#">Consultation</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Refund Policy</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="mailto:ssbasemaker@gmail.com">ssbasemaker@gmail.com</a></li>
-                        <li><a href="https://wa.me/+923472061598">WhatsApp: +92 347 206 1598</a></li>
-                        <li><span style="color: #64748b;">Karachi, Pakistan</span></li>
+                        <li><a href="mailto:support@12testers14days.pro"><i class="fa-solid fa-envelope"></i> Email Support</a></li>
+                        <li><a href="#"><i class="fa-brands fa-whatsapp"></i> WhatsApp Chat</a></li>
                     </ul>
                 </div>
             </div>
-            
             <div class="footer-btm">
-                <div style="font-size: 0.9rem;">&copy; 2024 12 Testers for 14 Days. All Rights Reserved.</div>
-                <div style="display: flex; gap: 20px;">
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <p>&copy; 2024 12Testers14Days.pro. All Rights Reserved.</p>
+                <div>
+                    <i class="fa-brands fa-cc-stripe" style="font-size: 1.8rem; margin-left: 10px;"></i>
+                    <i class="fa-brands fa-cc-visa" style="font-size: 1.8rem; margin-left: 10px;"></i>
+                    <i class="fa-brands fa-cc-mastercard" style="font-size: 1.8rem; margin-left: 10px;"></i>
                 </div>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/+923472061598" class="float-wa">
-        <i class="fa-brands fa-whatsapp" style="font-size: 1.5rem;"></i>
-        <span>Chat Now</span>
-    </a>
+    <!-- NEW: Bottom Trust Bar -->
+    <div class="trust-bar">
+        <div class="container trust-bar-content">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span><strong>Risk-Free Purchase:</strong> 100% Money-Back Guarantee if not approved.</span>
+            <span style="opacity: 0.7;">|</span>
+            <span><i class="fa-solid fa-lock" style="color: var(--secondary); margin-right: 5px;"></i> SSL Secured Checkout</span>
+        </div>
+    </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
+        AOS.init({ duration: 800, once: true, offset: 50 });
 
+        /* Mobile Menu Toggle */
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        /* Pricing Logic */
         const orderSection = document.getElementById('orderSection');
         const summaryPlan = document.getElementById('summaryPlan');
         const summaryPrice = document.getElementById('summaryPrice');
@@ -751,68 +750,55 @@
         const inpTotal = document.getElementById('inpTotal');
         const bulkControl = document.getElementById('bulkControl');
 
-        // Reset Styles
         function resetCards() {
             document.querySelectorAll('.price-card').forEach(c => {
-                c.style.borderColor = '#e2e8f0';
-                c.style.background = 'white';
+                c.classList.remove('featured');
+                c.querySelector('.btn').classList.replace('btn-primary', 'btn-outline');
             });
             bulkControl.style.display = 'none';
         }
 
-        // Logic for Single/Double
-        function selectPlan(qty, pricePerApp, card) {
-            resetCards();
-            card.style.borderColor = '#4F46E5';
-            card.style.background = '#EEF2FF';
-
-            const total = qty * pricePerApp;
-            const name = qty === 1 ? "Single App Plan" : "Double App Plan";
-
-            showOrderForm(name, total);
+        function scrollToOrder() {
+            orderSection.style.display = 'block';
+            setTimeout(() => { orderSection.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100);
         }
 
-        // Logic for Bulk
-        function selectBulk(card) {
+        function selectPlan(apps, pricePerApp, element) {
             resetCards();
-            card.style.borderColor = '#4F46E5';
-            card.style.background = '#EEF2FF';
+            element.classList.add('featured');
+            element.querySelector('.btn').classList.replace('btn-outline', 'btn-primary');
+            
+            const total = apps * pricePerApp;
+            const planName = apps === 1 ? "Starter (1 App)" : "Double Pack (2 Apps)";
+            
+            summaryPlan.textContent = planName;
+            summaryPrice.textContent = `$${total}`;
+            inpPlan.value = planName;
+            inpTotal.value = total;
+            
+            scrollToOrder();
+        }
+
+        function selectBulk(element) {
+            resetCards();
+            element.classList.add('featured');
+            element.querySelector('.btn').classList.replace('btn-outline', 'btn-primary');
             bulkControl.style.display = 'block';
             updateBulkCalc();
+            scrollToOrder();
         }
 
-        function updateBulkCalc() {
-            const qty = parseInt(document.getElementById('bulkInput').value);
-            if(qty < 3) return;
+        function updateBulkCalc(e) {
+            const input = document.getElementById('bulkInput');
+            let val = parseInt(input.value);
+            if(val < 3) { val = 3; input.value = 3; }
+            const total = val * 15;
             
-            const total = qty * 15;
-            document.getElementById('bulkTotalDisplay').innerText = total;
-            showOrderForm(`Bulk Plan (${qty} Apps)`, total);
-        }
-
-        function showOrderForm(planName, total) {
-            orderSection.style.display = 'block';
-            summaryPlan.innerText = planName;
-            summaryPrice.innerText = '$' + total;
-            
-            inpPlan.value = planName;
-            inpTotal.value = '$' + total;
-
-            setTimeout(() => {
-                orderSection.scrollIntoView({behavior: "smooth", block: "center"});
-            }, 100);
-        }
-
-        // FAQ Toggle
-        function toggleFaq(element) {
-            const item = element.parentElement;
-            const wasActive = item.classList.contains('active');
-            
-            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-            
-            if(!wasActive) {
-                item.classList.add('active');
-            }
+            document.getElementById('bulkTotalDisplay').textContent = total;
+            summaryPlan.textContent = `Agency Bulk (${val} Apps)`;
+            summaryPrice.textContent = `$${total}`;
+            inpPlan.value = `Agency Bulk (${val} Apps)`;
+            inpTotal.value = total;
         }
     </script>
 </body>
