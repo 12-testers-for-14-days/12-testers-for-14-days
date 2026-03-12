@@ -1602,27 +1602,30 @@ footer { background:#060810; padding:72px 28px 36px; }
           </div>
         </div>
         <div class="order-form-wrap">
-          <form action="https://formsubmit.co/nabeelsaleemshaikh@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="New 12 Testers · 14 Days Order">
-            <input type="hidden" name="_next" value="https://12testers14days.pro/thank-you.html">
-            <input type="hidden" name="_captcha" value="true">
-            <input type="hidden" name="Plan" id="fmPlan">
-            <input type="hidden" name="Total" id="fmAmt">
-            <div class="form-row-2">
-              <div class="f-group"><label>Full Name</label><input type="text" name="name" class="f-input" placeholder="John Smith" required></div>
-              <div class="f-group"><label>Email</label><input type="email" name="email" class="f-input" placeholder="you@company.com" required></div>
-            </div>
-            <div class="form-row-2">
-              <div class="f-group"><label>App Link or Package Name</label><input type="text" name="app" class="f-input" placeholder="com.yourapp or Play Store URL" required></div>
-              <div class="f-group"><label>WhatsApp (optional)</label><input type="text" name="wa" class="f-input" placeholder="+1 234 567 8900"></div>
-            </div>
-            <div class="form-submit-row">
-              <div class="fsr-note"><i class="fa-solid fa-lock"></i> SSL encrypted · Secure payment · will send you payment link after submit</div>
-              <button type="submit" class="btn btn-primary btn-lg">
-                Proceed to Payment <i class="fa-solid fa-lock"></i>
-              </button>
-            </div>
-          </form>
+          <form id="orderForm" onsubmit="handleFormSubmit(event)">
+  <input type="hidden" name="_subject" value="New 12 Testers · 14 Days Order">
+  <input type="hidden" name="_captcha" value="false"> <input type="hidden" name="Plan" id="fmPlan">
+  <input type="hidden" name="Total" id="fmAmt">
+  
+  <div id="formError" style="display:none; background:#FEE2E2; border:1px solid #FCA5A5; color:#B91C1C; padding:12px 16px; border-radius:12px; margin-bottom:20px; font-size:.85rem; font-weight:600;">
+    <span id="formErrorMsg"></span>
+  </div>
+
+  <div class="form-row-2">
+    <div class="f-group"><label>Full Name</label><input type="text" name="name" class="f-input" placeholder="John Smith" required></div>
+    <div class="f-group"><label>Email</label><input type="email" name="email" class="f-input" placeholder="you@company.com" required></div>
+  </div>
+  <div class="form-row-2">
+    <div class="f-group"><label>App Link or Package Name</label><input type="text" name="app" class="f-input" placeholder="com.yourapp or Play Store URL" required></div>
+    <div class="f-group"><label>WhatsApp (optional)</label><input type="text" name="wa" class="f-input" placeholder="+1 234 567 8900"></div>
+  </div>
+  <div class="form-submit-row">
+    <div class="fsr-note"><i class="fa-solid fa-lock"></i> SSL encrypted · Secure payment · will send you payment link after submit</div>
+    <button type="submit" id="submitBtn" class="btn btn-primary btn-lg">
+      Proceed to Payment <i class="fa-solid fa-lock"></i>
+    </button>
+  </div>
+</form>
         </div>
       </div>
     </div>
@@ -1889,6 +1892,7 @@ function recalcBulk() {
 
      
 /* ── FORM SUBMIT via Fetch (AJAX) ── */
+/* ── FORM SUBMIT via Fetch (AJAX) ── */
 async function handleFormSubmit(e) {
   e.preventDefault();
   const form   = document.getElementById('orderForm');
@@ -1904,7 +1908,8 @@ async function handleFormSubmit(e) {
     return;
   }
 
-  // Loading state
+  // Save original button content and set loading state
+  const originalBtnContent = btn.innerHTML;
   btn.disabled = true;
   btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
   errBox.style.display = 'none';
@@ -1928,12 +1933,12 @@ async function handleFormSubmit(e) {
   } catch (err) {
     // ❌ Error — restore button and show message
     btn.disabled = false;
-    btn.innerHTML = 'Submit Order <i class="fa-solid fa-arrow-right"></i>';
+    btn.innerHTML = originalBtnContent;
 
     if (err.name === 'TypeError' || err.message.includes('fetch') || err.message.includes('network')) {
-      errMsg.innerHTML = 'Network error. <a href="https://wa.me/+923472061598" style="color:var(--blue);font-weight:600;text-decoration:underline;">Contact us on WhatsApp</a> to place your order directly.';
+      errMsg.innerHTML = 'Network error. <a href="https://wa.me/+923472061598" style="color:var(--blue);font-weight:600;text-decoration:underline;">Contact us on WhatsApp</a>.';
     } else {
-      errMsg.textContent = 'Something went wrong: ' + err.message + '. Please try again or message us on WhatsApp.';
+      errMsg.textContent = 'Something went wrong. Please try again or message us on WhatsApp.';
     }
     errBox.style.display = 'block';
     console.error('FormSubmit error:', err);
