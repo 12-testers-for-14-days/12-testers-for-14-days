@@ -1604,8 +1604,8 @@ footer { background:#060810; padding:72px 28px 36px; }
         <div class="order-form-wrap">
           <form action="https://formsubmit.co/nabeelsaleemshaikh@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="New 12 Testers · 14 Days Order">
-            <input type="hidden" name="_next" value="https://12testers14days.pro/thank-you">
-            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://12testers14days.pro/thank-you.html">
+            <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="Plan" id="fmPlan">
             <input type="hidden" name="Total" id="fmAmt">
             <div class="form-row-2">
@@ -1921,7 +1921,7 @@ async function handleFormSubmit(e) {
 
     if (res.ok && (json.success === 'true' || json.success === true)) {
       // ✅ Success — redirect to thank-you page
-      window.location.href = 'https://12testers14days.pro/thank-you';
+      window.location.href = 'https://12testers14days.pro/thank-you.html';
     } else {
       throw new Error(json.message || 'Submission failed');
     }
