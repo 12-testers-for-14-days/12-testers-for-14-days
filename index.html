@@ -1887,6 +1887,59 @@ function recalcBulk() {
   showOrder('Agency — '+v+' Apps', t);
 }
 
+     
+/* ── FORM SUBMIT via Fetch (AJAX) ── */
+async function handleFormSubmit(e) {
+  e.preventDefault();
+  const form   = document.getElementById('orderForm');
+  const btn    = document.getElementById('submitBtn');
+  const errBox = document.getElementById('formError');
+  const errMsg = document.getElementById('formErrorMsg');
+
+  // Validate plan selected
+  if (!document.getElementById('fmPlan').value) {
+    errMsg.textContent = 'Please select a plan above before submitting.';
+    errBox.style.display = 'block';
+    orderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return;
+  }
+
+  // Loading state
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+  errBox.style.display = 'none';
+
+  try {
+    const data = new FormData(form);
+    const res  = await fetch('https://formsubmit.co/ajax/ssbasemaker@gmail.com', {
+      method:  'POST',
+      headers: { 'Accept': 'application/json' },
+      body:    data
+    });
+
+    const json = await res.json();
+
+    if (res.ok && (json.success === 'true' || json.success === true)) {
+      // ✅ Success — redirect to thank-you page
+      window.location.href = 'https://12testers14days.pro/thank-you';
+    } else {
+      throw new Error(json.message || 'Submission failed');
+    }
+  } catch (err) {
+    // ❌ Error — restore button and show message
+    btn.disabled = false;
+    btn.innerHTML = 'Submit Order <i class="fa-solid fa-arrow-right"></i>';
+
+    if (err.name === 'TypeError' || err.message.includes('fetch') || err.message.includes('network')) {
+      errMsg.innerHTML = 'Network error. <a href="https://wa.me/+923472061598" style="color:var(--blue);font-weight:600;text-decoration:underline;">Contact us on WhatsApp</a> to place your order directly.';
+    } else {
+      errMsg.textContent = 'Something went wrong: ' + err.message + '. Please try again or message us on WhatsApp.';
+    }
+    errBox.style.display = 'block';
+    console.error('FormSubmit error:', err);
+  }
+}
+
 /* FAQ */
 function tfaq(el) {
   const item = el.parentElement;
