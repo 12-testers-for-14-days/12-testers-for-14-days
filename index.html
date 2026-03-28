@@ -1602,14 +1602,15 @@ footer { background:#060810; padding:72px 28px 36px; }
           </div>
         </div>
         <div class="order-form-wrap">
-          <form id="orderForm" onsubmit="handleFormSubmit(event)">
-  <input type="hidden" name="_subject" value="New 12 Testers · 14 Days Order">
-  <input type="hidden" name="_captcha" value="false"> <input type="hidden" name="Plan" id="fmPlan">
-  <input type="hidden" name="Total" id="fmAmt">
+          <form action="https://formsubmit.co/logicloom362@gmail.com" method="POST">
+  <input type="hidden" name="_next" value="https://12testers14days.pro/thank-you.html">
   
-  <div id="formError" style="display:none; background:#FEE2E2; border:1px solid #FCA5A5; color:#B91C1C; padding:12px 16px; border-radius:12px; margin-bottom:20px; font-size:.85rem; font-weight:600;">
-    <span id="formErrorMsg"></span>
-  </div>
+  <input type="hidden" name="_captcha" value="false"> 
+  
+  <input type="hidden" name="_subject" value="New 12 Testers Order"> 
+
+  <input type="hidden" name="Plan" id="fmPlan">
+  <input type="hidden" name="Total" id="fmAmt">
 
   <div class="form-row-2">
     <div class="f-group"><label>Full Name</label><input type="text" name="name" class="f-input" placeholder="John Smith" required></div>
@@ -1620,8 +1621,8 @@ footer { background:#060810; padding:72px 28px 36px; }
     <div class="f-group"><label>WhatsApp (optional)</label><input type="text" name="wa" class="f-input" placeholder="+1 234 567 8900"></div>
   </div>
   <div class="form-submit-row">
-    <div class="fsr-note"><i class="fa-solid fa-lock"></i> SSL encrypted · Secure payment · will send you payment link after submit</div>
-    <button type="submit" id="submitBtn" class="btn btn-primary btn-lg">
+    <div class="fsr-note"><i class="fa-solid fa-lock"></i> SSL encrypted · Secure payment</div>
+    <button type="submit" class="btn btn-primary btn-lg">
       Proceed to Payment <i class="fa-solid fa-lock"></i>
     </button>
   </div>
@@ -1904,7 +1905,7 @@ async function handleFormSubmit(e) {
   if (!document.getElementById('fmPlan').value) {
     errMsg.textContent = 'Please select a plan above before submitting.';
     errBox.style.display = 'block';
-    orderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById('orderSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
     return;
   }
 
@@ -1922,26 +1923,33 @@ async function handleFormSubmit(e) {
       body:    data
     });
 
-    const json = await res.json();
-
-    if (res.ok && (json.success === 'true' || json.success === true)) {
-      // ✅ Success — redirect to thank-you page
-      window.location.href = 'https://12testers14days.pro/thank-you.html';
+    // CHECK: Did FormSubmit return JSON or HTML?
+    const contentType = res.headers.get("content-type");
+    if (contentType && contentType.includes("application/json")) {
+        const json = await res.json();
+        
+        if (res.ok && (json.success === 'true' || json.success === true)) {
+          // ✅ Success — redirect to thank-you page
+          window.location.href = 'https://12testers14days.pro/thank-you.html';
+        } else {
+          throw new Error(json.message || 'FormSubmit rejected the submission.');
+        }
     } else {
-      throw new Error(json.message || 'Submission failed');
+        // ❌ FormSubmit returned HTML (Likely asking for Activation or Captcha)
+        const textResponse = await res.text();
+        console.error("FormSubmit returned HTML instead of JSON. You likely need to activate the email or disable Captcha.", textResponse);
+        throw new Error("Form needs activation. Please check the email inbox for an activation link from FormSubmit.");
     }
+
   } catch (err) {
     // ❌ Error — restore button and show message
     btn.disabled = false;
     btn.innerHTML = originalBtnContent;
 
-    if (err.name === 'TypeError' || err.message.includes('fetch') || err.message.includes('network')) {
-      errMsg.innerHTML = 'Network error. <a href="https://wa.me/+923392211021" style="color:var(--blue);font-weight:600;text-decoration:underline;">Contact us on WhatsApp</a>.';
-    } else {
-      errMsg.textContent = 'Something went wrong. Please try again or message us on WhatsApp.';
-    }
+    // Display the actual error so you know what's failing
+    errMsg.innerHTML = `Error: ${err.message} <br><br><a href="https://wa.me/+923392211021" style="color:#B91C1C;font-weight:600;text-decoration:underline;">Contact us on WhatsApp</a>.`;
     errBox.style.display = 'block';
-    console.error('FormSubmit error:', err);
+    console.error('Submission error:', err);
   }
 }
 
