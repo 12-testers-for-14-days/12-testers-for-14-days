@@ -1602,14 +1602,14 @@ footer { background:#060810; padding:72px 28px 36px; }
           </div>
         </div>
         <div class="order-form-wrap">
-          <form id="orderForm" onsubmit="handleFormSubmit(event)">
-  <input type="hidden" name="_subject" value="New 12 Testers · 14 Days Order">
-  <input type="hidden" name="_captcha" value="false"> <input type="hidden" name="Plan" id="fmPlan">
-  <input type="hidden" name="Total" id="fmAmt">
+
+<form action="https://formsubmit.co/iahmedsheraz@gmail.com" method="POST">
+  <input type="hidden" name="_next" value="https://12testers14days.pro/thank-you.html">
+  <input type="hidden" name="_captcha" value="false"> 
+  <input type="hidden" name="_subject" value="New 12 Testers · 14 Days Order"> 
   
-  <div id="formError" style="display:none; background:#FEE2E2; border:1px solid #FCA5A5; color:#B91C1C; padding:12px 16px; border-radius:12px; margin-bottom:20px; font-size:.85rem; font-weight:600;">
-    <span id="formErrorMsg"></span>
-  </div>
+  <input type="hidden" name="Plan" id="fmPlan">
+  <input type="hidden" name="Total" id="fmAmt">
 
   <div class="form-row-2">
     <div class="f-group"><label>Full Name</label><input type="text" name="name" class="f-input" placeholder="John Smith" required></div>
@@ -1620,12 +1620,13 @@ footer { background:#060810; padding:72px 28px 36px; }
     <div class="f-group"><label>WhatsApp (optional)</label><input type="text" name="wa" class="f-input" placeholder="+1 234 567 8900"></div>
   </div>
   <div class="form-submit-row">
-    <div class="fsr-note"><i class="fa-solid fa-lock"></i> SSL encrypted · Secure payment · will send you payment link after submit</div>
-    <button type="submit" id="submitBtn" class="btn btn-primary btn-lg">
+    <div class="fsr-note"><i class="fa-solid fa-lock"></i> SSL encrypted · Secure payment</div>
+    <button type="submit" class="btn btn-primary btn-lg">
       Proceed to Payment <i class="fa-solid fa-lock"></i>
     </button>
   </div>
 </form>
+           
         </div>
       </div>
     </div>
@@ -1892,58 +1893,7 @@ function recalcBulk() {
 
      
 /* ── FORM SUBMIT via Fetch (AJAX) ── */
-/* ── FORM SUBMIT via Fetch (AJAX) ── */
-async function handleFormSubmit(e) {
-  e.preventDefault();
-  const form   = document.getElementById('orderForm');
-  const btn    = document.getElementById('submitBtn');
-  const errBox = document.getElementById('formError');
-  const errMsg = document.getElementById('formErrorMsg');
 
-  // Validate plan selected
-  if (!document.getElementById('fmPlan').value) {
-    errMsg.textContent = 'Please select a plan above before submitting.';
-    errBox.style.display = 'block';
-    orderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    return;
-  }
-
-  // Save original button content and set loading state
-  const originalBtnContent = btn.innerHTML;
-  btn.disabled = true;
-  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
-  errBox.style.display = 'none';
-
-  try {
-    const data = new FormData(form);
-    const res  = await fetch('https://formsubmit.co/ajax/iahmedsheraz@gmail.com', {
-      method:  'POST',
-      headers: { 'Accept': 'application/json' },
-      body:    data
-    });
-
-    const json = await res.json();
-
-    if (res.ok && (json.success === 'true' || json.success === true)) {
-      // ✅ Success — redirect to thank-you page
-      window.location.href = 'https://12testers14days.pro/thank-you.html';
-    } else {
-      throw new Error(json.message || 'Submission failed');
-    }
-  } catch (err) {
-    // ❌ Error — restore button and show message
-    btn.disabled = false;
-    btn.innerHTML = originalBtnContent;
-
-    if (err.name === 'TypeError' || err.message.includes('fetch') || err.message.includes('network')) {
-      errMsg.innerHTML = 'Network error. <a href="https://wa.me/+923392211021" style="color:var(--blue);font-weight:600;text-decoration:underline;">Contact us on WhatsApp</a>.';
-    } else {
-      errMsg.textContent = 'Something went wrong. Please try again or message us on WhatsApp.';
-    }
-    errBox.style.display = 'block';
-    console.error('FormSubmit error:', err);
-  }
-}
 
 /* FAQ */
 function tfaq(el) {
