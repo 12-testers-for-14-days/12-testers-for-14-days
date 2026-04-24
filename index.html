@@ -1706,8 +1706,8 @@ footer { background:#060810; padding:72px 28px 36px; }
       <div class="pc-right">
         <h3 style="font-family: var(--display); font-size: 1.5rem; margin-bottom: 24px;">Complete your request</h3>
         
-        <form action="https://formsubmit.co/pinscribd@gmail.com" method="POST">
-          <input type="hidden" name="_next" value="https://12testers14days.pro/thank-you.html">
+<form id="orderForm">
+  <input type="hidden" name="_next" value="https://12testers14days.pro/thank-you.html">
           <input type="hidden" name="_captcha" value="false"> 
           <input type="hidden" name="_subject" value="New 12 Testers · 14 Days Order"> 
           
@@ -2129,6 +2129,36 @@ function tfaq(el) {
   document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
   if(!was) item.classList.add('open');
 }
+
+document.getElementById('orderForm').addEventListener('submit', function(e) {
+  e.preventDefault(); // Stops the page from refreshing
+
+  const form = e.target;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalText = submitBtn.innerHTML;
+
+  // Change button state to show it's working
+  submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
+  submitBtn.disabled = true;
+
+  // PASTE YOUR GOOGLE SCRIPT URL HERE:
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyFuu6yq3OObLykuznEpn3h_k91iinP2XWOEzurJdXzl8ZwpFYTIFCt9fznKCw3aohl/exec';
+
+  // This automatically grabs all inputs, including your hidden dynamic pricing ones!
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(response => {
+      // Success! Redirect the user to your thank you page
+      window.location.href = "https://12testers14days.pro/thank-you.html";
+    })
+    .catch(error => {
+      console.error('Error!', error.message);
+      alert("Something went wrong. Please try again or contact us via WhatsApp.");
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    });
+});
+
+  
 </script>
 </body>
 </html>
