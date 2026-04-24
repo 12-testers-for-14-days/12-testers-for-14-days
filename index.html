@@ -1131,6 +1131,16 @@ footer { background:#060810; padding:72px 28px 36px; }
   .bc-1,.bc-2,.bc-3,.bc-4,.bc-5,.bc-6,.bc-7 { grid-column:span 1; }
   .hbs-sep { display:none; }
 }
+
+@media (max-width: 768px) {
+  .nav-right {
+    display: none;
+  }
+  .pricing-container {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 @media (max-width:560px) {
   .hero { padding:70px 0 0; }
   .stats-grid { grid-template-columns:1fr 1fr; }
@@ -1637,132 +1647,173 @@ footer { background:#060810; padding:72px 28px 36px; }
   <div class="section-inner">
     <div class="pricing-head sr">
       <div class="sec-tag" style="display:flex;justify-content:center;"><span class="tag">Pricing</span></div>
-      <h2 class="sec-h" style="text-align:center;">Get 12 testers for 14 days. <span class="g">No surprises.</span></h2>
-      <p class="sec-p" style="text-align:center;">One-time payment per app to clear Google Play Console testing. Need details? View our <a href="https://12testers14days.pro/blog/12-testers-service-pricing-guide/" style="color:var(--blue);text-decoration:underline;">Pricing Guide</a>.</p>
+      <h2 class="sec-h" style="text-align:center;">Simple pricing. <span class="g">No surprises.</span></h2>
+      <p class="sec-p" style="text-align:center;">Calculate your cost and request testing instantly.</p>
     </div>
-    <div class="price-cards">
 
-    <div class="price-card sr" onclick="choosePlan(1,39,this)">
-    <span class="pc-badge neutral">Starter</span>
-    <div class="pc-name">Single App</div>
-    <div class="pc-desc">Perfect for indie developers</div>
-    <div class="pc-price"><span class="cur">$</span><span class="amt">39</span><span class="per">/ one-time</span></div>
-    <div class="pc-tagline">For a single app — full testing cycle</div>
-    <div class="pc-divider"></div>
-    <div class="pc-feats">
-        <div class="pc-feat"><i class="fa-solid fa-circle-check"></i> 12 Verified Human Testers</div>
-        <div class="pc-feat"><i class="fa-solid fa-circle-check"></i> 14 Continuous Days Active</div>
-        <div class="pc-feat"><i class="fa-solid fa-circle-check"></i> Real Android Devices Only</div>
-        <div class="pc-feat"><i class="fa-solid fa-circle-check"></i> Production Approval Guarantee</div>
-        <div class="pc-feat"><i class="fa-solid fa-circle-check"></i> Email Support</div>
-    </div>
-    <button class="btn btn-ghost" style="width:100%;padding:14px;border-radius:12px;font-size:.9rem;">
-        Get Started <i class="fa-solid fa-arrow-right"></i>
-    </button>
-</div>
+    <style>
+      .pricing-container {
+        display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+        background: #fff; border-radius: var(--r3); border: 1px solid var(--border);
+        box-shadow: var(--sh2); overflow: hidden; margin-top: 56px;
+      }
+      .pc-left { background: var(--bg2); padding: 40px; border-right: 1px solid var(--border); }
+      .pc-right { padding: 40px; }
+      .p-tabs { display: flex; background: var(--bg3); border-radius: 10px; padding: 4px; margin-bottom: 28px; }
+      .p-tab {
+        flex: 1; text-align: center; padding: 12px; font-size: .85rem; font-weight: 700;
+        color: var(--ink3); cursor: pointer; border-radius: 8px; transition: .2s;
+      }
+      .p-tab.active { background: #fff; color: var(--blue); box-shadow: var(--sh1); }
+      .qty-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+      .qty-btn {
+        width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+        background: #fff; border: 1.5px solid var(--border2); border-radius: 10px;
+        font-family: var(--display); font-size: 1.1rem; font-weight: 700; color: var(--ink2);
+        cursor: pointer; transition: all .2s;
+      }
+      .qty-btn:hover { border-color: var(--blue2); color: var(--blue); }
+      .qty-btn.active { background: var(--blue); color: #fff; border-color: var(--blue); box-shadow: 0 4px 12px rgba(26,86,255,0.25); }
+      .calc-wrap { border-top: 1px solid var(--border); padding-top: 24px; }
+      .c-label { font-size: .75rem; font-weight: 700; color: var(--ink3); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+      .c-price-row { display: flex; align-items: baseline; gap: 12px; }
+      .c-total { font-family: var(--display); font-size: 3rem; font-weight: 800; color: var(--ink); line-height: 1; }
+      .c-strike { font-size: 1.1rem; color: var(--ink4); text-decoration: line-through; font-weight: 600; display: none; }
+      .c-save { display: inline-block; background: #D1FAE5; color: #059669; font-size: .75rem; font-weight: 700; padding: 4px 10px; border-radius: 50px; margin-top: 12px; display: none; }
+    </style>
 
-<div class="price-card featured sr d2" onclick="choosePlan(2,29,this)">
-    <span class="pc-badge blue">Most Popular</span>
-    <div class="pc-name">Growth Pack</div>
-    <div class="pc-desc">Best for active developers</div>
-    <div class="pc-price"><span class="cur">$</span><span class="amt">29</span><span class="per">/ app</span></div>
-    <div class="pc-tagline deal">For 2 to 5 apps · Save $20 vs Single</div>
-    <div class="pc-divider"></div>
-    <div class="pc-feats">
-        <div class="pc-feat"><i class="fa-solid fa-circle-check"></i> Up to 5 Apps Supported</div>
-        <div class="pc-feat"><i class="fa-solid fa-circle-check"></i> 12 Testers for Each App</div>
-        <div class="pc-feat"><i class="fa-solid fa-circle-check"></i> Priority Tester Assignment</div>
-        <div class="pc-feat"><i class="fa-solid fa-circle-check"></i> Approval Guarantee on All</div>
-        <div class="pc-feat"><i class="fa-solid fa-circle-check"></i> Priority WhatsApp Support</div>
-    </div>
-    <button class="btn btn-primary" style="width:100%;padding:14px;border-radius:12px;font-size:.9rem;">
-        Get Started <i class="fa-solid fa-arrow-right"></i>
-    </button>
-</div>
-
-<div class="price-card sr d4" onclick="chooseAgency(this)">
-    <span class="pc-badge green">Agency</span>
-    <div class="pc-name">Bulk / Agency</div>
-    <div class="pc-desc">For studios & agencies</div>
-    <div class="pc-price"><span class="cur">$</span><span class="amt">19</span><span class="per">/ app</span></div>
-    <div class="pc-tagline">6+ apps — lowest per-app rate</div>
-    <div class="pc-divider"></div>
-    <div class="pc-feats">
-        <div class="pc-feat"><i class="fa-solid fa-circle-check"></i> 6 or More Apps</div>
-        <div class="pc-feat"><i class="fa-solid fa-circle-check"></i> Dedicated Account Manager</div>
-        <div class="pc-feat"><i class="fa-solid fa-circle-check"></i> Parallel Testing Supported</div>
-        <div class="pc-feat"><i class="fa-solid fa-circle-check"></i> Custom Reporting Package</div>
-        <div class="pc-feat"><i class="fa-solid fa-circle-check"></i> Priority Direct Support Line</div>
-    </div>
-    <div class="bulk-box" id="bulkBox">
-        <label>How many apps?</label>
-        <div class="bx-row">
-            <input type="number" class="bx-inp" id="bxInp" value="6" min="6" onclick="event.stopPropagation()" oninput="recalcBulk()">
-            <span style="font-size:.9rem;color:var(--ink3);">apps =</span>
-            <div class="bx-total">$<span id="bxOut">114</span></div>
+    <div class="pricing-container sr d2">
+      <div class="pc-left">
+        <div class="p-tabs">
+          <div class="p-tab active" id="tabApp" onclick="setMode('app')">By App</div>
+          <div class="p-tab" id="tabTester" onclick="setMode('tester')">By Tester</div>
         </div>
-    </div>
-    <button class="btn btn-ghost" style="width:100%;padding:14px;border-radius:12px;font-size:.9rem;margin-top:12px;">
-        Get Started <i class="fa-solid fa-arrow-right"></i>
-    </button>
-</div>
-        <div class="bulk-box" id="bulkBox">
-          <label>How many apps?</label>
-          <div class="bx-row">
-            <input type="number" class="bx-inp" id="bxInp" value="3" min="3" onclick="event.stopPropagation()" oninput="recalcBulk()">
-            <span style="font-size:.9rem;color:var(--ink3);">apps =</span>
-            <div class="bx-total">$<span id="bxOut">45</span></div>
+
+        <h3 id="qtyTitle" style="font-family: var(--display); font-size: 1.25rem; margin-bottom: 16px;">How many apps do you have?</h3>
+        <div class="qty-grid" id="qtyGrid">
           </div>
+
+        <div class="calc-wrap">
+          <div class="c-label">Total Price</div>
+          <div class="c-price-row">
+            <div class="c-total" id="cTotal">$31</div>
+            <div class="c-strike" id="cStrike">$31</div>
+          </div>
+          <div class="c-save" id="cSave">You save $0!</div>
         </div>
-        
       </div>
 
-    </div>
+      <div class="pc-right">
+        <h3 style="font-family: var(--display); font-size: 1.5rem; margin-bottom: 24px;">Complete your request</h3>
+        
+        <form action="https://formsubmit.co/pinscribd@gmail.com" method="POST">
+          <input type="hidden" name="_next" value="https://12testers14days.pro/thank-you.html">
+          <input type="hidden" name="_captcha" value="false"> 
+          <input type="hidden" name="_subject" value="New 12 Testers · 14 Days Order"> 
+          
+          <input type="hidden" name="Order_Type" id="fmType" value="App">
+          <input type="hidden" name="Quantity" id="fmQty" value="1">
+          <input type="hidden" name="Total_Price" id="fmPrice" value="$31">
 
-    <div class="order-section" id="orderSection">
-      <div class="order-shell">
-        <div class="order-head-bar">
-          <div class="oh-text">
-            <div class="oh-label">Completing Order</div>
-            <div class="oh-heading">Just a few details →</div>
+          <div class="f-group"><label>Full Name</label><input type="text" name="name" class="f-input" placeholder="John Smith" required></div>
+          <div class="f-group"><label>Email</label><input type="email" name="email" class="f-input" placeholder="you@company.com" required></div>
+          <div class="f-group"><label>WhatsApp</label><input type="text" name="wa" class="f-input" placeholder="+1 234 567 8900" required></div>
+          <div class="f-group"><label>App Link or Package Name</label><input type="text" name="app" class="f-input" placeholder="com.yourapp or Play Store URL" required></div>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 12px;">
+            Proceed to Payment <i class="fa-solid fa-lock"></i>
+          </button>
+          
+          <div style="text-align: center; font-size: .75rem; color: var(--ink3); margin-top: 16px;">
+            <i class="fa-solid fa-lock" style="color: var(--green);"></i> SSL encrypted · Secure payment
           </div>
-          <div class="oh-summary">
-            <div class="ohs-plan">Selected Plan</div>
-            <div class="ohs-name" id="oName">—</div>
-            <div class="ohs-price" id="oAmt">$—</div>
-          </div>
-        </div>
-        <div class="order-form-wrap">
-
-<form action="https://formsubmit.co/pinscribd@gmail.com" method="POST">
-  <input type="hidden" name="_next" value="https://12testers14days.pro/thank-you.html">
-  <input type="hidden" name="_captcha" value="false"> 
-  <input type="hidden" name="_subject" value="New 12 Testers · 14 Days Order"> 
-  
-  <input type="hidden" name="Plan" id="fmPlan">
-  <input type="hidden" name="Total" id="fmAmt">
-
-  <div class="form-row-2">
-    <div class="f-group"><label>Full Name</label><input type="text" name="name" class="f-input" placeholder="John Smith" required></div>
-    <div class="f-group"><label>Email</label><input type="email" name="email" class="f-input" placeholder="you@company.com" required></div>
-  </div>
-  <div class="form-row-2">
-    <div class="f-group"><label>App Link or Package Name</label><input type="text" name="app" class="f-input" placeholder="com.yourapp or Play Store URL" required></div>
-    <div class="f-group"><label>WhatsApp (optional)</label><input type="text" name="wa" class="f-input" placeholder="+1 234 567 8900"></div>
-  </div>
-  <div class="form-submit-row">
-    <div class="fsr-note"><i class="fa-solid fa-lock"></i> SSL encrypted · Secure payment</div>
-    <button type="submit" class="btn btn-primary btn-lg">
-      Proceed to Payment <i class="fa-solid fa-lock"></i>
-    </button>
-  </div>
-</form>
-            
-        </div>
+        </form>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  const appPricing = {1:31, 2:58, 3:81, 4:100, 5:115, 6:126, 7:140, 8:144, 9:153, 10:160};
+  const baseAppPrice = 31;
+  const testerPrice = 5;
+
+  let state = {
+    mode: 'app',
+    qty: 1
+  };
+
+  function setMode(mode) {
+    state.mode = mode;
+    state.qty = 1; // Reset to 1 on switch
+    
+    document.getElementById('tabApp').classList.toggle('active', mode === 'app');
+    document.getElementById('tabTester').classList.toggle('active', mode === 'tester');
+    document.getElementById('qtyTitle').textContent = mode === 'app' ? 'How many apps do you have?' : 'How many testers do you need?';
+    
+    renderGrid();
+    updateCalc();
+  }
+
+  function setQty(q) {
+    state.qty = q;
+    renderGrid();
+    updateCalc();
+  }
+
+  function renderGrid() {
+    const grid = document.getElementById('qtyGrid');
+    grid.innerHTML = '';
+    for(let i = 1; i <= 10; i++) {
+      const btn = document.createElement('div');
+      btn.className = `qty-btn ${state.qty === i ? 'active' : ''}`;
+      btn.textContent = i;
+      btn.onclick = () => setQty(i);
+      grid.appendChild(btn);
+    }
+  }
+
+  function updateCalc() {
+    let total = 0;
+    let baseTotal = 0;
+    let savings = 0;
+
+    if (state.mode === 'app') {
+      total = appPricing[state.qty];
+      baseTotal = baseAppPrice * state.qty;
+      savings = baseTotal - total;
+    } else {
+      total = testerPrice * state.qty;
+      baseTotal = total; 
+      savings = 0;
+    }
+
+    // Update UI
+    document.getElementById('cTotal').textContent = `$${total}`;
+    
+    const strikeEl = document.getElementById('cStrike');
+    const saveEl = document.getElementById('cSave');
+    
+    if (savings > 0) {
+      strikeEl.textContent = `$${baseTotal}`;
+      strikeEl.style.display = 'block';
+      saveEl.textContent = `You save $${savings}!`;
+      saveEl.style.display = 'inline-block';
+    } else {
+      strikeEl.style.display = 'none';
+      saveEl.style.display = 'none';
+    }
+
+    // Update Form Inputs
+    document.getElementById('fmType').value = state.mode === 'app' ? 'App Package' : 'Tester Package';
+    document.getElementById('fmQty').value = state.qty;
+    document.getElementById('fmPrice').value = `$${total}`;
+  }
+
+  // Init
+  renderGrid();
+  updateCalc();
+</script>
 
 <section class="section testi-bg" id="reviews">
   <div class="section-inner">
