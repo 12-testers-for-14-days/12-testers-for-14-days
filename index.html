@@ -1128,39 +1128,7 @@ footer { background:#060810; padding:72px 28px 36px; }
 </head>
 <body>
 
-<!-- EXIT INTENT OVERLAY -->
-<div id="exitOverlay">
-  <div class="exit-modal">
-    <div class="exit-top">
-      <button class="exit-close" onclick="closeExit()" aria-label="Close">&times;</button>
-      <div class="exit-badge">🚨 Wait! Limited Time Offer</div>
-      <div class="exit-h">
-        <span>40% OFF</span>
-        Your First Order
-      </div>
-      <p class="exit-subh">Use code below. Expires in 10 minutes.</p>
-    </div>
-    <div class="exit-body">
-      <div class="exit-timer-row">
-        <span class="exit-timer-label">Offer expires in:</span>
-        <div class="exit-clock">
-          <span id="exitMins">10</span>
-          <span class="exit-clock-sep">:</span>
-          <span id="exitSecs">00</span>
-        </div>
-      </div>
-      <div class="exit-code-box">
-        <div class="exit-code-label">Your discount code</div>
-        <div class="exit-code" id="exitCode">LAUNCH40</div>
-      </div>
-      <a href="#pricing" onclick="closeExit()" class="btn btn-primary btn-xl" style="width:100%;justify-content:center;">
-        Claim 40% Off Now <i class="fa-solid fa-arrow-right"></i>
-      </a>
-      <p class="exit-terms">Applied at checkout. Single use per order. Valid for app packages only.</p>
-      <span class="exit-no" onclick="closeExit()">No thanks, I'll pay full price</span>
-    </div>
-  </div>
-</div>
+
 
 <div class="topbar">
 🚀 New: Agency bundle — test 3+ apps on your closed track for <strong>$15/app</strong>. <a href="#pricing">See plans →</a>
@@ -1760,7 +1728,6 @@ footer { background:#060810; padding:72px 28px 36px; }
           <div class="f-group"><label>Email</label><input type="email" name="email" class="f-input" placeholder="you@company.com" required></div>
           <div class="f-group"><label>WhatsApp</label><input type="text" name="wa" class="f-input" placeholder="+1 234 567 8900" required></div>
           <div class="f-group"><label>App Link or Package Name</label><input type="text" name="app" class="f-input" placeholder="com.yourapp or Play Store URL" required></div>
-          <div class="f-group"><label>Discount Code (optional)</label><input type="text" name="discount_code" class="f-input" placeholder="e.g. LAUNCH40" id="discountCodeInput"></div>
 
           <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 12px;">
             Proceed to Payment <i class="fa-solid fa-lock"></i>
