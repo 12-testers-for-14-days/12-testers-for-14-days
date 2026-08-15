@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing | 12Testers14Days</title>
+<meta name="description" content="Pricing for 12 testers for 14 days">
+<link rel="canonical" href="https://12testers14days.pro/pricing.html">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: { colors: {
+  ink:'#10151C', mist:'#5B6472', line:'#E4E7EC', papersoft:'#F6F7F9',
+  verified:{50:'#E6F7F0',500:'#0E9F6E',600:'#0B7F58'},
+  flag:{50:'#FBF0E4',500:'#B45309'},
+  deep:{DEFAULT:'#0B1524',soft:'#16233A'},
+  danger:{50:'#FEF2F2', 500:'#EF4444'}
+}, fontFamily: { display:['Space Grotesk','sans-serif'], sans:['Inter','sans-serif'], mono:['IBM Plex Mono','monospace'] } } } }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF; --paper-soft:#F6F7F9; --ink:#10151C; --mist:#5B6472; --mist-soft:#8A93A1;
+  --line:#E4E7EC; --line-soft:#EEF0F3; --verified:#0E9F6E; --verified-dark:#0B7F58; --verified-soft:#E6F7F0;
+  --flag:#B45309; --flag-soft:#FBF0E4; --deep:#0B1524; --deep-soft:#16233A; --deep-line:#26344C;
+  --radius-sm:8px; --radius-md:12px; --radius-lg:18px;
+  --shadow-card:0 1px 2px rgba(16,21,28,0.04), 0 8px 24px -12px rgba(16,21,28,0.10);
+  --shadow-lift:0 12px 32px -12px rgba(16,21,28,0.22);
+}
+html{scroll-behavior:smooth;}
+body{ font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--paper); -webkit-font-smoothing:antialiased; }
+.font-display{font-family:'Space Grotesk',sans-serif;}
+.font-mono{font-family:'IBM Plex Mono',monospace;}
+::selection{background:var(--verified-soft); color:var(--verified-dark);}
+a{ -webkit-tap-highlight-color: transparent; }
+:focus-visible{ outline: 2px solid var(--verified); outline-offset: 2px; border-radius: 4px; }
+.eyebrow{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--verified-dark); display:inline-flex; align-items:center; gap:8px; }
+.eyebrow .dot{ width:6px;height:6px;border-radius:999px;background:var(--verified); box-shadow:0 0 0 3px var(--verified-soft); }
+.eyebrow.on-dark{color:#8FE3C4;}
+.eyebrow.on-dark .dot{background:#3EDFA0; box-shadow:0 0 0 3px rgba(62,223,160,0.18);}
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600; font-size:14.5px; padding:13px 22px; border-radius:var(--radius-sm); transition:transform .15s ease, background .15s ease, box-shadow .15s ease, border-color .15s ease; white-space:nowrap; }
+.btn-primary{ background:var(--ink); color:#fff; border:1px solid var(--ink); }
+.btn-primary:hover{ background:var(--verified-dark); border-color:var(--verified-dark); transform:translateY(-1px); }
+.btn-accent{ background:var(--verified); color:#fff; border:1px solid var(--verified); box-shadow:0 10px 24px -10px rgba(14,159,110,0.55); }
+.btn-accent:hover{ background:var(--verified-dark); border-color:var(--verified-dark); transform:translateY(-1px); }
+.btn-outline{ background:transparent; color:var(--ink); border:1px solid var(--line); }
+.btn-outline:hover{ border-color:var(--ink); }
+.btn-block{ width:100%; }
+.btn-lg{ padding:16px 28px; font-size:16px; }
+.btn-sm{ padding:9px 16px; font-size:13px; }
+.site-nav{ position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+.nav-link{ font-size:14.5px; font-weight:500; color:var(--ink); opacity:0.78; transition:opacity .15s ease; }
+.nav-link:hover, .nav-link.active{opacity:1;}
+.nav-drop{ position:relative; }
+.nav-drop-panel{ position:absolute; top:calc(100% + 14px); left:50%; transform:translateX(-50%) translateY(4px); min-width:270px; background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); box-shadow:var(--shadow-lift); padding:8px; opacity:0; visibility:hidden; transition:opacity .15s ease, transform .15s ease, visibility .15s ease; }
+.nav-drop:hover .nav-drop-panel, .nav-drop:focus-within .nav-drop-panel{ opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+.nav-drop-item{ display:flex; flex-direction:column; gap:2px; padding:10px 12px; border-radius:8px; transition:background .15s ease; }
+.nav-drop-item:hover{ background:var(--paper-soft); }
+.nav-drop-item .title{ font-size:14px; font-weight:600; color:var(--ink); }
+.nav-drop-item .desc{ font-size:12.5px; color:var(--mist); }
+.mobile-panel{ max-height:0; overflow:hidden; transition:max-height .3s ease; }
+.mobile-panel.open{ max-height:900px; }
+.mobile-accordion[open] > .mobile-accordion-body{ display:block; }
+.mobile-accordion > summary{ list-style:none; cursor:pointer; }
+.mobile-accordion > summary::-webkit-details-marker{ display:none; }
+.card{ background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); box-shadow:var(--shadow-card); }
+.card-soft{ background:var(--paper-soft); border:1px solid var(--line); border-radius:var(--radius-lg); }
+.bg-grid{ background-image: linear-gradient(to right, var(--line-soft) 1px, transparent 1px), linear-gradient(to bottom, var(--line-soft) 1px, transparent 1px); background-size: 40px 40px; }
+.reveal{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }
+.reveal.is-visible{ opacity:1; transform:translateY(0); }
+/* Input forms */
+.field-label{ display:block; font-size:13px; font-weight:600; color:var(--ink); margin-bottom:6px; }
+.input{ width:100%; border:1px solid var(--line); border-radius:var(--radius-sm); padding:12px 14px; font-size:14.5px; color:var(--ink); background:#fff; transition:border-color .15s ease, box-shadow .15s ease; }
+.input:focus{ border-color:var(--verified); box-shadow:0 0 0 4px var(--verified-soft); outline:none; }
+.input::placeholder{ color:var(--mist-soft); }
+.choice-card{ border:1px solid var(--line); border-radius:var(--radius-md); padding:16px; cursor:pointer; transition:border-color .15s ease, background .15s ease; }
+.choice-card:hover{ border-color:var(--mist-soft); }
+.choice-card.is-selected{ border-color:var(--verified); background:var(--verified-soft); }
+.progress-dot{ width:9px; height:9px; border-radius:999px; background:var(--line); transition: background .3s; }
+.progress-dot.is-active{ background:var(--verified); }
+.progress-dot.is-done{ background:var(--ink); }
+/* Prose Styles */
+.prose h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.875rem; font-weight: 700; margin-top: 3rem; margin-bottom: 1.25rem; color: var(--ink); }
+.prose h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--ink); }
+.prose p { margin-bottom: 1.25rem; line-height: 1.75; color: var(--mist); }
+.prose ul { list-style-type: none; padding-left: 0; margin-bottom: 1.5rem; }
+.prose ul li { position: relative; padding-left: 1.75rem; margin-bottom: 0.75rem; color: var(--mist); }
+.prose ul li::before { content: '→'; position: absolute; left: 0; color: var(--verified-dark); font-weight: bold; }
+.prose ol { list-style-type: decimal; padding-left: 1.25rem; margin-bottom: 1.5rem; color: var(--mist); }
+.prose ol li { margin-bottom: 0.75rem; padding-left: 0.5rem; }
+.prose dl { margin-bottom: 1.5rem; }
+.prose dt { font-weight: 700; color: var(--ink); margin-top: 1rem; }
+.prose dd { margin-left: 1.5rem; color: var(--mist); margin-bottom: 0.5rem; }
+.prose a { color: var(--verified-dark); text-decoration: underline; }
+.prose a:hover { color: var(--ink); }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Pricing - 12Testers14Days",
+  "description": "Transparent pricing for Google Play closed testing services. 12 testers for $39, guaranteed production access."
+}
+</script>
+</head>
+<body class="bg-paper text-ink">
+
+<header class="site-nav">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5">
+      <span class="w-8 h-8 rounded-md bg-ink flex items-center justify-center">
+        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+      </span>
+      <span class="font-display font-semibold text-lg tracking-tight">12Testers<span class="text-verified-500">14Days</span></span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8">
+      <a href="index.html" class="nav-link">Home</a>
+      <div class="nav-drop">
+        <button class="nav-link flex items-center gap-1">Services <svg class="w-3.5 h-3.5 mt-px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+        <div class="nav-drop-panel">
+          <a href="services.html" class="nav-drop-item"><span class="title">12 Testers Plan</span><span class="desc">Guaranteed production approval</span></a>
+          <a href="app-rejected.html" class="nav-drop-item"><span class="title">App Rejection Recovery</span><span class="desc">Fix "Insufficient Testing" errors</span></a>
+          <a href="for-agencies.html" class="nav-drop-item"><span class="title">For Agencies</span><span class="desc">Bulk testing packages</span></a>
+        </div>
+      </div>
+      <a href="how-it-works.html" class="nav-link">How it Works</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <div class="nav-drop">
+        <button class="nav-link flex items-center gap-1">Resources <svg class="w-3.5 h-3.5 mt-px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+        <div class="nav-drop-panel">
+          <a href="guides/google-play-12-testers-14-days-rule.html" class="nav-drop-item"><span class="title">14-Day Rule Guide</span><span class="desc">Everything you need to know</span></a>
+          <a href="blog/index.html" class="nav-drop-item"><span class="title">Testing Blog</span><span class="desc">Tips & Google policy updates</span></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="order.html" class="btn btn-accent btn-sm">Get Testers Now</a>
+    </div>
+
+    <button id="mobile-nav-toggle" class="lg:hidden p-2 -mr-2">
+      <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+  </div>
+  <div id="mobile-nav-panel" class="mobile-panel lg:hidden border-t border-line bg-white">
+    <div class="px-5 py-4 space-y-1">
+      <a href="index.html" class="block py-2.5 font-medium">Home</a>
+      <a href="services.html" class="block py-2.5 font-medium">Services</a>
+      <a href="app-rejected.html" class="block py-2.5 font-medium">App Rejection Recovery</a>
+      <a href="how-it-works.html" class="block py-2.5 font-medium">How it Works</a>
+      <a href="pricing.html" class="block py-2.5 font-medium">Pricing</a>
+      <a href="guides/google-play-12-testers-14-days-rule.html" class="block py-2.5 font-medium">Guides</a>
+      <a href="contact.html" class="block py-2.5 font-medium">Contact</a>
+      <a href="order.html" class="btn btn-accent btn-block mt-3">Get Testers Now</a>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="bg-deep text-white pt-16 pb-24 lg:pt-24 border-b border-deep-line bg-grid">
+    <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center reveal">
+      <span class="eyebrow on-dark"><span class="dot"></span>SIMPLE PRICING</span>
+      <h1 class="font-display font-semibold text-4xl sm:text-5xl lg:text-6xl mt-5 mb-6 text-balance text-white">One price. A real delivery guarantee.</h1>
+      <p class="text-lg text-white/70 leading-relaxed mb-8 max-w-2xl mx-auto">We provide exactly what Google asks for: real, opted-in testers for 14 continuous days. Pass the testing phase easily with our guided feedback report.</p>
+    </div>
+  </section>
+
+  <section class="py-16 px-5 sm:px-8 bg-paper -mt-16 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12 reveal">
+        
+        <!-- Starter Plan -->
+        <div class="card p-10 flex flex-col hover:border-verified-500 transition-colors">
+          <div class="text-sm text-mist mb-1 font-bold tracking-widest uppercase">Starter</div>
+          <div class="font-display text-5xl font-bold mb-6 text-ink">$39</div>
+          <p class="text-mist mb-8">Perfect for indie developers launching their first app. Meets all minimum Google Play requirements.</p>
+          <ul class="space-y-4 text-sm text-ink flex-1 mb-8">
+            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-verified-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <strong>12 verified testers</strong></li>
+            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-verified-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 14-day managed cycle</li>
+            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-verified-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Standard device diversity</li>
+            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-verified-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Feedback summary included</li>
+            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-verified-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 100% Free Retest Guarantee</li>
+          </ul>
+          <a href="order.html" class="btn btn-outline btn-block btn-lg">Choose Starter</a>
+        </div>
+        
+        <!-- Buffer Plan -->
+        <div class="card p-10 flex flex-col border-2 border-verified-500 shadow-xl relative overflow-hidden transform sm:scale-105">
+          <div class="absolute top-0 right-0 bg-verified-500 text-white text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-bl-lg">Most Popular</div>
+          <div class="text-sm text-verified-600 mb-1 font-bold tracking-widest uppercase">Legacy Buffer</div>
+          <div class="font-display text-5xl font-bold mb-6 text-ink">$69</div>
+          <p class="text-mist mb-8">Provides overwhelming engagement data. Ideal for complex apps or those recovering from a previous rejection.</p>
+          <ul class="space-y-4 text-sm text-ink flex-1 mb-8">
+            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-verified-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <strong>20 verified testers</strong></li>
+            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-verified-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 16-day managed cycle (Buffer)</li>
+            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-verified-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Maximum OS & device mix</li>
+            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-verified-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Detailed UI/UX feedback report</li>
+            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-verified-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Priority Backfill Guarantee</li>
+          </ul>
+          <a href="order.html" class="btn btn-accent btn-block btn-lg shadow-lg">Choose Legacy Buffer</a>
+        </div>
+      </div>
+      
+      <div class="mt-20 max-w-3xl mx-auto text-center reveal">
+        <h3 class="font-display font-bold text-2xl mb-4">Building multiple apps?</h3>
+        <p class="text-mist mb-6">We offer bulk discounts and white-label dashboards for app development agencies.</p>
+        <a href="for-agencies.html" class="text-verified-600 font-semibold hover:underline">View Agency Pricing &rarr;</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="bg-papersoft border-t border-line pt-20 pb-10 px-5 sm:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-10 mb-16">
+      <div class="col-span-2">
+        <div class="flex items-center gap-2.5 mb-5">
+          <span class="w-8 h-8 rounded-md bg-ink flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+          </span>
+          <span class="font-display font-semibold text-lg">12Testers<span class="text-verified-500">14Days</span></span>
+        </div>
+        <p class="text-mist text-sm mb-6 max-w-xs leading-relaxed">The #1 Done-For-You QA testing service designed specifically to help indie developers and agencies pass Google Play's 14-day closed testing requirement.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4 text-sm font-display tracking-wide">SERVICES</h4>
+        <ul class="space-y-3 text-sm text-mist">
+          <li><a href="services.html" class="hover:text-verified-600 transition">Buy 12 Testers</a></li>
+          <li><a href="pricing.html" class="hover:text-verified-600 transition">Pricing Plans</a></li>
+          <li><a href="app-rejected.html" class="hover:text-verified-600 transition">App Recovery</a></li>
+          <li><a href="for-agencies.html" class="hover:text-verified-600 transition">For Agencies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4 text-sm font-display tracking-wide">RESOURCES</h4>
+        <ul class="space-y-3 text-sm text-mist">
+          <li><a href="guides/google-play-12-testers-14-days-rule.html" class="hover:text-verified-600 transition">14-Day Rule Guide</a></li>
+          <li><a href="blog/index.html" class="hover:text-verified-600 transition">Testing Blog</a></li>
+          <li><a href="how-it-works.html" class="hover:text-verified-600 transition">How it works</a></li>
+          <li><a href="contact.html" class="hover:text-verified-600 transition">Contact Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4 text-sm font-display tracking-wide">LEGAL</h4>
+        <ul class="space-y-3 text-sm text-mist">
+          <li><a href="terms-of-service.html" class="hover:text-verified-600 transition">Terms of Service</a></li>
+          <li><a href="privacy-policy.html" class="hover:text-verified-600 transition">Privacy Policy</a></li>
+          <li><a href="refund-policy.html" class="hover:text-verified-600 transition">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-line text-center md:flex md:justify-between items-center gap-6">
+      <p class="text-sm text-mist-soft">© 2026 12Testers14Days.pro. All rights reserved.</p>
+      <p class="text-xs text-mist-soft mt-2 md:mt-0 max-w-md md:text-right">Disclaimer: We are an independent QA testing service and are not affiliated, associated, authorized, endorsed by, or in any way officially connected with Google LLC or Google Play.</p>
+    </div>
+  </div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('mobile-nav-toggle');
+  const panel = document.getElementById('mobile-nav-panel');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+  if (toggle && panel) {
+    toggle.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      if (iconOpen && iconClose) { iconOpen.classList.toggle('hidden', isOpen); iconClose.classList.toggle('hidden', !isOpen); }
+    });
+  }
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach((el) => io.observe(el));
+  } else { revealEls.forEach((el) => el.classList.add('is-visible')); }
+});
+</script>
+</body>
+</html>

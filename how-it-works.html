@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Our 14-Day Testing Process Works | 12Testers14Days</title>
+<meta name="description" content="Learn exactly how our done-for-you Google Play closed testing service works. From email upload to daily engagement and production approval.">
+<link rel="canonical" href="https://12testers14days.pro/how-it-works.html">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: { colors: {
+  ink:'#10151C', mist:'#5B6472', line:'#E4E7EC', papersoft:'#F6F7F9',
+  verified:{50:'#E6F7F0',500:'#0E9F6E',600:'#0B7F58'},
+  flag:{50:'#FBF0E4',500:'#B45309'},
+  deep:{DEFAULT:'#0B1524',soft:'#16233A'},
+  danger:{50:'#FEF2F2', 500:'#EF4444'}
+}, fontFamily: { display:['Space Grotesk','sans-serif'], sans:['Inter','sans-serif'], mono:['IBM Plex Mono','monospace'] } } } }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF; --paper-soft:#F6F7F9; --ink:#10151C; --mist:#5B6472; --mist-soft:#8A93A1;
+  --line:#E4E7EC; --line-soft:#EEF0F3; --verified:#0E9F6E; --verified-dark:#0B7F58; --verified-soft:#E6F7F0;
+  --flag:#B45309; --flag-soft:#FBF0E4; --deep:#0B1524; --deep-soft:#16233A; --deep-line:#26344C;
+  --radius-sm:8px; --radius-md:12px; --radius-lg:18px;
+  --shadow-card:0 1px 2px rgba(16,21,28,0.04), 0 8px 24px -12px rgba(16,21,28,0.10);
+  --shadow-lift:0 12px 32px -12px rgba(16,21,28,0.22);
+}
+html{scroll-behavior:smooth;}
+body{ font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--paper); -webkit-font-smoothing:antialiased; }
+.font-display{font-family:'Space Grotesk',sans-serif;}
+.font-mono{font-family:'IBM Plex Mono',monospace;}
+::selection{background:var(--verified-soft); color:var(--verified-dark);}
+a{ -webkit-tap-highlight-color: transparent; }
+:focus-visible{ outline: 2px solid var(--verified); outline-offset: 2px; border-radius: 4px; }
+.eyebrow{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--verified-dark); display:inline-flex; align-items:center; gap:8px; }
+.eyebrow .dot{ width:6px;height:6px;border-radius:999px;background:var(--verified); box-shadow:0 0 0 3px var(--verified-soft); }
+.eyebrow.on-dark{color:#8FE3C4;}
+.eyebrow.on-dark .dot{background:#3EDFA0; box-shadow:0 0 0 3px rgba(62,223,160,0.18);}
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600; font-size:14.5px; padding:13px 22px; border-radius:var(--radius-sm); transition:transform .15s ease, background .15s ease, box-shadow .15s ease, border-color .15s ease; white-space:nowrap; }
+.btn-primary{ background:var(--ink); color:#fff; border:1px solid var(--ink); }
+.btn-primary:hover{ background:var(--verified-dark); border-color:var(--verified-dark); transform:translateY(-1px); }
+.btn-accent{ background:var(--verified); color:#fff; border:1px solid var(--verified); box-shadow:0 10px 24px -10px rgba(14,159,110,0.55); }
+.btn-accent:hover{ background:var(--verified-dark); border-color:var(--verified-dark); transform:translateY(-1px); }
+.btn-outline{ background:transparent; color:var(--ink); border:1px solid var(--line); }
+.btn-outline:hover{ border-color:var(--ink); }
+.btn-block{ width:100%; }
+.btn-lg{ padding:16px 28px; font-size:16px; }
+.btn-sm{ padding:9px 16px; font-size:13px; }
+.site-nav{ position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+.nav-link{ font-size:14.5px; font-weight:500; color:var(--ink); opacity:0.78; transition:opacity .15s ease; }
+.nav-link:hover, .nav-link.active{opacity:1;}
+.nav-drop{ position:relative; }
+.nav-drop-panel{ position:absolute; top:calc(100% + 14px); left:50%; transform:translateX(-50%) translateY(4px); min-width:270px; background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); box-shadow:var(--shadow-lift); padding:8px; opacity:0; visibility:hidden; transition:opacity .15s ease, transform .15s ease, visibility .15s ease; }
+.nav-drop:hover .nav-drop-panel, .nav-drop:focus-within .nav-drop-panel{ opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+.nav-drop-item{ display:flex; flex-direction:column; gap:2px; padding:10px 12px; border-radius:8px; transition:background .15s ease; }
+.nav-drop-item:hover{ background:var(--paper-soft); }
+.nav-drop-item .title{ font-size:14px; font-weight:600; color:var(--ink); }
+.nav-drop-item .desc{ font-size:12.5px; color:var(--mist); }
+.mobile-panel{ max-height:0; overflow:hidden; transition:max-height .3s ease; }
+.mobile-panel.open{ max-height:900px; }
+.mobile-accordion[open] > .mobile-accordion-body{ display:block; }
+.mobile-accordion > summary{ list-style:none; cursor:pointer; }
+.mobile-accordion > summary::-webkit-details-marker{ display:none; }
+.card{ background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); box-shadow:var(--shadow-card); }
+.card-soft{ background:var(--paper-soft); border:1px solid var(--line); border-radius:var(--radius-lg); }
+.bg-grid{ background-image: linear-gradient(to right, var(--line-soft) 1px, transparent 1px), linear-gradient(to bottom, var(--line-soft) 1px, transparent 1px); background-size: 40px 40px; }
+.reveal{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }
+.reveal.is-visible{ opacity:1; transform:translateY(0); }
+/* Prose Styles for AI Extractability */
+.prose h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.875rem; font-weight: 700; margin-top: 3rem; margin-bottom: 1.25rem; color: var(--ink); }
+.prose h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--ink); }
+.prose p { margin-bottom: 1.25rem; line-height: 1.75; color: var(--mist); }
+.prose ul { list-style-type: none; padding-left: 0; margin-bottom: 1.5rem; }
+.prose ul li { position: relative; padding-left: 1.75rem; margin-bottom: 0.75rem; color: var(--mist); }
+.prose ul li::before { content: '→'; position: absolute; left: 0; color: var(--verified-dark); font-weight: bold; }
+.prose ol { list-style-type: decimal; padding-left: 1.25rem; margin-bottom: 1.5rem; color: var(--mist); }
+.prose ol li { margin-bottom: 0.75rem; padding-left: 0.5rem; }
+.prose dl { margin-bottom: 1.5rem; }
+.prose dt { font-weight: 700; color: var(--ink); margin-top: 1rem; }
+.prose dd { margin-left: 1.5rem; color: var(--mist); margin-bottom: 0.5rem; }
+.prose table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; }
+.prose th { background-color: var(--paper-soft); border: 1px solid var(--line); padding: 1rem; text-align: left; font-weight: 600; color: var(--ink); }
+.prose td { border: 1px solid var(--line); padding: 1rem; color: var(--mist); }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Complete Google Play's 14-Day Closed Testing",
+  "description": "A 4-step process to bypass Google Play's closed testing requirement using our professional 12-tester service.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Share your opt-in link",
+      "text": "Add our verified emails into your Play Console and send us the generated closed-test link."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "We start testing",
+      "text": "Within 6 hours, our 12 professional testers install your app on physical devices."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "14 days of real use",
+      "text": "Our testers engage with your app daily to generate mandatory retention metrics."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "You apply for production",
+      "text": "Use our provided feedback report to fill out the Google questionnaire and launch your app."
+    }
+  ]
+}
+</script>
+
+</head>
+<body class="bg-paper text-ink">
+
+<header class="site-nav">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5">
+      <span class="w-8 h-8 rounded-md bg-ink flex items-center justify-center">
+        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+      </span>
+      <span class="font-display font-semibold text-lg tracking-tight">12Testers<span class="text-verified-500">14Days</span></span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8">
+      <a href="index.html" class="nav-link">Home</a>
+      <div class="nav-drop">
+        <button class="nav-link active flex items-center gap-1">Services <svg class="w-3.5 h-3.5 mt-px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+        <div class="nav-drop-panel">
+          <a href="services.html" class="nav-drop-item"><span class="title">12 Testers Plan</span><span class="desc">Guaranteed production approval</span></a>
+          <a href="app-rejected.html" class="nav-drop-item"><span class="title">App Rejection Recovery</span><span class="desc">Fix "Insufficient Testing" errors</span></a>
+          <a href="for-agencies.html" class="nav-drop-item"><span class="title">For Agencies</span><span class="desc">Bulk testing packages</span></a>
+        </div>
+      </div>
+      <a href="how-it-works.html" class="nav-link">How it Works</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <div class="nav-drop">
+        <button class="nav-link flex items-center gap-1">Resources <svg class="w-3.5 h-3.5 mt-px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+        <div class="nav-drop-panel">
+          <a href="guides/google-play-12-testers-14-days-rule.html" class="nav-drop-item"><span class="title">14-Day Rule Guide</span><span class="desc">Everything you need to know</span></a>
+          <a href="blog/index.html" class="nav-drop-item"><span class="title">Testing Blog</span><span class="desc">Tips & Google policy updates</span></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="order.html" class="btn btn-accent btn-sm">Get Testers Now</a>
+    </div>
+
+    <button id="mobile-nav-toggle" class="lg:hidden p-2 -mr-2">
+      <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+  </div>
+  <div id="mobile-nav-panel" class="mobile-panel lg:hidden border-t border-line bg-white">
+    <div class="px-5 py-4 space-y-1">
+      <a href="index.html" class="block py-2.5 font-medium">Home</a>
+      <a href="services.html" class="block py-2.5 font-medium">Services</a>
+      <a href="app-rejected.html" class="block py-2.5 font-medium">App Rejection Recovery</a>
+      <a href="how-it-works.html" class="block py-2.5 font-medium">How it Works</a>
+      <a href="pricing.html" class="block py-2.5 font-medium">Pricing</a>
+      <a href="guides/google-play-12-testers-14-days-rule.html" class="block py-2.5 font-medium">Guides</a>
+      <a href="contact.html" class="block py-2.5 font-medium">Contact</a>
+      <a href="order.html" class="btn btn-accent btn-block mt-3">Get Testers Now</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="bg-grid pt-16 pb-12 lg:pt-24 border-b border-line">
+    <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center">
+      <span class="eyebrow"><span class="dot"></span>THE PROCESS</span>
+      <h1 class="font-display font-semibold text-4xl sm:text-5xl lg:text-6xl mt-5 mb-6 text-balance">The 14-Day Closed Testing Workflow</h1>
+      <p class="text-lg text-mist leading-relaxed mb-8">We have streamlined the Google Play testing requirement so you can focus entirely on your app. Here is exactly what happens after you place an order.</p>
+    </div>
+  </section>
+
+  <section class="py-16 px-5 sm:px-8 bg-paper">
+    <div class="max-w-4xl mx-auto">
+      <article class="prose max-w-none">
+        <!-- TL;DR Block (Answer-First for AI) -->
+        <div class="bg-verified-50 border-l-4 border-verified-500 p-6 mb-12 rounded-r-xl shadow-sm reveal">
+          <h3 class="!mt-0 !mb-2 flex items-center gap-2 text-verified-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> TL;DR: How does this work?</h3>
+          <p class="!mb-0 text-mist-dark text-sm leading-relaxed">You paste our list of 12 Google emails into your Play Console and send us your <strong>Opt-in Link</strong>. We accept the invite, install the app on real devices, and open it daily for 14 days. On day 15, we send you a feedback report so you can pass Google's review.</p>
+        </div>
+
+        <ol>
+          <li>
+            <h3>Step 1: Order and Add Our Testers (Day 0)</h3>
+            <p>Once you place an order, you will instantly receive a CSV file containing 12 to 20 verified Google accounts. Your only job is to paste these emails into the "Testers" section of your Google Play Console.</p>
+            <p>After Google approves your closed test track (usually takes 1-3 hours), they will generate a "Web Opt-in Link". Simply reply to your order confirmation email with this link. <em>We do not need your APK file.</em></p>
+          </li>
+          
+          <li>
+            <h3>Step 2: We Install Your App (Day 1)</h3>
+            <p>Within 4-6 hours of receiving your link, our team of QA professionals will click the link, accept the testing invite, and download your application directly from the Play Store onto their physical Android devices.</p>
+          </li>
+          
+          <li>
+            <h3>Step 3: Real Daily Engagement (Days 1 - 14)</h3>
+            <p>Google's algorithm monitors active retention. Our testers will open your app daily, navigate through the UI, and generate genuine crash-free metrics. If you release an update during this period, our testers will seamlessly install it to demonstrate active development to Google.</p>
+          </li>
+
+          <li>
+            <h3>Step 4: Apply for Production Access (Day 15)</h3>
+            <p>When the 14 days are complete, the "Apply for Production" button in your Play Console will unlock. We will email you a comprehensive Feedback Report containing notes from our testers.</p>
+            <p>You will use this report to confidently answer Google's review questionnaire (e.g., "What feedback did you receive? How did you implement it?").</p>
+          </li>
+        </ol>
+
+        <div class="card p-8 bg-papersoft mt-12 text-center reveal">
+          <h3 class="font-display font-bold text-2xl !mt-0 mb-4">Start your 14-day clock today.</h3>
+          <p class="text-mist mb-6">Our device lab is ready. Let's get your app into production.</p>
+          <a href="order.html" class="btn btn-accent btn-lg">Order 12 Testers Now</a>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-papersoft border-t border-line pt-20 pb-10 px-5 sm:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-10 mb-16">
+      <div class="col-span-2">
+        <div class="flex items-center gap-2.5 mb-5">
+          <span class="w-8 h-8 rounded-md bg-ink flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+          </span>
+          <span class="font-display font-semibold text-lg">12Testers<span class="text-verified-500">14Days</span></span>
+        </div>
+        <p class="text-mist text-sm mb-6 max-w-xs leading-relaxed">The #1 Done-For-You QA testing service designed specifically to help indie developers and agencies pass Google Play's 14-day closed testing requirement.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4 text-sm font-display tracking-wide">SERVICES</h4>
+        <ul class="space-y-3 text-sm text-mist">
+          <li><a href="services.html" class="hover:text-verified-600 transition">Buy 12 Testers</a></li>
+          <li><a href="pricing.html" class="hover:text-verified-600 transition">Pricing Plans</a></li>
+          <li><a href="app-rejected.html" class="hover:text-verified-600 transition">App Recovery</a></li>
+          <li><a href="for-agencies.html" class="hover:text-verified-600 transition">For Agencies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4 text-sm font-display tracking-wide">RESOURCES</h4>
+        <ul class="space-y-3 text-sm text-mist">
+          <li><a href="guides/google-play-12-testers-14-days-rule.html" class="hover:text-verified-600 transition">14-Day Rule Guide</a></li>
+          <li><a href="blog/index.html" class="hover:text-verified-600 transition">Testing Blog</a></li>
+          <li><a href="how-it-works.html" class="hover:text-verified-600 transition">How it works</a></li>
+          <li><a href="contact.html" class="hover:text-verified-600 transition">Contact Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4 text-sm font-display tracking-wide">LEGAL</h4>
+        <ul class="space-y-3 text-sm text-mist">
+          <li><a href="terms-of-service.html" class="hover:text-verified-600 transition">Terms of Service</a></li>
+          <li><a href="privacy-policy.html" class="hover:text-verified-600 transition">Privacy Policy</a></li>
+          <li><a href="refund-policy.html" class="hover:text-verified-600 transition">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-line text-center md:flex md:justify-between items-center gap-6">
+      <p class="text-sm text-mist-soft">© 2026 12Testers14Days.pro. All rights reserved.</p>
+      <p class="text-xs text-mist-soft mt-2 md:mt-0 max-w-md md:text-right">Disclaimer: We are an independent QA testing service and are not affiliated, associated, authorized, endorsed by, or in any way officially connected with Google LLC or Google Play.</p>
+    </div>
+  </div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('mobile-nav-toggle');
+  const panel = document.getElementById('mobile-nav-panel');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+  if (toggle && panel) {
+    toggle.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      if (iconOpen && iconClose) { iconOpen.classList.toggle('hidden', isOpen); iconClose.classList.toggle('hidden', !isOpen); }
+    });
+  }
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach((el) => io.observe(el));
+  } else { revealEls.forEach((el) => el.classList.add('is-visible')); }
+});
+</script>
+</body>
+</html>
