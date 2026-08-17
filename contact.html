@@ -38,7 +38,7 @@ a{ -webkit-tap-highlight-color: transparent; }
 .eyebrow .dot{ width:6px;height:6px;border-radius:999px;background:var(--verified); box-shadow:0 0 0 3px var(--verified-soft); }
 .eyebrow.on-dark{color:#8FE3C4;}
 .eyebrow.on-dark .dot{background:#3EDFA0; box-shadow:0 0 0 3px rgba(62,223,160,0.18);}
-.btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600; font-size:14.5px; padding:13px 22px; border-radius:var(--radius-sm); transition:transform .15s ease, background .15s ease, box-shadow .15s ease, border-color .15s ease; white-space:nowrap; }
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600; font-size:14.5px; padding:13px 22px; border-radius:var(--radius-sm); transition:transform .15s ease, background .15s ease, box-shadow .15s ease, border-color .15s ease; white-space:nowrap; cursor:pointer;}
 .btn-primary{ background:var(--ink); color:#fff; border:1px solid var(--ink); }
 .btn-primary:hover{ background:var(--verified-dark); border-color:var(--verified-dark); transform:translateY(-1px); }
 .btn-accent{ background:var(--verified); color:#fff; border:1px solid var(--verified); box-shadow:0 10px 24px -10px rgba(14,159,110,0.55); }
@@ -129,8 +129,8 @@ a{ -webkit-tap-highlight-color: transparent; }
       <div class="nav-drop">
         <button class="nav-link flex items-center gap-1">Resources <svg class="w-3.5 h-3.5 mt-px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
         <div class="nav-drop-panel">
-          <a href="guides/google-play-12-testers-14-days-rule/" class="nav-drop-item"><span class="title">14-Day Rule Guide</span><span class="desc">Everything you need to know</span></a>
-          <a href="blog/index/" class="nav-drop-item"><span class="title">Testing Blog</span><span class="desc">Tips & Google policy updates</span></a>
+          <a href="guides/google-play-12-testers-14-days-rule" class="nav-drop-item"><span class="title">14-Day Rule Guide</span><span class="desc">Everything you need to know</span></a>
+          <a href="blog/index" class="nav-drop-item"><span class="title">Testing Blog</span><span class="desc">Tips & Google policy updates</span></a>
         </div>
       </div>
     </nav>
@@ -145,19 +145,20 @@ a{ -webkit-tap-highlight-color: transparent; }
       <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
     </button>
   </div>
-  <div id="mobile-nav-panel" class="mobile-panel lg:hidden border-t border-line bg-white">
+  <div id="mobile-nav-panel" class="mobile-panel lg:hidden border-t border-line bg-white hidden">
     <div class="px-5 py-4 space-y-1">
       <a href="/" class="block py-2.5 font-medium">Home</a>
       <a href="services" class="block py-2.5 font-medium">Services</a>
       <a href="app-rejected" class="block py-2.5 font-medium">App Rejection Recovery</a>
       <a href="how-it-works" class="block py-2.5 font-medium">How it Works</a>
       <a href="pricing" class="block py-2.5 font-medium">Pricing</a>
-      <a href="guides/google-play-12-testers-14-days-rule/" class="block py-2.5 font-medium">Guides</a>
+      <a href="guides/index" class="block py-2.5 font-medium">Guides</a>
       <a href="contact" class="block py-2.5 font-medium">Contact</a>
       <a href="order" class="btn btn-accent btn-block mt-3">Get Testers Now</a>
     </div>
   </div>
 </header>
+
 <main>
   <section class="bg-grid pt-16 pb-12 lg:pt-24 border-b border-line bg-deep text-white">
     <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center">
@@ -190,7 +191,7 @@ a{ -webkit-tap-highlight-color: transparent; }
             <div>
               <h4 class="font-bold text-ink">WhatsApp Support</h4>
               <p class="text-mist text-sm mb-1">For urgent queries and agency clients.</p>
-              <a href="#" class="text-verified-600 font-semibold hover:underline">Message us directly</a>
+              <a href="https://wa.me/+923399887783?text=Hi,%20I%20just%20submitted%20a%20request%20for%2012%20testers" class="text-verified-600 font-semibold hover:underline">Message us directly</a>
             </div>
           </div>
         </div>
@@ -199,41 +200,38 @@ a{ -webkit-tap-highlight-color: transparent; }
       <!-- Contact Form -->
       <div class="card p-8 reveal" id="contact-form-wrap">
         <h3 class="font-display font-bold text-xl mb-6">Send a message</h3>
-        <form id="contact-form" class="space-y-4">
+        <!-- Web3Forms action URL - user needs to replace YOUR_ACCESS_KEY_HERE with actual key -->
+        <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="space-y-4">
+          <input type="hidden" name="access_key" value="36e2c0c8-8d59-4ad5-a27b-1ccaaa108475">
+          <input type="hidden" name="subject" value="New Contact Form Message">
+          <input type="hidden" name="redirect" value="https://12testers14days.pro/thank-you">
+
           <div>
             <label class="field-label">Name</label>
-            <input type="text" class="input" placeholder="John Doe" required>
+            <input type="text" name="Name" class="input" placeholder="John Doe" required>
           </div>
           <div>
             <label class="field-label">Email Address</label>
-            <input type="email" class="input" placeholder="john@example.com" required>
+            <input type="email" name="Email" class="input" placeholder="john@example.com" required>
           </div>
           <div>
             <label class="field-label">Subject</label>
-            <select class="input" required>
+            <select name="Category" class="input" required>
               <option value="" disabled selected>Select an option</option>
-              <option>Pre-sale Question</option>
-              <option>Existing Order Support</option>
-              <option>Agency / Bulk Inquiry</option>
-              <option>App Rejection Help</option>
+              <option value="Pre-sale Question">Pre-sale Question</option>
+              <option value="Existing Order Support">Existing Order Support</option>
+              <option value="Agency / Bulk Inquiry">Agency / Bulk Inquiry</option>
+              <option value="App Rejection Help">App Rejection Help</option>
             </select>
           </div>
           <div>
             <label class="field-label">Message</label>
-            <textarea class="input" rows="4" placeholder="How can we help?" required></textarea>
+            <textarea name="Message" class="input" rows="4" placeholder="How can we help?" required></textarea>
           </div>
           <button type="submit" class="btn btn-accent btn-block mt-2">Send Message</button>
         </form>
       </div>
 
-      <!-- Success State -->
-      <div id="contact-success" class="card p-10 text-center hidden flex flex-col items-center justify-center">
-        <div class="w-16 h-16 bg-verified-50 text-verified-500 rounded-full flex items-center justify-center mb-6">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-        </div>
-        <h3 class="font-display font-bold text-2xl mb-2">Message Sent!</h3>
-        <p class="text-mist">Thank you for reaching out. Our support team will get back to you within 4-6 hours.</p>
-      </div>
     </div>
   </section>
 </main>
@@ -245,12 +243,12 @@ a{ -webkit-tap-highlight-color: transparent; }
           <span class="w-8 h-8 rounded-md bg-ink flex items-center justify-center">
             <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
           </span>
-          <span class="font-display font-semibold text-lg">12Testers<span class="text-verified-500">14Days</span></span>
+          <span class="font-display font-semibold text-lg tracking-tight">12Testers<span class="text-verified-500">14Days</span></span>
         </div>
         <p class="text-mist text-sm mb-6 max-w-xs leading-relaxed">The #1 Done-For-You QA testing service designed specifically to help indie developers and agencies pass Google Play's 14-day closed testing requirement.</p>
       </div>
       <div>
-        <h4 class="font-semibold mb-4 text-sm font-display tracking-wide">SERVICES</h4>
+        <h4 class="font-semibold mb-4 text-sm font-display tracking-wide uppercase">Services</h4>
         <ul class="space-y-3 text-sm text-mist">
           <li><a href="services" class="hover:text-verified-600 transition">Buy 12 Testers</a></li>
           <li><a href="pricing" class="hover:text-verified-600 transition">Pricing Plans</a></li>
@@ -259,16 +257,16 @@ a{ -webkit-tap-highlight-color: transparent; }
         </ul>
       </div>
       <div>
-        <h4 class="font-semibold mb-4 text-sm font-display tracking-wide">RESOURCES</h4>
+        <h4 class="font-semibold mb-4 text-sm font-display tracking-wide uppercase">Resources</h4>
         <ul class="space-y-3 text-sm text-mist">
-          <li><a href="guides/google-play-12-testers-14-days-rule/" class="hover:text-verified-600 transition">14-Day Rule Guide</a></li>
-          <li><a href="blog/index/" class="hover:text-verified-600 transition">Testing Blog</a></li>
+          <li><a href="guides/google-play-12-testers-14-days-rule" class="hover:text-verified-600 transition">14-Day Rule Guide</a></li>
+          <li><a href="blog/index" class="hover:text-verified-600 transition">Testing Blog</a></li>
           <li><a href="how-it-works" class="hover:text-verified-600 transition">How it works</a></li>
           <li><a href="contact" class="hover:text-verified-600 transition">Contact Support</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="font-semibold mb-4 text-sm font-display tracking-wide">LEGAL</h4>
+        <h4 class="font-semibold mb-4 text-sm font-display tracking-wide uppercase">Legal</h4>
         <ul class="space-y-3 text-sm text-mist">
           <li><a href="terms-of-service" class="hover:text-verified-600 transition">Terms of Service</a></li>
           <li><a href="privacy-policy" class="hover:text-verified-600 transition">Privacy Policy</a></li>
@@ -286,13 +284,9 @@ a{ -webkit-tap-highlight-color: transparent; }
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('mobile-nav-toggle');
   const panel = document.getElementById('mobile-nav-panel');
-  const iconOpen = document.getElementById('icon-open');
-  const iconClose = document.getElementById('icon-close');
   if (toggle && panel) {
     toggle.addEventListener('click', () => {
-      const isOpen = panel.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      if (iconOpen && iconClose) { iconOpen.classList.toggle('hidden', isOpen); iconClose.classList.toggle('hidden', !isOpen); }
+      panel.classList.toggle('hidden');
     });
   }
   const revealEls = document.querySelectorAll('.reveal');
