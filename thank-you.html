@@ -5,486 +5,334 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Order Received — 12Testers14Days.pro</title>
 <meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://12testers14days.pro/thank-you">
+
+<!-- Theme Tailwind Config -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { 
+  theme: { 
+    extend: { 
+      colors: {
+        ink:'#10151C', mist:'#5B6472', line:'#E4E7EC', papersoft:'#F6F7F9',
+        verified:{50:'#E6F7F0',500:'#0E9F6E',600:'#0B7F58'},
+        flag:{50:'#FBF0E4',100:'#F8DDC3',200:'#F3C59D',500:'#B45309',600:'#92400E'},
+        deep:{DEFAULT:'#0B1524',soft:'#16233A'},
+        danger:{50:'#FEF2F2', 500:'#EF4444'}
+      }, 
+      fontFamily: { 
+        display:['Space Grotesk','sans-serif'], 
+        sans:['Inter','sans-serif'], 
+        mono:['IBM Plex Mono','monospace'] 
+      } 
+    } 
+  } 
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-
-/* ── DESIGN TOKENS (matches V3) ── */
-:root {
-  --bg:          #ffffff;
-  --bg2:         #F7F8FC;
-  --bg3:         #EEEEF5;
-  --border:      rgba(10,10,30,0.08);
-  --border2:     rgba(10,10,30,0.14);
-  --ink:         #09090F;
-  --ink2:        #3A3A52;
-  --ink3:        #7A7A9A;
-  --ink4:        #ADADC5;
-  --blue:        #1A56FF;
-  --blue2:       #4B7DFF;
-  --blue3:       #EDF1FF;
-  --violet:      #7C3AED;
-  --cyan:        #06B6D4;
-  --green:       #10B981;
-  --green2:      #D1FAE5;
-  --amber:       #F59E0B;
-  --grad-brand:  linear-gradient(135deg, #1A56FF 0%, #7C3AED 100%);
-  --grad-text:   linear-gradient(135deg, #1A56FF 0%, #06B6D4 100%);
-  --sh2:         0 4px 20px rgba(10,10,30,0.08), 0 12px 40px rgba(10,10,30,0.06);
-  --sh3:         0 8px 40px rgba(10,10,30,0.10), 0 24px 80px rgba(10,10,30,0.08);
-  --sh-blue:     0 8px 40px rgba(26,86,255,0.25);
-  --display:     'Bricolage Grotesque', sans-serif;
-  --body:        'Manrope', sans-serif;
-  --max:         1280px;
+/* =========================================================
+   Base & Components
+   ========================================================= */
+:root{
+  --paper:      #FFFFFF;
+  --paper-soft: #F6F7F9;
+  --ink:        #10151C;
+  --mist:       #5B6472;
+  --line:       #E4E7EC;
+  --line-soft:  #EEF0F3;
+  --shadow-card: 0 1px 2px rgba(16,21,28,0.04), 0 8px 24px -12px rgba(16,21,28,0.10);
 }
 
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+body { font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--paper); -webkit-font-smoothing:antialiased; }
+.font-display { font-family:'Space Grotesk',sans-serif; }
+.font-mono { font-family:'IBM Plex Mono',monospace; }
 
-body {
-  font-family: var(--body);
-  background: var(--bg);
-  color: var(--ink);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+.bg-grid { 
+  background-image: linear-gradient(to right, var(--line-soft) 1px, transparent 1px), linear-gradient(to bottom, var(--line-soft) 1px, transparent 1px); 
+  background-size: 40px 40px; 
 }
+.card { background:#fff; border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow-card); }
 
-a { text-decoration:none; color:inherit; transition:.2s; }
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600; font-size:14.5px; padding:12px 22px; border-radius:8px; transition:all .15s ease; white-space:nowrap; }
+.btn-wa { background:#25D366; color:#fff; border:1px solid #25D366; box-shadow:0 10px 24px -10px rgba(37,211,102,0.55); }
+.btn-wa:hover { background:#1EBE5C; border-color:#1EBE5C; transform:translateY(-1px); }
 
-/* ── CONFETTI CANVAS ── */
-#confetti {
-  position: fixed; inset: 0;
-  pointer-events: none; z-index: 999;
-}
-
-/* ── HEADER ── */
-header {
-  position: sticky; top: 0; z-index: 900;
-  background: rgba(255,255,255,0.88);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-}
-.nav-wrap {
-  max-width: var(--max); margin: 0 auto;
-  padding: 0 28px; height: 66px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.logo {
-  font-family: var(--display);
-  font-weight: 800; font-size: 1.35rem;
-  color: var(--ink); letter-spacing: -.5px;
-  display: flex; align-items: center; gap: 10px;
-}
-.logo-icon {
-  width: 32px; height: 32px; background: var(--grad-brand);
-  border-radius: 9px; display: flex; align-items: center;
-  justify-content: center; font-size: .9rem; color: #fff;
-}
-.nav-actions { display: flex; gap: 10px; align-items: center; }
-.btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  gap: 8px; border: none; cursor: pointer;
-  font-family: var(--body); font-weight: 600;
-  border-radius: 50px; transition: all .22s; white-space: nowrap;
-  padding: 10px 22px; font-size: .88rem;
-}
-.btn-primary {
-  background: var(--grad-brand); color: #fff;
-  box-shadow: var(--sh-blue);
-}
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(26,86,255,.35); }
-.btn-ghost {
-  background: transparent; color: var(--ink2);
-  border: 1.5px solid var(--border2);
-}
-.btn-ghost:hover { border-color: var(--blue2); color: var(--blue); background: var(--blue3); }
-.btn-wa { background: #25D366; color: #fff; box-shadow: 0 4px 16px rgba(37,211,102,.3); }
-.btn-wa:hover { background: #1EB857; transform: translateY(-2px); }
-
-/* ── HERO BG ── */
-.page-bg {
-  position: fixed; inset: 0; z-index: 0; pointer-events: none;
-  background:
-    radial-gradient(ellipse 70% 50% at 50% -10%, rgba(26,86,255,0.09) 0%, transparent 65%),
-    radial-gradient(ellipse 40% 40% at 85% 70%, rgba(124,58,237,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 30% 30% at 10% 80%, rgba(6,182,212,0.05) 0%, transparent 60%);
-}
-
-/* ── GRID LINES ── */
-.grid-bg {
-  position: fixed; inset: 0; z-index: 0; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(10,10,30,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10,10,30,0.025) 1px, transparent 1px);
-  background-size: 64px 64px;
-}
-
-/* ── MAIN ── */
-main {
-  flex: 1; display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  padding: 60px 28px 80px;
-  position: relative; z-index: 2;
-}
-
-/* ── SUCCESS CARD ── */
-.success-card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  box-shadow: var(--sh3);
-  max-width: 580px; width: 100%;
-  overflow: hidden;
-  animation: cardIn .55s cubic-bezier(0.16,1,0.3,1) both;
-}
-@keyframes cardIn {
-  from { opacity:0; transform: translateY(32px) scale(0.97); }
-  to   { opacity:1; transform: translateY(0)   scale(1); }
-}
-
-/* Card top accent bar */
-.card-bar {
-  height: 4px;
-  background: var(--grad-brand);
-}
-
-.card-body { padding: 48px 48px 40px; text-align: center; }
-
-/* ── ICON ── */
-.success-icon-wrap {
-  position: relative; width: 88px; height: 88px;
-  margin: 0 auto 32px;
-}
-.success-ring {
-  position: absolute; inset: -10px; border-radius: 50%;
-  border: 2px solid rgba(26,86,255,0.15);
-  animation: ringPulse 2.5s ease-in-out infinite;
-}
-.success-ring-2 {
-  position: absolute; inset: -20px; border-radius: 50%;
-  border: 1px solid rgba(26,86,255,0.08);
-  animation: ringPulse 2.5s ease-in-out infinite .4s;
-}
-@keyframes ringPulse {
-  0%,100%{ opacity:1; transform:scale(1); }
-  50%{ opacity:.4; transform:scale(1.05); }
-}
-.success-icon {
-  width: 88px; height: 88px; border-radius: 50%;
-  background: var(--grad-brand);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 2.2rem; color: #fff;
-  box-shadow: var(--sh-blue);
-  animation: iconPop .5s cubic-bezier(0.34,1.56,0.64,1) .15s both;
-  position: relative; z-index: 2;
-}
-@keyframes iconPop {
-  from { transform: scale(0); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
-}
-
-/* ── HEADING ── */
-.card-eyebrow {
-  display: inline-flex; align-items: center; gap: 7px;
-  background: var(--blue3); color: var(--blue);
-  font-size: .7rem; font-weight: 700; letter-spacing: .8px;
-  text-transform: uppercase; padding: 5px 12px; border-radius: 50px;
-  border: 1px solid rgba(26,86,255,.2); margin-bottom: 16px;
-}
-.card-eyebrow-dot { width: 6px; height: 6px; background: var(--blue); border-radius: 50%; animation: blink 1.8s infinite; }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
-
-.card-h1 {
-  font-family: var(--display);
-  font-size: clamp(1.9rem, 4vw, 2.6rem);
-  font-weight: 800; letter-spacing: -1px; line-height: 1.1;
-  color: var(--ink); margin-bottom: 14px;
-}
-.card-h1 .g {
-  background: var(--grad-text);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
-.card-sub {
-  font-size: .97rem; color: var(--ink2); line-height: 1.7;
-  margin-bottom: 32px; max-width: 440px; margin-left: auto; margin-right: auto;
-}
-
-/* ── NEXT STEPS ── */
-.steps-block {
-  background: var(--bg2); border: 1px solid var(--border);
-  border-radius: 16px; overflow: hidden; margin-bottom: 28px; text-align: left;
-}
-.steps-head {
-  padding: 14px 20px; border-bottom: 1px solid var(--border);
-  font-size: .7rem; font-weight: 700; letter-spacing: 1.5px;
-  text-transform: uppercase; color: var(--ink3);
-  display: flex; align-items: center; gap: 8px;
-}
-.steps-head i { color: var(--blue); }
-.step-row {
-  display: flex; align-items: flex-start; gap: 16px;
-  padding: 16px 20px; border-bottom: 1px solid var(--border);
-  transition: background .2s;
-}
-.step-row:last-child { border-bottom: none; }
-.step-row:hover { background: #fff; }
-.step-num {
-  width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--display); font-size: .85rem; font-weight: 800;
-}
-.sn-done  { background: var(--green2); color: var(--green); }
-.sn-doing { background: var(--blue3);  color: var(--blue); }
-.sn-todo  { background: var(--bg3);    color: var(--ink3); }
-.step-text strong { font-size: .88rem; color: var(--ink); display: block; margin-bottom: 2px; font-weight: 700; }
-.step-text span   { font-size: .78rem; color: var(--ink3); line-height: 1.5; }
-
-/* ── CTA BUTTONS ── */
-.cta-group { display: flex; flex-direction: column; gap: 10px; }
-.btn-wa-lg {
-  display: flex; align-items: center; justify-content: center; gap: 12px;
-  background: #25D366; color: #fff;
-  padding: 16px 28px; border-radius: 14px;
-  font-family: var(--body); font-weight: 700; font-size: 1rem;
-  box-shadow: 0 6px 24px rgba(37,211,102,.3);
-  transition: all .25s; cursor: pointer; border: none; width: 100%;
-}
-.btn-wa-lg:hover { background: #1EB857; transform: translateY(-2px); box-shadow: 0 10px 32px rgba(37,211,102,.4); }
-.btn-wa-lg i { font-size: 1.3rem; }
-
-.btn-home {
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  background: var(--bg2); color: var(--ink2);
-  padding: 13px 28px; border-radius: 14px;
-  font-family: var(--body); font-weight: 600; font-size: .9rem;
-  border: 1.5px solid var(--border2); transition: all .25s; width: 100%;
-}
-.btn-home:hover { border-color: var(--blue2); color: var(--blue); background: var(--blue3); }
-
-/* ── TRUST CHIPS ── */
-.trust-chips {
-  display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
-  margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border);
-}
-.chip {
-  display: flex; align-items: center; gap: 7px;
-  background: var(--bg2); border: 1px solid var(--border);
-  padding: 7px 14px; border-radius: 50px;
-  font-size: .73rem; font-weight: 600; color: var(--ink3);
-}
-.chip i { font-size: .75rem; }
-.chip i.g { color: var(--green); }
-.chip i.b { color: var(--blue2); }
-
-/* ── SIDE STATS ── */
-.side-stats {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 12px; max-width: 580px; width: 100%; margin-top: 20px;
-}
-.stat-chip {
-  background: #fff; border: 1px solid var(--border);
-  border-radius: 16px; padding: 20px 24px; text-align: center;
-  box-shadow: var(--sh2); animation: cardIn .55s cubic-bezier(0.16,1,0.3,1) both;
-}
-.stat-chip:nth-child(1) { animation-delay: .12s; }
-.stat-chip:nth-child(2) { animation-delay: .2s; }
-.stat-chip:nth-child(3) { animation-delay: .28s; }
-.stat-chip:nth-child(4) { animation-delay: .36s; }
-.sc-num {
-  font-family: var(--display); font-size: 2rem; font-weight: 800;
-  letter-spacing: -1px; line-height: 1;
-  background: var(--grad-text); -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; background-clip: text;
-  margin-bottom: 4px;
-}
-.sc-lbl { font-size: .68rem; font-weight: 600; color: var(--ink3); text-transform: uppercase; letter-spacing: 1px; }
-
-/* ── FOOTER ── */
-footer {
-  background: #060810; padding: 40px 28px;
-  border-top: 1px solid rgba(255,255,255,.06);
-  position: relative; z-index: 2;
-}
-.footer-inner {
-  max-width: var(--max); margin: 0 auto;
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 20px;
-}
-.f-logo-row {
-  font-family: var(--display); font-size: 1.1rem; font-weight: 800;
-  color: #fff; letter-spacing: -.3px;
-  display: flex; align-items: center; gap: 9px;
-}
-.f-logo-icon { width: 26px; height: 26px; background: var(--grad-brand); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: .75rem; color: #fff; }
-.f-links { display: flex; gap: 24px; flex-wrap: wrap; }
-.f-links a { font-size: .8rem; color: rgba(255,255,255,.35); transition: .2s; }
-.f-links a:hover { color: rgba(255,255,255,.75); }
-.f-copy { font-size: .72rem; color: rgba(255,255,255,.2); }
-
-@media (max-width:600px) {
-  .card-body { padding: 32px 24px 28px; }
-  .side-stats { grid-template-columns: 1fr 1fr; }
-  .nav-actions .btn-ghost { display:none; }
-  .footer-inner { flex-direction:column; text-align:center; }
-  .f-links { justify-content:center; }
-}
+/* Confetti Canvas */
+#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 999; }
 </style>
 </head>
-<body>
+
+<body class="bg-paper flex flex-col lg:h-screen lg:overflow-hidden">
 
 <canvas id="confetti"></canvas>
-<div class="page-bg"></div>
-<div class="grid-bg"></div>
 
-<!-- ── HEADER ── -->
-<header>
-  <div class="nav-wrap">
-    <a href="/" class="logo">
-      <div class="logo-icon"><i class="fa-brands fa-google-play"></i></div>
-      12Testers14Days<span style="color:var(--blue);">.pro</span>
+<!-- ============ HEADER ============ -->
+<header class="bg-white/85 backdrop-blur-md border-b border-line z-50 h-[64px] flex-shrink-0">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-full flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2.5">
+      <span class="w-8 h-8 rounded-md bg-ink flex items-center justify-center">
+        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+      </span>
+      <span class="font-display font-semibold text-lg tracking-tight">12Testers<span class="text-verified-500">14Days</span></span>
     </a>
-    <div class="nav-actions">
-      <a href="https://wa.me/+923472061598" class="btn btn-wa">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp
-      </a>
-      <a href="/#pricing" class="btn btn-ghost">
-        Order Another <i class="fa-solid fa-arrow-right"></i>
-      </a>
-    </div>
+    <a href="/" class="text-sm font-medium text-mist hover:text-ink transition flex items-center gap-1.5">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+      Back to Home
+    </a>
   </div>
 </header>
 
-<!-- ── MAIN ── -->
-<main>
-
-  <!-- Success Card -->
-  <div class="success-card">
-    <div class="card-bar"></div>
-    <div class="card-body">
-
-      <!-- Icon -->
-      <div class="success-icon-wrap">
-        <div class="success-ring"></div>
-        <div class="success-ring-2"></div>
-        <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+<!-- ============ MAIN CONTENT ============ -->
+<main class="flex-1 bg-grid flex flex-col items-center justify-center p-4 sm:p-6 overflow-y-auto">
+  <div class="card w-full max-w-[840px] bg-white p-6 sm:p-8 relative z-10 animate-[reveal_0.4s_ease-out]">
+    
+    <!-- 1. Success Message -->
+    <div class="text-center mb-6">
+      <div class="w-14 h-14 bg-verified-50 rounded-full flex items-center justify-center text-verified-500 mx-auto mb-3 border border-verified-500/20">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
       </div>
-
-      <!-- Heading -->
-      <div class="card-eyebrow">
-        <span class="card-eyebrow-dot"></span> Order Confirmed
-      </div>
-      <h1 class="card-h1">You're all set!<br><span class="g">Testing starts soon.</span></h1>
-      <p class="card-sub">
-        Your order has been received. We'll send a <strong>payment link to your email within 30 minutes</strong> — testing kicks off within 24 hours of payment.
+      <h1 class="font-display font-bold text-3xl sm:text-4xl text-ink mb-2 tracking-tight">Thank you, order received!</h1>
+      <p class="text-mist text-[15px] sm:text-base leading-relaxed max-w-2xl mx-auto">
+        We have sent you a list of Gmails to add as testers. Please add them as testers and 
+        <strong class="text-ink font-semibold">allow the app for all countries/regions</strong> 
+        so we can start testing immediately.
       </p>
-
-      <!-- Next Steps -->
-      <div class="steps-block">
-        <div class="steps-head"><i class="fa-solid fa-list-check"></i> What happens next</div>
-        <div class="step-row">
-          <div class="step-num sn-done"><i class="fa-solid fa-check" style="font-size:.6rem;"></i></div>
-          <div class="step-text">
-            <strong>Order Received</strong>
-            <span>Your app details have been submitted successfully.</span>
-          </div>
-        </div>
-        <div class="step-row">
-          <div class="step-num sn-doing"><i class="fa-solid fa-envelope" style="font-size:.6rem;"></i></div>
-          <div class="step-text">
-            <strong>Payment Link on its Way</strong>
-            <span>Expect an email from us within 30 minutes with a secure payment link.</span>
-          </div>
-        </div>
-        <div class="step-row">
-          <div class="step-num sn-todo">3</div>
-          <div class="step-text">
-            <strong>Testers Assigned in 24 Hours</strong>
-            <span>Once payment confirmed, 12 real testers join your Play Console track.</span>
-          </div>
-        </div>
-        <div class="step-row">
-          <div class="step-num sn-todo">🎉</div>
-          <div class="step-text">
-            <strong>Production Access Unlocked — Day 14</strong>
-            <span>After the full testing period, submit your request and get approved.</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- CTA Buttons -->
-      <div class="cta-group">
-        <a href="https://wa.me/+923472061598?text=Hi!%20I%20just%20submitted%20my%2012Testers14Days%20order.%20Can%20you%20confirm%20receipt%3F" class="btn-wa-lg">
-          <i class="fa-brands fa-whatsapp"></i>
-          Confirm on WhatsApp
-        </a>
-        <a href="/" class="btn-home">
-          <i class="fa-solid fa-arrow-left"></i> Back to Homepage
-        </a>
-      </div>
-
-      <!-- Trust Chips -->
-      <div class="trust-chips">
-        <div class="chip"><i class="fa-solid fa-shield-halved g"></i> Money-Back Guarantee</div>
-        <div class="chip"><i class="fa-solid fa-lock b"></i> Stripe Secured</div>
-        <div class="chip"><i class="fa-solid fa-bolt g"></i> Starts in 24h</div>
-        <div class="chip"><i class="fa-solid fa-headset b"></i> 24/7 Support</div>
-      </div>
-
     </div>
+
+    <!-- 2. 24-Hour Clocks Container -->
+    <div class="space-y-3 mb-6">
+      
+      <!-- Primary Green Clock: Karachi HQ -->
+      <div class="bg-verified-50 border border-verified-500 rounded-xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-4 shadow-sm tz-clock" data-tz="Asia/Karachi">
+        <div class="flex flex-col sm:flex-row items-center gap-4">
+          
+          <!-- 24H Clock Face -->
+          <div class="relative w-20 h-20 flex-shrink-0 rounded-full border-2 border-verified-600 overflow-hidden bg-white shadow-inner clock-face">
+            <div class="clock-gradient absolute inset-0"></div>
+            <!-- SVG Dots Injected via JS -->
+            <div class="hr-rotator absolute inset-0 z-20 transition-transform duration-300"><div class="absolute bottom-1/2 left-1/2 w-[2.5px] h-[35%] bg-ink -ml-[1.25px] rounded-full"></div></div>
+            <div class="min-rotator absolute inset-0 z-20 transition-transform duration-300"><div class="absolute bottom-1/2 left-1/2 w-[1.5px] h-[48%] bg-ink -ml-[0.75px] rounded-full"></div></div>
+            <div class="absolute top-1/2 left-1/2 w-2 h-2 bg-ink rounded-full -translate-x-1/2 -translate-y-1/2 z-30"></div>
+          </div>
+          
+          <div>
+            <div class="font-display font-bold text-verified-600 text-lg sm:text-xl leading-tight">Karachi, Pakistan (Our HQ)</div>
+            <div class="text-[13.5px] font-medium text-verified-600/90 mt-1 flex items-center justify-center sm:justify-start gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-verified-500 shadow-[0_0_0_2px_rgba(14,159,110,0.2)]"></span>
+              Available: 10:00 AM to 03:00 AM
+            </div>
+          </div>
+        </div>
+        <div class="bg-white border border-verified-500/30 px-5 py-2.5 rounded-xl shadow-sm">
+          <div class="digital-time font-mono text-2xl font-bold text-verified-600 tracking-tight">--:--</div>
+        </div>
+      </div>
+
+      <!-- Secondary Orange Clocks: World Timings -->
+      <div class="grid grid-cols-3 sm:grid-cols-5 gap-2 sm:gap-3">
+        
+        <!-- New York -->
+        <div class="bg-flag-50 border border-flag-200 rounded-lg p-3 text-center flex flex-col justify-center items-center tz-clock shadow-sm" data-tz="America/New_York">
+          <div class="text-[10px] font-bold text-flag-600 uppercase tracking-widest mb-2">New York</div>
+          <div class="relative w-12 h-12 rounded-full border-[1.5px] border-flag-600 overflow-hidden bg-white clock-face mb-2">
+            <div class="clock-gradient absolute inset-0"></div>
+            <div class="hr-rotator absolute inset-0 z-20 transition-transform duration-300"><div class="absolute bottom-1/2 left-1/2 w-[1.5px] h-[35%] bg-ink -ml-[0.75px] rounded-full"></div></div>
+            <div class="min-rotator absolute inset-0 z-20 transition-transform duration-300"><div class="absolute bottom-1/2 left-1/2 w-[1px] h-[48%] bg-ink -ml-[0.5px] rounded-full"></div></div>
+            <div class="absolute top-1/2 left-1/2 w-1.5 h-1.5 bg-ink rounded-full -translate-x-1/2 -translate-y-1/2 z-30"></div>
+          </div>
+          <div class="digital-time font-mono text-[13px] font-bold text-flag-600">--:--</div>
+        </div>
+
+        <!-- London -->
+        <div class="bg-flag-50 border border-flag-200 rounded-lg p-3 text-center flex flex-col justify-center items-center tz-clock shadow-sm" data-tz="Europe/London">
+          <div class="text-[10px] font-bold text-flag-600 uppercase tracking-widest mb-2">London</div>
+          <div class="relative w-12 h-12 rounded-full border-[1.5px] border-flag-600 overflow-hidden bg-white clock-face mb-2">
+            <div class="clock-gradient absolute inset-0"></div>
+            <div class="hr-rotator absolute inset-0 z-20 transition-transform duration-300"><div class="absolute bottom-1/2 left-1/2 w-[1.5px] h-[35%] bg-ink -ml-[0.75px] rounded-full"></div></div>
+            <div class="min-rotator absolute inset-0 z-20 transition-transform duration-300"><div class="absolute bottom-1/2 left-1/2 w-[1px] h-[48%] bg-ink -ml-[0.5px] rounded-full"></div></div>
+            <div class="absolute top-1/2 left-1/2 w-1.5 h-1.5 bg-ink rounded-full -translate-x-1/2 -translate-y-1/2 z-30"></div>
+          </div>
+          <div class="digital-time font-mono text-[13px] font-bold text-flag-600">--:--</div>
+        </div>
+
+        <!-- Dubai -->
+        <div class="bg-flag-50 border border-flag-200 rounded-lg p-3 text-center flex flex-col justify-center items-center tz-clock shadow-sm" data-tz="Asia/Dubai">
+          <div class="text-[10px] font-bold text-flag-600 uppercase tracking-widest mb-2">Dubai</div>
+          <div class="relative w-12 h-12 rounded-full border-[1.5px] border-flag-600 overflow-hidden bg-white clock-face mb-2">
+            <div class="clock-gradient absolute inset-0"></div>
+            <div class="hr-rotator absolute inset-0 z-20 transition-transform duration-300"><div class="absolute bottom-1/2 left-1/2 w-[1.5px] h-[35%] bg-ink -ml-[0.75px] rounded-full"></div></div>
+            <div class="min-rotator absolute inset-0 z-20 transition-transform duration-300"><div class="absolute bottom-1/2 left-1/2 w-[1px] h-[48%] bg-ink -ml-[0.5px] rounded-full"></div></div>
+            <div class="absolute top-1/2 left-1/2 w-1.5 h-1.5 bg-ink rounded-full -translate-x-1/2 -translate-y-1/2 z-30"></div>
+          </div>
+          <div class="digital-time font-mono text-[13px] font-bold text-flag-600">--:--</div>
+        </div>
+
+        <!-- Tokyo -->
+        <div class="bg-flag-50 border border-flag-200 rounded-lg p-3 text-center flex flex-col justify-center items-center tz-clock shadow-sm" data-tz="Asia/Tokyo">
+          <div class="text-[10px] font-bold text-flag-600 uppercase tracking-widest mb-2">Tokyo</div>
+          <div class="relative w-12 h-12 rounded-full border-[1.5px] border-flag-600 overflow-hidden bg-white clock-face mb-2">
+            <div class="clock-gradient absolute inset-0"></div>
+            <div class="hr-rotator absolute inset-0 z-20 transition-transform duration-300"><div class="absolute bottom-1/2 left-1/2 w-[1.5px] h-[35%] bg-ink -ml-[0.75px] rounded-full"></div></div>
+            <div class="min-rotator absolute inset-0 z-20 transition-transform duration-300"><div class="absolute bottom-1/2 left-1/2 w-[1px] h-[48%] bg-ink -ml-[0.5px] rounded-full"></div></div>
+            <div class="absolute top-1/2 left-1/2 w-1.5 h-1.5 bg-ink rounded-full -translate-x-1/2 -translate-y-1/2 z-30"></div>
+          </div>
+          <div class="digital-time font-mono text-[13px] font-bold text-flag-600">--:--</div>
+        </div>
+
+        <!-- Sydney -->
+        <div class="bg-flag-50 border border-flag-200 rounded-lg p-3 text-center flex flex-col justify-center items-center tz-clock shadow-sm" data-tz="Australia/Sydney">
+          <div class="text-[10px] font-bold text-flag-600 uppercase tracking-widest mb-2">Sydney</div>
+          <div class="relative w-12 h-12 rounded-full border-[1.5px] border-flag-600 overflow-hidden bg-white clock-face mb-2">
+            <div class="clock-gradient absolute inset-0"></div>
+            <div class="hr-rotator absolute inset-0 z-20 transition-transform duration-300"><div class="absolute bottom-1/2 left-1/2 w-[1.5px] h-[35%] bg-ink -ml-[0.75px] rounded-full"></div></div>
+            <div class="min-rotator absolute inset-0 z-20 transition-transform duration-300"><div class="absolute bottom-1/2 left-1/2 w-[1px] h-[48%] bg-ink -ml-[0.5px] rounded-full"></div></div>
+            <div class="absolute top-1/2 left-1/2 w-1.5 h-1.5 bg-ink rounded-full -translate-x-1/2 -translate-y-1/2 z-30"></div>
+          </div>
+          <div class="digital-time font-mono text-[13px] font-bold text-flag-600">--:--</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. WhatsApp CTA -->
+    <div class="border-t border-line pt-5 flex flex-col sm:flex-row items-center justify-between bg-papersoft -mx-6 sm:-mx-8 -mb-6 sm:-mb-8 p-6 sm:p-8 rounded-b-[17px] gap-4">
+      <div class="text-center sm:text-left">
+        <h3 class="font-display font-semibold text-ink text-base">Have a question?</h3>
+        <p class="text-[13.5px] text-mist mt-1 max-w-[340px] leading-relaxed">Leave us a message on WhatsApp. If we are currently offline (white zone on the clock), we will answer as soon as we become online.</p>
+      </div>
+      <a href="https://wa.me/+923472061598?text=Hi!%20I%20just%20submitted%20my%20order." target="_blank" class="btn btn-wa w-full sm:w-auto shadow-lg">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Message on WhatsApp
+      </a>
+    </div>
+
   </div>
-
-  <!-- Stats Row -->
-  <div class="side-stats">
-    <div class="stat-chip">
-      <div class="sc-num">3,500+</div>
-      <div class="sc-lbl">Apps Approved</div>
-    </div>
-    <div class="stat-chip">
-      <div class="sc-num">99.9%</div>
-      <div class="sc-lbl">Success Rate</div>
-    </div>
-    <div class="stat-chip">
-      <div class="sc-num">&lt;24h</div>
-      <div class="sc-lbl">Testing Start</div>
-    </div>
-    <div class="stat-chip">
-      <div class="sc-num">100%</div>
-      <div class="sc-lbl">Tester Retention</div>
-    </div>
-  </div>
-
 </main>
 
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="footer-inner">
-    <div class="f-logo-row">
-      <div class="f-logo-icon"><i class="fa-brands fa-google-play"></i></div>
-      12Testers14Days.pro
-    </div>
-    <div class="f-links">
-      <a href="/#features">Features</a>
-      <a href="/#pricing">Pricing</a>
-      <a href="/#faq">FAQ</a>
-      <a href="/#reviews">Reviews</a>
-      <a href="mailto:support@12testers14days.pro">Contact</a>
-    </div>
-    <div class="f-copy">© 2024 12Testers14Days.pro</div>
-  </div>
-</footer>
-
-<!-- ── CONFETTI ── -->
+<!-- ============ SCRIPTS ============ -->
 <script>
+// 1. 24-Hour Analog Clocks Initialization & Ticker
+(function initClocks() {
+  const clocks = document.querySelectorAll('.tz-clock');
+  
+  // Base availability in UTC (10:00 PKT to 03:00 PKT)
+  const now = new Date();
+  const startUTC = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 5, 0, 0));
+  const endUTC = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 22, 0, 0));
+
+  // Helper to extract strict numerical hours/minutes in specific timezone
+  const getDecimalHour = (date, tz) => {
+    const parts = new Intl.DateTimeFormat('en-US', { timeZone: tz, hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(date);
+    let h = 0, m = 0;
+    parts.forEach(p => {
+      if (p.type === 'hour') h = parseInt(p.value, 10);
+      if (p.type === 'minute') m = parseInt(p.value, 10);
+    });
+    return h + (m / 60);
+  };
+
+  clocks.forEach(clock => {
+    const tz = clock.dataset.tz;
+    const isPrimary = tz === 'Asia/Karachi';
+    const face = clock.querySelector('.clock-face');
+    
+    // A. Generate SVG 24-Hour Dial Layout
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 100 100");
+    svg.setAttribute("class", "absolute inset-0 w-full h-full z-10");
+    
+    for (let i = 0; i < 24; i++) {
+      const angle = (i * 15) * (Math.PI / 180);
+      const x = 50 + 41 * Math.sin(angle);
+      const y = 50 - 41 * Math.cos(angle);
+      const isMajor = i % 6 === 0;
+      
+      // Skip dots at 0, 6, 12, 18 to place numbers there instead for clarity
+      if (!isMajor) {
+        const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        circle.setAttribute("cx", x);
+        circle.setAttribute("cy", y);
+        circle.setAttribute("r", isPrimary ? 1.5 : 1.2);
+        circle.setAttribute("fill", isPrimary ? "rgba(11, 127, 88, 0.5)" : "rgba(146, 64, 14, 0.4)");
+        svg.appendChild(circle);
+      }
+    }
+    
+    // Place military time indicators at cardinal points
+    const fontColor = isPrimary ? "#0B7F58" : "#B45309";
+    const fontSize = isPrimary ? "12" : "14";
+    const numbers = [
+      { v: '0', x: 50, y: 15 },
+      { v: '6', x: 89, y: 54 },
+      { v: '12', x: 50, y: 92 },
+      { v: '18', x: 11, y: 54 }
+    ];
+    numbers.forEach(n => {
+      const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      text.setAttribute("x", n.x);
+      text.setAttribute("y", n.y);
+      text.setAttribute("text-anchor", "middle");
+      text.setAttribute("font-size", fontSize);
+      text.setAttribute("font-weight", "800");
+      text.setAttribute("font-family", "Space Grotesk, sans-serif");
+      text.setAttribute("fill", fontColor);
+      text.textContent = n.v;
+      svg.appendChild(text);
+    });
+    face.appendChild(svg);
+
+    // B. Calculate and map the Green Availability Wedge to local timezone
+    const startLocal = getDecimalHour(startUTC, tz);
+    const endLocal = getDecimalHour(endUTC, tz);
+    
+    const startDeg = (startLocal / 24) * 360;
+    const endDeg = (endLocal / 24) * 360;
+    
+    const gradEl = clock.querySelector('.clock-gradient');
+    const colorOn = '#0E9F6E';  // verified-500
+    const colorOff = '#FFFFFF';
+    
+    if (startLocal < endLocal) {
+      gradEl.style.background = `conic-gradient(from 0deg, ${colorOff} 0deg ${startDeg}deg, ${colorOn} ${startDeg}deg ${endDeg}deg, ${colorOff} ${endDeg}deg 360deg)`;
+    } else {
+      gradEl.style.background = `conic-gradient(from 0deg, ${colorOn} 0deg ${endDeg}deg, ${colorOff} ${endDeg}deg ${startDeg}deg, ${colorOn} ${startDeg}deg 360deg)`;
+    }
+  });
+
+  // C. Start the ticking mechanism
+  function tick() {
+    const current = new Date();
+    clocks.forEach(clock => {
+      const tz = clock.dataset.tz;
+      const hrDecimal = getDecimalHour(current, tz);
+      
+      const m = current.getMinutes();
+      const hrAngle = (hrDecimal / 24) * 360;
+      const minAngle = (m / 60) * 360;
+      
+      clock.querySelector('.hr-rotator').style.transform = `rotate(${hrAngle}deg)`;
+      clock.querySelector('.min-rotator').style.transform = `rotate(${minAngle}deg)`;
+      
+      // Update digital readout below
+      const displayH = Math.floor(hrDecimal).toString().padStart(2, '0');
+      const displayM = m.toString().padStart(2, '0');
+      clock.querySelector('.digital-time').innerText = `${displayH}:${displayM}`;
+    });
+  }
+  
+  setInterval(tick, 1000);
+  tick();
+})();
+
+// 2. Confetti Animation
 (function(){
   const canvas = document.getElementById('confetti');
   const ctx    = canvas.getContext('2d');
-  const colors = ['#1A56FF','#7C3AED','#06B6D4','#10B981','#F59E0B','#4B7DFF'];
+  const colors = ['#0E9F6E','#10151C','#0B7F58','#B45309','#F8DDC3','#E4E7EC'];
   let W, H, pieces = [], running = true;
 
   function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
@@ -492,9 +340,7 @@ footer {
   window.addEventListener('resize', resize);
 
   class Piece {
-    constructor(delay){
-      this.reset(true, delay);
-    }
+    constructor(delay){ this.reset(true, delay); }
     reset(initial, delay){
       this.x  = Math.random() * W;
       this.y  = initial ? (Math.random() * H - H) : -20;
@@ -535,7 +381,6 @@ footer {
     }
   }
 
-  // Spawn burst
   for(let i = 0; i < 160; i++) pieces.push(new Piece(Math.floor(Math.random() * 40)));
 
   function loop(){
@@ -546,7 +391,6 @@ footer {
   }
   loop();
 
-  // Slow down after 5s, stop canvas after 9s
   setTimeout(() => { pieces.forEach(p => { p.vy *= .3; p.vx *= .3; }); }, 5000);
   setTimeout(() => { running = false; ctx.clearRect(0, 0, W, H); }, 9000);
 })();
