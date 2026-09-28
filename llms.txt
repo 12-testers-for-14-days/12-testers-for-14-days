@@ -1,0 +1,23 @@
+# 12Testers14Days
+
+> Independent done-for-you QA testing service that provides 12 real Android testers on physical devices for 14 continuous days, helping developers meet Google Play's closed-testing requirement for new personal developer accounts and apply for production access.
+
+Last updated: 2026-09-28
+
+## Key facts
+- Requirement: personal Google Play developer accounts created after November 13, 2023 must run a closed test with at least 12 testers opted in continuously for 14 days before applying for production access (source: Google Play Console Help, https://support.google.com/googleplay/android-developer/answer/14151465).
+- Google lowered the tester minimum from 20 to 12 in December 2024; the 14-day period did not change.
+- Plans: Starter $39 (12 verified testers), Buffer $69 (20 verified testers). Free retest guarantee if rejected for testing reasons.
+- Testers are real people on physical Android devices (Android 8 to 14). No bots or emulators.
+- Independent service, not affiliated with Google LLC or Google Play.
+
+## Pages
+- [Home](https://12testers14days.pro/): overview, how it works, pricing, reviews and FAQ
+- [Services](https://12testers14days.pro/services): the 12 testers plan
+- [App Rejection Recovery](https://12testers14days.pro/app-rejected): fix "insufficient testing" rejections
+- [For Agencies](https://12testers14days.pro/for-agencies): bulk testing packages
+- [How it Works](https://12testers14days.pro/how-it-works): full walkthrough
+- [Pricing](https://12testers14days.pro/pricing)
+- [14-Day Rule Guide](https://12testers14days.pro/guides/google-play-12-testers-14-days-rule/)
+- [Testing Blog](https://12testers14days.pro/blog/index/)
+- [Contact](https://12testers14days.pro/contact)
